@@ -1,0 +1,22 @@
+
+<h1>Result</h1>
+<div class="result-text">{{pageData.result.text}}</div>
+
+<div class="row">
+  <div ng-repeat="(key,group) in pageData.groups" class="compare-section-{{key}} columns medium-6">
+    <div class="table-wrap">
+      <div class="header">{{group.title}}</div>
+      <div ng-repeat="cost in group.items | orderByWeight : 'weight'" class="row">
+        <div class="columns small-6">{{cost.label}}</div>
+        <div class="columns small-6">${{cost.amount}}{{cost.suffix}}</div>
+      </div>
+      <div class="total row">
+        <div class="columns small-6">Total</div>
+        <div class="columns small-6">${{group.total}}</div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="pageData.result.hint" class="result-hint">{{pageData.result.hint}}</div>
+  <a class="button">Get Insurance!</a>
+  <a ui-sref="use" class="button">Start Over</a>
+</div>
