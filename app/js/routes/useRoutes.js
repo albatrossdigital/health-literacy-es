@@ -39,28 +39,37 @@ angular.module('healthLiteracy.use', [
         })
         .state("use.option", {
 
-          url: '/scenario/{scenarioId:[0-3]{1}}',
+          url: '/scenario',
           templateUrl: 'views/use.scenario.html',
           controller: function($scope, useData) {
             $scope.pageData = useData;
             $scope.currentPage = 'scenario';
 
             $scope.nextPageVal = function(key) {
-              return 'use.scenario({scenarioId: '
-                   + (key + 1) 
-                   + '}).action({actionId: 0})';
+              return 'use.action({scenarioId: ' + key + '})'
             }
           }
         })
         .state("use.action", {
-          url: '/action/{actionId:[0-3]{1}}',
-          templateUrl: 'views/use.scenario.action.html'
-        });
-        /*.state("use.premium", {
-          url: '/premium',
-          templateUrl: 'views/use.scenario.action.premium.html'
+
+          url: '/action?scenarioId',
+          templateUrl: 'views/use.action.html',
+          controller: function($scope, $stateParams, useData) {
+            $scope.pageData = useData;
+            $scope.currentPage = 'action';
+
+            $scope.nextPageVal = function(key) {
+              return 'use.premium({scenarioId: '
+                   + $stateParams.scenarioId + ', actionId: '
+                   + key + '})';
+            }
+          }
         })
-        .state("use.scenario.action.premium.result", {
+        .state("use.premium", {
+          url: '/premium?scenarioId&actionId',
+          templateUrl: 'views/use.premium.html'
+        });
+        /*.state("use.scenario.action.premium.result", {
           url: '/result',
           templateUrl: 'views/use.scenario.action.premium.result.html'
         });*/
