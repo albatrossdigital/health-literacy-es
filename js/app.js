@@ -7,6 +7,7 @@
 //***************************************
 
 angular.module('healthLiteracy', [
+	'healthLiteracy.use',
   'ui.router',
   'ngAnimate',
 ])
@@ -27,14 +28,15 @@ angular.module('healthLiteracy', [
   [          '$locationProvider', '$stateProvider', '$urlRouterProvider',
     function ($locationProvider,   $stateProvider,   $urlRouterProvider) {
 
+    	// set location provider as regular urls
+    	//$locationProvider.html5Mode(true);
+
     	/////////////////////////////
       // Redirects and Otherwise //
       /////////////////////////////
 
       // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
-      $urlRouterProvider
-      	.when('/c?id', '/contacts/:id')
-      	.otherwise('/');
+      //$urlRouterProvider.otherwise('/');
 
       //////////////////////////
       // State Configurations //
@@ -52,11 +54,6 @@ angular.module('healthLiteracy', [
           // Use a url of "/" to set a state as the "index".
           url: "/",
 
-          // Example of an inline template string. By default, templates
-          // will populate the ui-view within the parent state's template.
-          // For top level states, like this one, the parent template is
-          // the index.html file. So this template will be inserted into the
-          // ui-view within index.html.
           templateUrl: 'views/home.html'
         });
 
@@ -71,49 +68,72 @@ angular.module('healthLiteracy', [
 
 //***************************************
 
-// angular.module('healthLiteracy.use', [
-//   'ui.router',
-// ])
+angular.module('healthLiteracy.use', [
+  'ui.router',
+])
 
-// .config(
-//   [          '$stateProvider', '$urlRouterProvider',
-//     function ($stateProvider,   $urlRouterProvider) {
+.config(
+  [          '$stateProvider', '$urlRouterProvider',
+    function ($stateProvider,   $urlRouterProvider) {
 
-//     	/////////////////////////////
-//       // Redirects and Otherwise //
-//       /////////////////////////////
 
-//       // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
-//       $urlRouterProvider
-//       	.when('/use', '/contacts/:id');
+      // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
+      $urlRouterProvider
+      	.when('/use', '/use/scenario/0');
 
-//       //////////////////////////
-//       // State Configurations //
-//       //////////////////////////
 
-//       // Use $stateProvider to configure your states.
-//       $stateProvider
+      // Use $stateProvider to configure your states.
+      $stateProvider
 
-//         //////////
-//         // Home //
-//         //////////
+        //////////
+        // Home //
+        //////////
 
-//         .state("home", {
+        .state("use", {
 
-//           // Use a url of "/" to set a state as the "index".
-//           url: "/",
+          // Use a url of "/" to set a state as the "index".
+          url: "/use",
+          templateUrl: 'views/use.html',
+          resolve: {
+          	useData: function(healthLiteracyUseFactory) {
+          		return healthLiteracyUseFactory.getUseFlow().then(function(pages) {
+          			return pages;
+          		});
+          	},
+          	controller: function($scope, useData) {
+        			$scope.useData = useData;
+          	}
+          }
+        })
+        .state("use.option", {
+        	url: '/scenario/{scenarioId:[0-3]{1}}',
+        	templateUrl: 'views/use.scenario.html',
+        	controller: function($scope, useData) {
+        		$scope.pageData = useData;
+        		$scope.currentPage = 'scenario';
 
-//           // Example of an inline template string. By default, templates
-//           // will populate the ui-view within the parent state's template.
-//           // For top level states, like this one, the parent template is
-//           // the index.html file. So this template will be inserted into the
-//           // ui-view within index.html.
-//           templateUrl: 'views/home.html'
-//         });
+        		$scope.nextPageVal = function(key) {
+        			return 'use.scenario.action';
+        		}
+          }
+        });
+        /*.state("use.scenario.action", {
+        	url: '/action/{actionId:[0-3]{1}}',
+        	templateUrl: 'views/use.scenario.action.html'
+        });*/
+        /*.state("use.premium", {
+        	url: '/premium',
+        	templateUrl: 'views/use.scenario.action.premium.html'
+        })
+        .state("use.scenario.action.premium.result", {
+        	url: '/result',
+        	templateUrl: 'views/use.scenario.action.premium.result.html'
+        });*/
 
-//     }
-//   ]
-// );
+
+    }
+  ]
+);
 
 
 //***************************************

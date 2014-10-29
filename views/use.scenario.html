@@ -1,0 +1,8 @@
+
+<h1 ng-bind="pageData[currentPage].title"></h1>
+
+<div ng-repeat="(key, option) in pageData[currentPage].options">
+  <div class="columns small-3 no-padding" ng-class="option.id">
+    <a ui-sref="{nextPageVal(key)}"></a>
+  </div>
+</div>
