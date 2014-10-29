@@ -11,7 +11,7 @@ angular.module('healthLiteracy.use', [
 
       // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
       $urlRouterProvider
-        .when('/use', '/use/scenario/0');
+        .when('/use', '/use/scenario');
 
 
       // Use $stateProvider to configure your states.
@@ -67,12 +67,66 @@ angular.module('healthLiteracy.use', [
         })
         .state("use.premium", {
           url: '/premium?scenarioId&actionId',
-          templateUrl: 'views/use.premium.html'
+          templateUrl: 'views/use.premium.html',
+          controller: function($scope, $stateParams, useData, $location, $anchorScroll) {
+            $scope.pageData = useData['results'][$stateParams.scenarioId][$stateParams.actionId];
+          
+            $scope.goToPage = function(key) {
+              // If we're not the last story
+              if((key + 1) < $scope.pageData.stories.length) {
+                $location.hash('premium-'+(key + 1));
+                $anchorScroll();
+              }
+              else {
+                $location.hash('');
+                $location.path('/use/result');
+              }
+            }
+          }
+        })
+        .state("use.result", {
+          url: '/result?scenarioId&actionId',
+          templateUrl: 'views/use.result.html',
+          controller: function($scope, $stateParams, useData, $location, $anchorScroll) {
+            var pageData = useData['results'][$stateParams.scenarioId][$stateParams.actionId];
+
+            //$scope.initCalc = function() {
+              var compare = {
+                'insured': {
+                  'title': 'Cost with insurance',
+                  'items': {},
+                  'total': 0
+                },
+                'uninsured': {
+                  'title': 'Cost with NO insurance',
+                  'items': {},
+                  'total': 0
+                },
+              };
+              angular.forEach(pageData.stories, function(story) {
+                angular.forEach(story.costs, function(costBucket, key) {
+                  angular.forEach(costBucket, function(cost) {
+                    // Already added
+                    if(compare[key].items.hasOwnProperty(cost.group)) {
+                      compare[key].items[cost.group].amount += cost.amount;
+                    }
+                    else {
+                      compare[key].items[cost.group] = {
+                        label: pageData.groups[cost.group]['label'],
+                        amount: cost.amount,
+                        suffix: cost.suffix ? cost.suffix : '',
+                        weight: pageData.groups[cost.group]['weight']
+                      }
+                    }
+                    compare[key].total += cost.amount;
+                  });
+                });
+              });
+              pageData.groups = compare;
+              $scope.pageData = pageData;
+            //}
+          }
         });
-        /*.state("use.scenario.action.premium.result", {
-          url: '/result',
-          templateUrl: 'views/use.scenario.action.premium.result.html'
-        });*/
 
 
     }
