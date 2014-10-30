@@ -1,0 +1,31 @@
+
+<div class="row">
+  <div class="columns medium-6">
+
+    <p>Suggested plan level</p>
+    <div class="row tier-details">
+      <div class="columns small-3 tier tier-{{suggestedTier}}"></div>
+      <div class="columns small-9"><h2>{{activeTier.label}}</div>
+    </div>
+    <p>{{activeTier.text}}</p>
+
+    <p>Please Note! This is an educational tool only and is not intended as advice or a recommendation.  Health insurance plans may differ dramatically in costs and benefits. You should seek professional assistance from a health insurance navigator or broker who can provide free help to find the health insurance plan that's right for your needs.</p>
+
+  </div>
+  
+  <div class="columns medium-6 tabs-wrapper">
+    
+    <dl class="tabs">
+      <dd ui-sref-active="active" ng-repeat="tier in tiers">
+        <a ui-sref="shop.tier.tab({tierId: tier.key})">{{tier.label}}</a>
+      </dd>
+    </dl>
+    <div class="tabs-content">
+      <div class="row">
+        <div ui-view></div>
+      </div>
+    </div>
+    
+  </div>
+
+</div>

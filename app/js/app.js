@@ -8,6 +8,7 @@
 
 angular.module('healthLiteracy', [
 	'healthLiteracy.use',
+  'healthLiteracy.shop',
   'ui.router',
   'ngAnimate',
 ])
