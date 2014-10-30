@@ -1,0 +1,9 @@
+<div class="row question">
+  <p>{{question.question}}</p>
+  @todo: status directive
+</div>
+<div class="row">
+  <div class="columns medium-{{colClass}}" ng-repeat="option in question.options" ng-click="answer($index)">
+    {{option.label}}
+  </div>
+</div>
