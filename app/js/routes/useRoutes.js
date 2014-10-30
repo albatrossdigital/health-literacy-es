@@ -89,7 +89,7 @@ angular.module('healthLiteracy.use', [
           templateUrl: 'views/use.result.html',
           controller: function($scope, $stateParams, useData, $location, $anchorScroll) {
             var pageData = useData['results'][$stateParams.scenarioId][$stateParams.actionId];
-
+            
             //$scope.initCalc = function() {
               var compare = {
                 'insured': {
@@ -106,6 +106,10 @@ angular.module('healthLiteracy.use', [
               angular.forEach(pageData.stories, function(story) {
                 angular.forEach(story.costs, function(costBucket, key) {
                   angular.forEach(costBucket, function(cost) {
+                    // if we're skipping, just set to 0
+                    if(cost.skipCount) {
+                      cost.amount = 0;
+                    }
                     // Already added
                     if(compare[key].items.hasOwnProperty(cost.group)) {
                       compare[key].items[cost.group].amount += cost.amount;
@@ -113,16 +117,17 @@ angular.module('healthLiteracy.use', [
                     else {
                       compare[key].items[cost.group] = {
                         label: pageData.groups[cost.group]['label'],
-                        amount: cost.amount,
                         suffix: cost.suffix ? cost.suffix : '',
-                        weight: pageData.groups[cost.group]['weight']
+                        amount: cost.amount,
+                        weight: pageData.groups[cost.group]['weight'],
+                        hide: pageData.groups[cost.group]['hide'] ? pageData.groups[cost.group]['hide'] : false
                       }
                     }
                     compare[key].total += cost.amount;
                   });
                 });
               });
-              pageData.groups = compare;
+              $scope.compare = compare;
               $scope.pageData = pageData;
             //}
           }
