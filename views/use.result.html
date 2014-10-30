@@ -3,12 +3,16 @@
 <div class="result-text">{{pageData.result.text}}</div>
 
 <div class="row">
-  <div ng-repeat="(key,group) in pageData.groups" class="compare-section-{{key}} columns medium-6">
+  <div ng-repeat="(key,group) in compare" class="compare-section-{{key}} columns medium-6">
     <div class="table-wrap">
       <div class="header">{{group.title}}</div>
       <div ng-repeat="cost in group.items | orderByWeight : 'weight'" class="row">
-        <div class="columns small-6">{{cost.label}}</div>
-        <div class="columns small-6">${{cost.amount}}{{cost.suffix}}</div>
+        <div class="columns small-6">
+          <span ng-if="!cost.hide">{{cost.label}}</span>
+        </div>
+        <div class="columns small-6">
+          <span ng-if="!cost.hide">${{cost.amount}}{{cost.suffix}}</span>&nbsp;
+        </div>
       </div>
       <div class="total row">
         <div class="columns small-6">Total</div>
@@ -16,7 +20,7 @@
       </div>
     </div>
   </div>
-  <div ng-if="pageData.result.hint" class="result-hint">{{pageData.result.hint}}</div>
+  <div ng-if="pageData.results.hint" class="result-hint">{{pageData.results.hint}}</div>
   <a class="button">Get Insurance!</a>
   <a ui-sref="use" class="button">Start Over</a>
 </div>

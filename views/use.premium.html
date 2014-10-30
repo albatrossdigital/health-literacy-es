@@ -1,6 +1,10 @@
 
 <h1>Premium</h1>
 
+<div class="premium-override" ng-if="pageData.override">
+  {{pageData.results.text}}
+</div>
+
 <div class="premium-container" 
      ng-repeat="(key, story) in pageData.stories" 
      id="premium-{{key}}">
@@ -12,6 +16,10 @@
            ng-repeat="cost in story.costs.insured | orderBy:weight">
         <div class="columns small-6">{{cost.label}}</div>
         <div class="columns small-6">${{cost.amount}}{{cost.suffix}}</div>
+      </div>
+      <div ng-if="story.hint" class="hint" 
+           ng-repeat="hint in story.hint">
+        {{hint}}
       </div>
       <div class="next-button">
         <a ng-click="goToPage(key)" class="button rounded">
