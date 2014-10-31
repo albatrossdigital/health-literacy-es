@@ -187,7 +187,33 @@ angular.module('healthLiteracy.shop')
               }
             ],
             // PLANS
-            'plans': null
+            'plans': [
+              {
+                'key': 'hmo',
+                'label': 'HMO',
+                'premiums': 'Tend to be lower',
+                'primaryCare': 'Regardless of what is happening with you\'re health, you will probably have to first select and see a Primary Care Provider within the HMO network.',
+                'specialty': 'You are almost always required to first see your Primary Care Provider before you can see a specialist with a referral.',
+                'outOfNetwork': 'No out-of-network coverage in your insurance except in emergency situations when no HMO providers are available.'
+              },
+              {
+                'key': 'epo',
+                'label': 'EPO',
+                'premiums': 'Tend to be lower',
+                'primaryCare': 'Limited Choice of Primary Care Providers you can see within the network.',
+                'specialty': 'Limited choice of specialists within the network.',
+                'outOfNetwork': 'No out-of-network coverage in your insurance except maybe in emergency situations when no in-network providers are available.'
+              },
+              {
+                'key': 'ppo',
+                'label': 'PPO',
+                'premiums': 'Higher',
+                'primaryCare': 'Broad choice of primary care providers in the network.',
+                'specialty': 'You can choose to see a specialist often without a referral from your Primary Care Provider. Relatively broad choice of specialists.',
+                'outOfNetwork': 'You can see providers out-of-network, but you will have to cover the full costs until you reach a separate, more expensive out-of-pocket maximum. (often double your in-network maximum).'
+              }
+            ]
+
           };
           cache.put(callUrl, result);
           deferred.resolve(result);
