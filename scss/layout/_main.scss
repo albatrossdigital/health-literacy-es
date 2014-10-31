@@ -1,0 +1,8 @@
+
+.main {
+  background: $smoke;
+}
+
+@media #{$medium-up} {
+  overflow-y: auto;
+}

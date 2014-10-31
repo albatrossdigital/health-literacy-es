@@ -1,10 +1,12 @@
 
-<h1 ng-bind="pageData[currentPage].title"></h1>
+<div class="choice-header">
+  <h2 ng-bind="pageData[currentPage].title"></h2>
+</div>
+<div class="full-all header-top">
+  <div class="medium-4 columns reds no-padding full-height"
+       ng-repeat="(key, option) in pageData[currentPage].options" 
+       ng-init="nextLink = nextPageVal(key)">
 
-<div ng-repeat="(key, option) in pageData[currentPage].options" 
-     ng-init="nextLink = nextPageVal(key)">
-
-    <div class="columns small-3 no-padding" ng-class="option.id">
-      <a ui-sref="{{nextLink}}">{{option.title}}</a>
-    </div>
+    <a class="full-all full-link h3" ui-sref="{{nextLink}}"><span>{{option.title}}</span></a>
+  </div>
 </div>

@@ -37,7 +37,7 @@ angular.module('healthLiteracy', [
       /////////////////////////////
 
       // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
-      //$urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/');
 
       //////////////////////////
       // State Configurations //

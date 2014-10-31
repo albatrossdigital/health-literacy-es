@@ -14,30 +14,69 @@
     <link rel="stylesheet" href="css/app_override.css">
     <!-- endbuild -->
     <!-- build:js js/vendor/modernizr.min.js -->
+    <?php 
+    /**
+     * Delayed loading of typekit scripts vs Flicker-free loading
+     * Source: https://www.farbeyondcode.com/Delayed-loading-of-typekit-scripts-vs-Flicker-free-loading-5-2304.html
+     * Avg. Load Time: 66ms; 91ms; 113ms
+     */
+    ?>
+    <script type="text/javascript">
+        /* <![CDATA[ */ 
+        TypekitConfig = {
+            kitId: 'aje6baa'
+        };
+        (function() {
+            var tk = document.createElement('script');
+            tk.src = '//use.typekit.com/' + TypekitConfig.kitId + '.js';
+            tk.type = 'text/javascript';
+            tk.async = 'true';
+            tk.onload = tk.onreadystatechange = function() {
+                var rs = this.readyState;
+                if (rs && rs != 'complete' && rs != 'loaded') return;
+                try { Typekit.load(TypekitConfig); } catch (e) {}
+            };
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(tk, s);
+        })(); 
+        /* ]]> */
+    </script>
+
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
   <body>
     <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
-        <div class="page">
-          <header>
-            <a class="left-off-canvas-toggle left">
-              <i class="fa fa-bars"></i> Menu
-            </a>
-            <h2 class="site-name">Covered U</h2>
-            <a class="right ">
-              <i class="fa fa-plus"></i> Get Insurance
-            </a>
-          </header>
-          <main ui-view></main>
-        </div>
+        <header><div class="row">
+          <a class="left-off-canvas-toggle left">
+            <i class="fa fa-bars"></i> Menu
+          </a>
+          <h2 class="site-name"><a ui-sref="home"><img src="../images/logo.png" alt="Home" Title="Home" />Covered <span>U</span></a></h2>
+          <a class="right ">
+            <i class="fa fa-plus"></i> Get Insurance
+          </a>
+        </div></header>
+        <main class="main full-height" ui-view></main>
 
         <!-- Off Canvas Menu -->
         <aside class="left-off-canvas-menu" ng-controller="termsCtrl">
           <h2>Terms</h2>
         </aside>
-
+        <div class="footer-push"></div>
+        <footer class="footer">
+          <div class="row">
+            <div class="left">
+              <ul class="inline-list">
+                <li><a>About</a></li>
+                <li><a>Resources</a></li>
+              </ul>
+            </div>
+            <div class="right">
+              Share <a class="icon-only"><i class="fa fa-twitter"></i> Twitter</a> <a class="icon-only"><i class="fa fa-pinterest"></i> Pinterest</a> <a class="icon-only"><i class="fa fa-facebook"></i> Facebook</a>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
 
