@@ -1,0 +1,12 @@
+
+.footer {
+  background: $smoke;
+  
+  a {
+    color: $steel;
+
+    &:hover {
+      color: darken($steel, 14%);
+    }
+  }
+}
