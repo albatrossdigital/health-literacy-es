@@ -1,6 +1,8 @@
-<div class="row question">
+<div class="row text-center question">
   <p>{{question.question}}</p>
-  @todo: status directive
+  <ul class="status-dots">
+    <li ng-repeat="n in range(1, answers.total)" ng-class="n <= questionId+1 ? 'active' : 'inactive'">{{n}}</li>
+  </ul>
 </div>
 <div class="row">
   <div class="columns medium-{{colClass}}" ng-repeat="option in question.options" ng-click="answer($index)">
