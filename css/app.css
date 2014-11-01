@@ -6014,6 +6014,20 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%; }
+  .full-all-three {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    overflow-y: auto; }
+    .full-all-three .full-all {
+      top: 0;
+      height: 100%;
+      position: relative; }
+      .full-all-three .full-all + .full-all {
+        top: 200%; }
+        .full-all-three .full-all + .full-all + .full-all {
+          top: 300%; }
   .choice-header {
     height: 7.5rem; }
   .header-top {
