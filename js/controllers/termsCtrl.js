@@ -4,9 +4,11 @@ angular.module('healthLiteracy')
 
 .controller('termsCtrl',
   
-  [          '$scope', 
+  ['$scope', 
     function ($scope) {
-      console.log('yup');
+
+      //$scope.termData = healthLiteracyTermsFactory.getTermsFlow();
+      //console.log($scope.termData);
 
     }
   ]

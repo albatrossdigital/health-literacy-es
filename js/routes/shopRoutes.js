@@ -1,4 +1,4 @@
-
+'use strict';
 
 angular.module('healthLiteracy.shop', [
   'ui.router',
@@ -30,7 +30,7 @@ angular.module('healthLiteracy.shop', [
           templateUrl: 'views/shop.html',
           resolve: {
             shopData: function(healthLiteracyShopFactory) {
-              return healthLiteracyShopFactory.getshopFlow().then(function(pages) {
+              return healthLiteracyShopFactory.getShopFlow().then(function(pages) {
                 return pages;
               });
             },
@@ -97,6 +97,12 @@ angular.module('healthLiteracy.shop', [
                 $state.go('shop.question', {questionId: $scope.questionId + 2});
               }
             }
+
+            $scope.range = function(min, max){
+              var input = [];
+              for (var i = min; i <= max; i ++) input.push(i);
+              return input;
+            };
           }
         })
 

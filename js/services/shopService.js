@@ -1,4 +1,4 @@
-'shop strict';
+'use strict';
 
 angular.module('healthLiteracy.shop')
 
@@ -11,7 +11,7 @@ angular.module('healthLiteracy.shop')
       var shopFactory = {};
       var cache = $cacheFactory('shopFactory');
 
-      shopFactory.getshopFlow = function () {
+      shopFactory.getShopFlow = function () {
         var callUrl  = 'shopFlow',
             deferred = $q.defer(),
             data     = cache.get(callUrl);
