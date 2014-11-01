@@ -1,12 +1,8 @@
 
 <div class="premium-override" ng-if="pageData.override">
-  {{pageData.results.text}}
+  {{resultsText}}
 </div>
-
-<div class="premium-container" 
-     ng-repeat="(key, story) in pageData.stories" 
-     id="premium-{{key}}">
-
+<div class="full-all">
   <div class="row">
     <div class="columns medium-6">
       <div class="story-text">{{story.text}}</div>
@@ -20,8 +16,10 @@
            
         {{hint}}
       </div>
-      <div class="next-button">
-        <a ng-click="goToPage(key)" class="button rounded">
+      <div class="next-button" 
+           ng-init="location = goToPage(key);">
+
+        <a ui-sref="{{location}}" class="button rounded">
           <i class="fa fa-chevron-down"></i><span class="invisible">Next Page</span>
         </a>
       </div>
