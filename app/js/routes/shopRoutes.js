@@ -45,6 +45,18 @@ angular.module('healthLiteracy.shop', [
               '1': 0,
               'special': 0
             };
+
+            $scope.getChildByKey = function(obj, key) {
+              var returnItem = false
+              angular.forEach(obj, function(item) {
+                console.log(item);
+                console.log(key);
+                if (item.key == key) {
+                  returnItem = item;
+                }
+              });
+              return returnItem;
+            }
           }
         })
 
@@ -53,7 +65,6 @@ angular.module('healthLiteracy.shop', [
           templateUrl: 'views/shop.intro.html',
           controller: function($scope, shopData) {
             //$scope.pageData = shopData;
-            console.log(shopData);
             $scope.currentPage = 'intro';
 
             $scope.nextPageVal = function(key) {
@@ -73,13 +84,11 @@ angular.module('healthLiteracy.shop', [
             $scope.questionId = $stateParams.questionId - 1;
             $scope.question = shopData.questions[$scope.questionId];
             $scope.colClass = 12 / $scope.question.options.length;
-            console.log($scope.answers);
 
             $scope.answer = function(key) {
               $scope.answers[key] ++;
               $scope.answers.answered ++;
               // Done with the questions
-              console.log($scope.questionId);
               if ($scope.questionId+1 >= $scope.answers.total) {
                 $state.go('shop.tier');
               }
@@ -94,7 +103,7 @@ angular.module('healthLiteracy.shop', [
         .state("shop.tier", {
           url: '/tier',
           templateUrl: 'views/shop.tier.html',
-          controller: function($scope, $stateParams, shopData, $state) {
+          controller: function($scope, $stateParams, shopData, $state, $anchorScroll, $location) {
             $scope.tiers = shopData.tiers;
 
             // Make sure they have answered all of the questions
@@ -116,24 +125,41 @@ angular.module('healthLiteracy.shop', [
             else {
               $scope.suggestedTier = 'silver';
             }
-            $scope.activeTier = shopData.tiers[$scope.suggestedTier];
+            $scope.activeTier = $scope.getChildByKey(shopData.tiers, $scope.suggestedTier);
+
             $state.go('shop.tier.tab', {tierId: $scope.suggestedTier});
-            console.log($scope.answers);
+
+            $scope.goToPlan = function() {
+              // @todo?
+              //$location.hash('plan');
+              //$anchorScroll();
+              $state.go('shop.plan.tab', {planId: shopData.plans[0].key});
+            }
 
             //$scope.pageData = shopData['results'][$stateParams.scenarioId][$stateParams.actionId];
 
           }
         })
-
         .state("shop.tier.tab", {
           url: '/:tierId',
           templateUrl: 'views/shop.tier.tab.html',
           controller: function($scope, $stateParams, shopData, $state) {
-            angular.forEach(shopData.tiers, function(tier) {
-              if (tier.key == $stateParams.tierId) {
-                $scope.stats = tier.stats;
-              }
-            });
+            $scope.stats = $scope.getChildByKey(shopData.tiers, $stateParams.tierId).stats;
+          }
+        })
+
+        .state("shop.plan", {
+          url: '/plan',
+          templateUrl: 'views/shop.plan.html',
+          controller: function($scope, $stateParams, shopData, $state) {
+            $scope.plans = shopData.plans;
+          }
+        })
+        .state("shop.plan.tab", {
+          url: '/:planId',
+          templateUrl: 'views/shop.plan.tab.html',
+          controller: function($scope, $stateParams, shopData, $state) {
+            $scope.plan = $scope.getChildByKey(shopData.plans, $stateParams.planId);
           }
         });
 
