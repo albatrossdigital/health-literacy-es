@@ -1,1 +1,17 @@
-<div ui-view></div>
+<p>Compare plan networks</p>
+
+<div class="row tabs-wrapper">
+  
+  <dl class="tabs">
+    <dd ui-sref-active="active" ng-repeat="plan in plans">
+      <a ui-sref="shop.plan.tab({planId: plan.key})">{{plan.label}}</a>
+    </dd>
+  </dl>
+  <div class="tabs-content">
+    <div class="row">
+      <div ui-view></div>
+    </div>
+  </div>
+  
+</div>
+
