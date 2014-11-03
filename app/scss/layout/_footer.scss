@@ -12,6 +12,28 @@
   }
 }
 
+a.icon-only {
+  display: inline-block;
+  overflow: hidden;
+  margin-left: rem-calc(10px); 
+
+  &:first-of-type {
+    margin-left: rem-calc(20);
+  }
+
+  &, i {
+    height: $social-icon-dimension;
+    width: $social-icon-dimension;
+  } 
+
+  i {
+    padding-top: rem-calc(3);
+    display: block;
+    line-height: $social-icon-dimension;
+    text-align: center;
+  }
+}
+
 // *
 // * Media Queries
 // *
@@ -27,6 +49,17 @@
     bottom: 0;
     width: 100%;
     position: absolute;
+
+    &:before {
+      content: "";
+      height: 6px;
+      position: absolute;
+      top: -6px;
+      z-index: 0;
+      width: 100%;
+      left: 0;
+      @include background(linear-gradient(rgba(#000, 0) 0%, rgba(#000, 0) 25%, rgba(#000, .1) 100%));
+    }
   }
 
 }
