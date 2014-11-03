@@ -1,9 +1,11 @@
-<div class="row question">
-  <p>{{question.question}}</p>
-  @todo: status directive
+<div class="choice-header">
+  <h2 ng-bind="question.question"></h2>
+  <div>@todo: status directive</div>
 </div>
-<div class="row">
-  <div class="columns medium-{{colClass}}" ng-repeat="option in question.options" ng-click="answer($index)">
-    {{option.label}}
+<div class="full-all header-top">
+  <div class="columns blues no-padding full-height medium-{{colClass}}" 
+       ng-repeat="option in question.options">
+
+    <a class="full-all full-link h3" ng-click="answer($index)">{{option.label}}</a>
   </div>
 </div>
