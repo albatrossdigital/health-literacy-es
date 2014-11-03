@@ -75,6 +75,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -95,6 +96,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -124,6 +126,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -174,6 +177,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -194,6 +198,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: ["See what you’d pay if you went to your primary care provider"]
                     },
@@ -219,6 +224,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -266,6 +272,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -286,6 +293,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: ["See what you’d pay if you went to your primary care provider"]
                     },
@@ -320,6 +328,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -373,6 +382,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -402,6 +412,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -431,6 +442,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -481,6 +493,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -510,6 +523,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -539,6 +553,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -589,6 +604,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -647,6 +663,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -718,6 +735,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -733,6 +751,7 @@ angular.module('healthLiteracy.use')
                         ],
                         'uninsured' : []
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: ["You just hit your health insurance deductible."]
                     },
@@ -766,6 +785,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: ['You pay $4,600 to reach your out-of-pocket maximum and your health insurance covers the rest!']
                     },
