@@ -16,3 +16,16 @@
     margin-bottom: 10px
   }
 }
+
+
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+@media #{$medium-up} {
+  .left-off-canvas-toggle, .get-insurance {
+    margin-top: rem-calc(24);
+  }
+}

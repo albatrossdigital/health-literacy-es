@@ -8,18 +8,26 @@
   display: block;
 }
 
+// Remove padding from columns
 .no-padding {
   padding-left: 0;
   padding-right: 0;
 }
 
+// COlumns with big image
+.columns.image {
+  text-align: center;
+}
 
+
+// Big header for questions
 .choice-header {
   padding-bottom: rem-calc(38px);
   padding-top: rem-calc(38px);
   text-align: center;
 }
 
+// Make triangle graphic
 .header-top {
   &:before {
     content: '';
@@ -33,6 +41,7 @@
   }
 }
 
+// Full page links 
 .full-link {
 
   &, &:hover {
@@ -47,7 +56,16 @@
   }
 }
 
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+
 @media #{$medium-up} {
+
+  // Make 100% height
   .full-height {
     position: absolute;
     top: 0;
@@ -55,6 +73,7 @@
     //height: 100%;
   }
 
+  // Make 100% height + 100% width
   .full-all {
     position: absolute;
     top: 0;
@@ -64,6 +83,7 @@
     height: 100%;
   }
 
+  // Vertical Triples (not currently used)
   .full-all-three {
     position: absolute;
     height: 100%;
@@ -87,15 +107,29 @@
 
   }
 
+  // big header
   .choice-header {
     height: $choice-header-height;
   }
 
+  // 100% height with big header
   .header-top {
     height: auto;
     top: $choice-header-height;
   }
 
+  // Big padding
+  .big-pad {
+    padding-top: rem-calc(115px)
+  }
+
+
+  // Big padding
+  .big-pad-right {
+    padding-right: rem-calc(40px)
+  }
+
+  // Make 3 (or 2) in a row full height
   .full-height {
 
     &.columns {
@@ -110,5 +144,13 @@
         right: 0;
       }
     }
+  }
+}
+
+
+@media #{$large-up} {
+  // Big padding
+  .big-pad-right {
+    padding-right: rem-calc(100px)
   }
 }

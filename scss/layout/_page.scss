@@ -8,6 +8,13 @@ body > * {
   font-size: rem-calc(18px);
 }
 
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+
 @media #{$medium-up} {
   body > * {
     font-size: rem-calc(21);
@@ -36,14 +43,5 @@ body > * {
 
   .footer-push {
     //height: $footer-height;
-  }
-
-  .footer {
-    //clear: both;
-    //position: relative;
-    height: $footer-height;
-    bottom: 0;
-    width: 100%;
-    position: absolute;
   }
 }
