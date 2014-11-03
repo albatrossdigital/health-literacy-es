@@ -22,22 +22,25 @@
 
 // Big header for questions
 .choice-header {
-  padding-bottom: rem-calc(38px);
-  padding-top: rem-calc(38px);
+  padding-bottom: rem-calc(32px);
+  padding-top: rem-calc(32px);
   text-align: center;
+  z-index: 10;
+  background: $smoke;
+  position: relative;
 }
 
-// Make triangle graphic
-.header-top {
-  &:before {
+.triangle-bottom {
+
+  // Make triangle graphic
+  &:after {
     content: '';
     position: absolute;
-    top: 0;
-    z-index: 10;
+    bottom: rem-calc(-59);
+    z-index: 11;
     left: 50%;
     margin-left: rem-calc(-30);
     @include css-triangle(rem-calc(30), $smoke, top)
-
   }
 }
 
@@ -109,7 +112,7 @@
 
   // big header
   .choice-header {
-    height: $choice-header-height;
+    min-height: $choice-header-height;
   }
 
   // 100% height with big header

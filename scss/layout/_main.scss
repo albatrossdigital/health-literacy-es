@@ -1,10 +1,15 @@
 
 .main {
   background: $smoke;
+
+  & > [ui-view] {
+    padding-bottom: 20px;
+  } 
 }
 
 @media #{$medium-up} {
   .main {
     overflow-y: auto;
+    overflow-x: hidden;
   }
 }

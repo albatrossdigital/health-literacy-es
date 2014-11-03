@@ -25,6 +25,11 @@
 // ******************************************************
 
 @media #{$medium-up} {
+  
+  .l-header {
+    height: $header-height; 
+  }
+  
   .left-off-canvas-toggle, .get-insurance {
     margin-top: rem-calc(24);
   }
