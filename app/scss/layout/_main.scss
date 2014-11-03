@@ -4,5 +4,7 @@
 }
 
 @media #{$medium-up} {
-  overflow-y: auto;
+  .main {
+    overflow-y: auto;
+  }
 }

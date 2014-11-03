@@ -89,7 +89,9 @@
 
 // import components
 
+@import "components/buttons";
 @import "components/type";
+
 
 // Helpers
 @import "helpers/layout";
@@ -105,5 +107,6 @@
 
 // Pages
 @import "pages/home";
+@import "pages/how-to-use";
 
 @import "appstyles";

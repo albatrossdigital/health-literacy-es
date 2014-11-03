@@ -1,6 +1,7 @@
 
 .footer {
   background: $smoke;
+  padding-top: rem-calc(30);
   
   a {
     color: $steel;
@@ -9,4 +10,23 @@
       color: darken($steel, 14%);
     }
   }
+}
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+
+@media #{$medium-up} {
+
+  .footer {
+    //clear: both;
+    //position: relative;
+    height: $footer-height;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+  }
+
 }

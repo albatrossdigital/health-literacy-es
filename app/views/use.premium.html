@@ -1,28 +1,31 @@
 
-<div class="premium-override" ng-if="pageData.override">
-  {{resultsText}}
+<div class="premium-override columns medium-5 medium-centered big-pad" ng-if="override">
+  <p>{{resultsText}}</p>
+  <div class="text-center">
+    <a ui-sref="use" class="button radius">Start Over</a>
+  </div>
 </div>
-<div class="full-all">
+<div ng-if="!override" class="full-all">
   <div class="row">
-    <div class="columns medium-6 image"><img ng-src="../images/{{story.img}}" /></div>
-    <div class="columns medium-6">
+    <div class="columns medium-6 big-pad image"><img ng-src="../images/{{story.img}}" /></div>
+    <div class="columns medium-6 big-pad big-pad-right">
       <div class="story-text">{{story.text}}</div>
       <div ng-if="story.showCosts" class="story-pricing row" 
            ng-repeat="cost in story.costs.insured | orderBy:weight">
-        <div class="columns small-6">{{cost.label}}</div>
+        <div class="columns small-6">{{cost.label}}:</div>
         <div class="columns small-6">${{cost.amount}}{{cost.suffix}}</div>
       </div>
       <div ng-if="story.hint" class="hint" 
            ng-repeat="hint in story.hint">
            
-        {{hint}}
+        <p>{{hint}}</p>
       </div>
     </div>
   </div>
   <div class="next-button" 
        ng-init="location = goToPage(key);">
 
-    <a ui-sref="{{location}}" class="button rounded">
+    <a ui-sref="{{location}}" class="button round">
       <i class="fa fa-chevron-down"></i><span class="invisible">Next Page</span>
     </a>
   </div>

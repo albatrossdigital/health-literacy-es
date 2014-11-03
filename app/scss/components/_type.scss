@@ -26,6 +26,13 @@ h3 {
   font-weight: $font-weight-semi-bold; 
 }
 
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+
 @media #{$medium-up} {
 
   h1 { font-size: $h1-font-size; }
