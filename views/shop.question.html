@@ -1,6 +1,8 @@
 <div class="choice-header triangle-bottom columns">
   <h2 ng-bind="question.question"></h2>
-  <div>@todo: status directive</div>
+  <ul class="status-dots">
+    <li ng-repeat="n in range(1, answers.total)" ng-class="n <= questionId+1 ? 'active' : 'inactive'">{{n}}</li>
+  </ul>
 </div>
 <div class="full-all header-top">
   <div class="columns blues no-padding full-height medium-{{colClass}}" 

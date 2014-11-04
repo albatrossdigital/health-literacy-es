@@ -1,6 +1,9 @@
+<div class="row">
+  <p>Compare plan networks</p>
+</div>
+
 <div class="result-text columns medium-7 medium-centered text-center">
   <div class="choice-header">
-    <h2>Compare plan networks</h2>
     <dl class="tabs">
       <dd ui-sref-active="active" ng-repeat="plan in plans">
         <a ui-sref="shop.plan.tab({planId: plan.key})">{{plan.label}}</a>
@@ -8,6 +11,8 @@
     </dl>
   </div>
 </div>
+
+
 
 <div class="tabs-wrapper">
   <div class="tabs-content">
