@@ -1,15 +1,31 @@
 
+.l-header {
+  padding-bottom: rem-calc(35);
+}
+
+.left-off-canvas-toggle, .get-insurance {
+  position: absolute;
+  top: rem-calc(80);
+}
+
+.left-off-canvas-toggle {
+  left: $column-gutter/2;
+}
+
+.get-insurance {
+  right: $column-gutter/2;
+}
+
 .site-name {
   max-width: rem-calc(161);
-  left: 50%;
   margin-left: rem-calc(-80);
   margin-right: auto;
+  margin-left: auto;
   overflow: hidden;
   padding: rem-calc(10);
   height: rem-calc(46);
   overflow: hidden;
-  position: absolute;
-  top: 10px;
+  margin-top: rem-calc(18px);
 
   img {
     display: block;
@@ -28,9 +44,10 @@
   
   .l-header {
     height: $header-height; 
+    padding-bottom: 0;
   }
-  
+
   .left-off-canvas-toggle, .get-insurance {
-    margin-top: rem-calc(24);
+    top: rem-calc(28);
   }
 }

@@ -9,9 +9,7 @@
 
 
 .next-button {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: rem-calc(40);
+  padding-top: rem-calc(40);
   overflow: hidden;
   clear: both;
 
@@ -21,13 +19,16 @@
     padding: 0;
     line-height: $next-button-width;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 
     &:hover {
       background: rgba(#ffffff, .70);
     }
   }
 
-  &, .button, i {
+  .button, i {
     height: $next-button-width;
     width: $next-button-width;
   }
