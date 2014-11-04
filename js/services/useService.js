@@ -75,6 +75,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -95,6 +96,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -124,6 +126,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -174,6 +177,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -194,6 +198,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: ["See what you’d pay if you went to your primary care provider"]
                     },
@@ -219,6 +224,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -266,6 +272,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -286,6 +293,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: ["See what you’d pay if you went to your primary care provider"]
                     },
@@ -320,6 +328,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -373,6 +382,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -386,7 +396,7 @@ angular.module('healthLiteracy.use')
                             amount: 25,
                           },
                           {
-                            label: "Cleaning wound/stitches",
+                            label: "Cleaning wound / stitches",
                             group: 'coinsurance',
                             amount: 75,
                           },
@@ -402,6 +412,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -415,7 +426,7 @@ angular.module('healthLiteracy.use')
                             amount: 25,
                           },
                           {
-                            label: "Thorough cleaning/stitching",
+                            label: "Thorough cleaning / stitching",
                             group: 'coinsurance',
                             amount: 100,
                           },
@@ -431,6 +442,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -453,7 +465,7 @@ angular.module('healthLiteracy.use')
                       'weight': 1
                     },
                     'stitches': {
-                      'label': 'Cleanings/Stitches',
+                      'label': 'Cleanings / Stitches',
                       'weight': 2
                     }
                   },
@@ -481,6 +493,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -494,7 +507,7 @@ angular.module('healthLiteracy.use')
                             amount: 75,
                           },
                           {
-                            label: "Coinsurance/Stitches",
+                            label: "Coinsurance / Stitches",
                             group: 'coinsurance',
                             amount: 175,
                           },
@@ -510,6 +523,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -523,7 +537,7 @@ angular.module('healthLiteracy.use')
                             amount: 75,
                           },
                           {
-                            label: "Coinsurance/Stitches",
+                            label: "Coinsurance / Stitches",
                             group: 'coinsurance',
                             amount: 200,
                           },
@@ -539,6 +553,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -561,7 +576,7 @@ angular.module('healthLiteracy.use')
                       'weight': 1
                     },
                     'stitches': {
-                      'label': 'Cleanings/Stitches',
+                      'label': 'Cleanings / Stitches',
                       'weight': 2
                     }
                   },
@@ -589,6 +604,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -602,7 +618,7 @@ angular.module('healthLiteracy.use')
                             amount: 150,
                           },
                           {
-                            label: "Coinsurance/Stitches",
+                            label: "Coinsurance / Stitches",
                             group: 'coinsurance',
                             amount: 250,
                           },
@@ -618,6 +634,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -631,7 +648,7 @@ angular.module('healthLiteracy.use')
                             amount: 150,
                           },
                           {
-                            label: "Coinsurance/Stitches",
+                            label: "Coinsurance / Stitches",
                             group: 'coinsurance',
                             amount: 350,
                           },
@@ -647,6 +664,7 @@ angular.module('healthLiteracy.use')
                           },
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: false
                     },
@@ -669,7 +687,7 @@ angular.module('healthLiteracy.use')
                       'weight': 1
                     },
                     'stitches': {
-                      'label': 'Cleanings/Stitches',
+                      'label': 'Cleanings / Stitches',
                       'weight': 2
                     }
                   },
@@ -718,6 +736,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -733,6 +752,7 @@ angular.module('healthLiteracy.use')
                         ],
                         'uninsured' : []
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: ["You just hit your health insurance deductible."]
                     },
@@ -766,6 +786,7 @@ angular.module('healthLiteracy.use')
                           }
                         ]
                       },
+                      img: 'premium-1.png',
                       showCosts: true,
                       hint: ['You pay $4,600 to reach your out-of-pocket maximum and your health insurance covers the rest!']
                     },

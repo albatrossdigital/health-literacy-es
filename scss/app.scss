@@ -52,7 +52,24 @@
 // Settings
 @import "settings/prefixer";
 
+// Addons
 @import "addons/prefixer";
+
+// Custom Helpers
+@import "helpers/gradient-positions-parser";
+@import "helpers/linear-positions-parser";
+@import "helpers/radial-arg-parser";
+@import "helpers/radial-positions-parser";
+@import "helpers/render-gradients";
+@import "helpers/shape-size-stripper";
+
+// Custom Functions
+@import "functions/golden-ratio";
+@import "functions/linear-gradient";
+@import "functions/radial-gradient";
+@import "functions/strip-units";
+@import "functions/transition-property-name";
+@import "functions/unpack";
 
 // CSS3 Mixins
 @import "css3/animation";
@@ -89,7 +106,10 @@
 
 // import components
 
+@import "components/buttons";
+@import "components/tabs";
 @import "components/type";
+
 
 // Helpers
 @import "helpers/layout";
@@ -103,7 +123,9 @@
 @import "layout/footer";
 
 
-// Pages
-@import "pages/home";
+// Sections
+@import "sections/home";
+@import "sections/how-to-use";
+@import "sections/how-to-shop";
 
 @import "appstyles";
