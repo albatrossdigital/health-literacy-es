@@ -103,6 +103,19 @@ angular.module('healthLiteracy.shop', [
               for (var i = min; i <= max; i ++) input.push(i);
               return input;
             };
+
+            $scope.questionClass = function(n) {
+              var id = parseInt($stateParams.questionId);
+              if(n < id) {
+                return 'active';
+              }
+              else if(n == id) {
+                return 'current';
+              }
+              else {
+                return 'inactive';
+              }
+            }
           }
         })
 

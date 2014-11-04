@@ -2,6 +2,9 @@
 .footer {
   background: $smoke;
   padding-top: rem-calc(30);
+  font-size: $paragraph-font-size;
+  clear: both;
+  position: relative;
   
   a {
     color: $steel;
@@ -9,6 +12,17 @@
     &:hover {
       color: darken($steel, 14%);
     }
+  }
+
+  &:before {
+    content: "";
+    height: 6px;
+    position: absolute;
+    top: -6px;
+    z-index: 0;
+    width: 100%;
+    left: 0;
+    @include background(linear-gradient(rgba(#000, 0) 0%, rgba(#000, 0) 25%, rgba(#000, .1) 100%));
   }
 }
 
@@ -34,11 +48,24 @@ a.icon-only {
   }
 }
 
+
+
 // *
 // * Media Queries
 // *
 // ******************************************************
 
+
+@media #{$small-only} {
+  .footer {
+    padding-bottom: rem-calc(30);
+
+    .left, .right {
+      float: none!important;
+    }
+
+  }
+}
 
 @media #{$medium-up} {
 
@@ -49,17 +76,6 @@ a.icon-only {
     bottom: 0;
     width: 100%;
     position: absolute;
-
-    &:before {
-      content: "";
-      height: 6px;
-      position: absolute;
-      top: -6px;
-      z-index: 0;
-      width: 100%;
-      left: 0;
-      @include background(linear-gradient(rgba(#000, 0) 0%, rgba(#000, 0) 25%, rgba(#000, .1) 100%));
-    }
   }
 
 }

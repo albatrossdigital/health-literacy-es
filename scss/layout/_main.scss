@@ -2,8 +2,17 @@
 .main {
   background: $smoke;
 
-  & > [ui-view] {
-    padding-bottom: 20px;
+  & > [ui-view]{
+    padding-top: rem-calc(40px);
+
+    & > *:last-child {
+      padding-bottom: rem-calc(40px);
+
+      &.header-top {
+        padding-bottom: 0!important;
+      }
+
+    }  
   } 
 }
 
@@ -11,5 +20,8 @@
   .main {
     overflow-y: auto;
     overflow-x: hidden;
+    & > [ui-view] {
+      padding-top: 0;
+    }
   }
 }
