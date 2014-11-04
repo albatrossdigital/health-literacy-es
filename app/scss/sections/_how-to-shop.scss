@@ -1,0 +1,13 @@
+
+@mixin circle-grad($color) {
+  @include background(radial-gradient(50% 50%, rgba($color, .1) 0%, rgba($color, .6) 50%, rgba($color, 1) 100%));
+}
+
+
+.tier-details {
+  margin-top: rem-calc(30);
+}
+
+.tier-silver {
+  @include circle-grad($body-font-color);
+}

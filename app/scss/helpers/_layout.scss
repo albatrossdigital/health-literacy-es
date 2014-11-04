@@ -8,31 +8,43 @@
   display: block;
 }
 
+// Remove padding from columns
 .no-padding {
   padding-left: 0;
   padding-right: 0;
 }
 
-
-.choice-header {
-  padding-bottom: rem-calc(38px);
-  padding-top: rem-calc(38px);
+// COlumns with big image
+.columns.image {
   text-align: center;
 }
 
-.header-top {
-  &:before {
+
+// Big header for questions
+.choice-header {
+  padding-bottom: rem-calc(32px);
+  padding-top: rem-calc(32px);
+  text-align: center;
+  z-index: 10;
+  background: $smoke;
+  position: relative;
+}
+
+.triangle-bottom {
+
+  // Make triangle graphic
+  &:after {
     content: '';
     position: absolute;
-    top: 0;
-    z-index: 10;
+    bottom: rem-calc(-59);
+    z-index: 11;
     left: 50%;
     margin-left: rem-calc(-30);
     @include css-triangle(rem-calc(30), $smoke, top)
-
   }
 }
 
+// Full page links 
 .full-link {
 
   &, &:hover {
@@ -47,7 +59,16 @@
   }
 }
 
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+
 @media #{$medium-up} {
+
+  // Make 100% height
   .full-height {
     position: absolute;
     top: 0;
@@ -55,24 +76,63 @@
     //height: 100%;
   }
 
+  // Make 100% height + 100% width
   .full-all {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%
+    height: 100%;
   }
 
+  // Vertical Triples (not currently used)
+  .full-all-three {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    overflow-y: auto;
+    
+    .full-all {
+      top: 0;
+      height: 100%;
+      position: relative;
+
+      & + .full-all {
+        top: (100%*2);
+
+        & + .full-all {
+          top: (100%*3);
+        }
+      }
+    }
+
+  }
+
+  // big header
   .choice-header {
-    height: $choice-header-height;
+    min-height: $choice-header-height;
   }
 
+  // 100% height with big header
   .header-top {
     height: auto;
     top: $choice-header-height;
   }
 
+  // Big padding
+  .big-pad {
+    padding-top: rem-calc(115px)
+  }
+
+
+  // Big padding
+  .big-pad-right {
+    padding-right: rem-calc(40px)
+  }
+
+  // Make 3 (or 2) in a row full height
   .full-height {
 
     &.columns {
@@ -87,5 +147,13 @@
         right: 0;
       }
     }
+  }
+}
+
+
+@media #{$large-up} {
+  // Big padding
+  .big-pad-right {
+    padding-right: rem-calc(100px)
   }
 }

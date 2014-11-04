@@ -59,28 +59,43 @@ angular.module('healthLiteracy.use', [
             $scope.currentPage = 'action';
 
             $scope.nextPageVal = function(key) {
-              return 'use.premium({scenarioId: '
+              return 'use.premium({premuimId:0, scenarioId: '
                    + $stateParams.scenarioId + ', actionId: '
                    + key + '})';
             }
           }
         })
         .state("use.premium", {
-          url: '/premium?scenarioId&actionId',
+          url: '/premium/:premuimId?scenarioId&actionId',
           templateUrl: 'views/use.premium.html',
-          controller: function($scope, $stateParams, useData, $location, $anchorScroll) {
-            $scope.pageData = useData['results'][$stateParams.scenarioId][$stateParams.actionId];
-          
-            $scope.goToPage = function(key) {
+          controller: function($scope, $stateParams, useData, $location) {
+            var pageData = useData['results'][$stateParams.scenarioId][$stateParams.actionId];
+            var premuimId = $stateParams.premuimId;
+            // Actually print story?
+            $scope.override = pageData.override;
+            // If not, then what do we print
+            $scope.resultsText = pageData.results.text;
+            // Load story
+            $scope.story = pageData.stories[premuimId];
+            
+            $scope.resultYet = function() {
+              return (premuimId + 1) >= pageData.stories.length;
+            }
+            $scope.goToPage = function() {
+              var url = '';
               // If we're not the last story
-              if((key + 1) < $scope.pageData.stories.length) {
-                $location.hash('premium-'+(key + 1));
-                $anchorScroll();
+              if(!$scope.resultYet()) {
+                url = 'use.premium({premuimId: ' + (premuimId + 1) + ', ';
               }
               else {
-                $location.hash('');
-                $location.path('/use/result');
+                url = 'use.result({';
               }
+
+              return url + 'scenarioId: '
+                         + $stateParams.scenarioId 
+                         + ', actionId: ' 
+                         + $stateParams.actionId 
+                         + '})';
             }
           }
         })
