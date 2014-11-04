@@ -30,7 +30,7 @@ angular.module('healthLiteracy', [
     function ($locationProvider,   $stateProvider,   $urlRouterProvider) {
 
     	// set location provider as regular urls
-    	$locationProvider.html5Mode(true);
+    	//$locationProvider.html5Mode(true);
 
     	/////////////////////////////
       // Redirects and Otherwise //
