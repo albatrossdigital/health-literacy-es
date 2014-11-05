@@ -11,7 +11,10 @@ angular.module('healthLiteracy.use', [
 
       // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
       $urlRouterProvider
-        .when('/use', '/use/scenario');
+        .when('/use', '/use/scenario')
+        .when('/use/action', ['$match', '$stateParams', function ($match, $stateParams) {
+          console.log('oooooo');
+        }]);
 
 
       // Use $stateProvider to configure your states.
