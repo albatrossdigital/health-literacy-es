@@ -30,14 +30,26 @@ angular.module('healthLiteracy', [
     function ($locationProvider,   $stateProvider,   $urlRouterProvider) {
 
     	// set location provider as regular urls
-    	//$locationProvider.html5Mode(true);
+    	$locationProvider.html5Mode(true);
 
-    	/////////////////////////////
-      // Redirects and Otherwise //
-      /////////////////////////////
+      // trailing slash and url re-rerouting
+      $urlRouterProvider.rule(function ($injector, $location) {
+        var path = $location.url();
 
-      // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
-      $urlRouterProvider.otherwise('/');
+        var argPos = path.indexOf('/?');
+
+        // check to see if the path already has a slash where it should be
+        if (path.length > 1) {
+          if(path[path.length - 1] === '/') {
+            return path.substring(0, path.length - 1);
+          }
+          else if(argPos > 0) {
+            return path.replace('/?', '?');
+          }
+
+          return '/';
+        }
+      });
 
       //////////////////////////
       // State Configurations //

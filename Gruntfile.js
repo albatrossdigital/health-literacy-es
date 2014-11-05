@@ -1,8 +1,14 @@
 'use strict';
 
+var modRewrite = require('connect-modrewrite');
+var mountFolder = function (connect, dir) {
+  return connect.static(require('path').resolve(dir));
+};
+var filesRedirect = '!\\.html|\\.js|\\.svg|\\.woff|\\.ttf|\\.eot|\\.otf|\\.css|\\.png|\\.jpg$ /index.html [L]';
+
 module.exports = function(grunt) {
 
-    require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt);
 
 
 	grunt.initConfig({
@@ -118,7 +124,13 @@ module.exports = function(grunt) {
 					base: '<%= app %>/',
 					open: true,
 					livereload: 35727,
-					hostname: '127.0.0.1'
+					hostname: 'localhost',
+					middleware:  function (connect) {
+            return [
+              modRewrite ([filesRedirect]),
+              mountFolder(connect, 'app')
+            ];        
+	        }
 				}
 			},
 			dist: {
@@ -128,7 +140,13 @@ module.exports = function(grunt) {
 					open: true,
 					keepalive: true,
 					livereload: false,
-					hostname: '127.0.0.1'
+					hostname: 'healthliteracy.local',
+					middleware:  function (connect) {
+            return [
+              modRewrite ([filesRedirect]),
+              mountFolder(connect, 'dist')
+            ];        
+	        }
 				}
 			}
 		},

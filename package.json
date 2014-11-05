@@ -28,6 +28,7 @@
     "grunt-usemin": "~2.4.0",
     "grunt-contrib-imagemin": "0.8.1",
     "grunt-newer": "~0.7.0",
-    "grunt-angular-templates": "~0.5.7"
+    "grunt-angular-templates": "~0.5.7",
+    "connect-modrewrite": "~0.7.9"
   }
 }
