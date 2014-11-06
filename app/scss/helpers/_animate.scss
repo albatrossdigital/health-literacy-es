@@ -1,10 +1,10 @@
 /* Have to set height explicity on ui-view 
 to prevent collapsing during animation*/
-[ui-view]{
+.transform{
   min-height: 65px;
   z-index: 2;
 
-  [ui-view]:not(:empty) {
+  .transform:not(:empty) {
     background: $smoke;
   }
 }
@@ -13,36 +13,36 @@ to prevent collapsing during animation*/
   //position: relative;
 }
 
-[ui-view].ng-enter, [ui-view].ng-enter-active, [ui-view].gn-leave, [ui-view].ng-leave-active {
+.transform.ng-enter, .transform.ng-enter-active, .transform.gn-leave, .transform.ng-leave-active {
   overflow: hidden;
 }
 
-[ui-view].ng-enter, [ui-view].ng-leave {
+.transform.ng-enter, .transform.ng-leave {
   position: absolute;
   left: 0;
   right: 0;
 }
 
-[ui-view].ng-enter {
+.transform.ng-enter {
   opacity: 1;
   @include transform(translateY(100%));
   @include transition(all .5s ease-in-out);
   z-index: 2;
 }
 
-[ui-view].ng-enter-active {
+.transform.ng-enter-active {
   opacity: 1;
   @include transform(translateY(0%));
 }
 
-[ui-view].ng-leave {
+.transform.ng-leave {
   //opacity: 1;
   z-index: 1;
   @include transform(scale3d(1, 1, 1));
   @include transition(all .5s ease-in-out);
 }
 
-[ui-view].ng-leave-active {
+.transform.ng-leave-active {
   //opacity: 1;
   @include transform(scale3d(0.5, 0.5, 0.5));
 }
