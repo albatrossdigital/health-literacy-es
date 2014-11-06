@@ -7,6 +7,7 @@
 //***************************************
 
 angular.module('app', [
+	'healthLiteracy.terms',
 	'app.use',
   'app.shop',
   'metaInfo',
