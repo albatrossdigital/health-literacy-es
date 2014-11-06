@@ -7,7 +7,8 @@
 //***************************************
 
 angular.module('healthLiteracy', [
-	'healthLiteracy.use',
+	'healthLiteracy.terms',
+  'healthLiteracy.use',
   'healthLiteracy.shop',
   'ui.router',
   'ngAnimate',
