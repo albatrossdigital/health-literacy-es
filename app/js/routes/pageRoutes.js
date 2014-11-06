@@ -16,17 +16,18 @@ angular.module('app.page', [
       $stateProvider
 
         .state("about", {
-
-          // shop a url of "/" to set a state as the "index".
           url: "/about",
           templateUrl: 'views/about.html'
         })
 
         .state("resources", {
-
-          // shop a url of "/" to set a state as the "index".
           url: "/resources",
           templateUrl: 'views/resources.html'
+        })
+
+        .state("get-insurance", {
+          url: "/get-insurance",
+          templateUrl: 'views/get-insurance.html'
         })
 
 

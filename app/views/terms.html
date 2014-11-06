@@ -4,7 +4,7 @@
 
   <dl class="accordion" data-accordion="myAccordionGroup">
     <dd class="accordion-navigation" ng-repeat="term in terms">
-      <a href="#" ng-click="setActive(term.key)">{{term.label}}</a>
+      <a ng-click="setActive(term.key)">{{term.label}}</a>
       <div ng-class="active === term.key ? 'content active' : 'content'" >
         {{term.text}}
       </div>
