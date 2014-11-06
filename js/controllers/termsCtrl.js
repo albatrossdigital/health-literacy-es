@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('healthLiteracy')
+angular.module('app')
 
 .controller('termsCtrl',
   
   ['$scope', 
     function ($scope) {
 
-      //$scope.termData = healthLiteracyTermsFactory.getTermsFlow();
+      //$scope.termData = appTermsFactory.getTermsFlow();
       //console.log($scope.termData);
 
     }

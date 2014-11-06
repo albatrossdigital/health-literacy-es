@@ -1,6 +1,6 @@
 
 .main {
-  background: $smoke;
+  //background: $smoke;
 
   & > [ui-view]{
     padding-top: rem-calc(40px);
@@ -18,10 +18,10 @@
 
 @media #{$medium-up} {
   .main {
-    overflow-y: auto;
-    overflow-x: hidden;
     & > [ui-view] {
       padding-top: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 }

@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('healthLiteracy.use')
+angular.module('app.use')
 
 // use factory
-.factory('healthLiteracyUseFactory', 
+.factory('appUseFactory', 
 
   [         '$http', '$q', '$cacheFactory',
     function($http,   $q,   $cacheFactory) {

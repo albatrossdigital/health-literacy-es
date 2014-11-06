@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('healthLiteracy')
+angular.module('app')
 
 .filter('orderByWeight', function() {
   return function(items, field, reverse) {

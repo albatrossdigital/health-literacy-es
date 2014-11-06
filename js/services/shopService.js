@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('healthLiteracy.shop')
+angular.module('app.shop')
 
 // shop factory
-.factory('healthLiteracyShopFactory', 
+.factory('appShopFactory', 
 
   [         '$http', '$q', '$cacheFactory',
     function($http,   $q,   $cacheFactory) {

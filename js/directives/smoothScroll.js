@@ -2,7 +2,7 @@
 * Anchor Smooth Scroll - Smooth scroll to the given anchor on click
 *   adapted from this stackoverflow answer: http://stackoverflow.com/a/21918502/257494
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-angular.module('healthLiteracy').directive('anchorSmoothScroll', function($location) {
+angular.module('app').directive('anchorSmoothScroll', function($location) {
   'use strict';
  
   return {
