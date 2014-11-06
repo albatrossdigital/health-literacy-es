@@ -1,38 +1,52 @@
-<div class="row plan-details premiums">
-  <div class="columns medium-4">
-    icon
+<div class="row">
+
+  <div class="columns medium-6 plan-title-graphic">
+    <div class="plan-title">
+      <h3>{{plan.label}}</h3>
+      ({{plan.longLabel}})
+    </div>
+    <img ng-src="../images/plans/{{plan.key}}.png" />
   </div>
-  <div class="columns medium-8">
-    <h3>Premiums</h3>
-    <p>{{plan.premiums}}</p>
+
+  <div class="columns medium-6">
+    <div class="row plan-details premiums">
+      <div class="columns medium-4">
+        icon
+      </div>
+      <div class="columns medium-8">
+        <h4>Premiums</h4>
+        <p class="text-small">{{plan.premiums}}</p>
+      </div>
+    </div>
+    <div class="row plan-details primary-care">
+      <div class="columns medium-4">
+        icon
+      </div>
+      <div class="columns medium-8">
+        <h4>Primary Care Providers</h4>
+        <p class="text-small">{{plan.primaryCare}}</p>
+      </div>
+    </div>
+    <div class="row plan-details specialty">
+      <div class="columns medium-4">
+        icon
+      </div>
+      <div class="columns medium-8">
+        <h4>Specialty Providers</h4>
+        <p class="text-small">{{plan.specialty}}</p>
+      </div>
+    </div>
+    <div class="row plan-details out-of-network">
+      <div class="columns medium-4">
+        icon
+      </div>
+      <div class="columns medium-8">
+        <h4>Out-of-Network</h4>
+        <p class="text-small">{{plan.outOfNetwork}}</p>
+      </div>
+    </div>
   </div>
-</div>
-<div class="row plan-details primary-care">
-  <div class="columns medium-4">
-    icon
-  </div>
-  <div class="columns medium-8">
-    <h3>Primary Care Providers</h3>
-    <p>{{plan.primaryCare}}</p>
-  </div>
-</div>
-<div class="row plan-details specialty">
-  <div class="columns medium-4">
-    icon
-  </div>
-  <div class="columns medium-8">
-    <h3>Specialty Providers</h3>
-    <p>{{plan.specialty}}</p>
-  </div>
-</div>
-<div class="row plan-details out-of-network">
-  <div class="columns medium-4">
-    icon
-  </div>
-  <div class="columns medium-8">
-    <h3>Out-of-Network</h3>
-    <p>{{plan.outOfNetwork}}</p>
-  </div>
+
 </div>
 
 <div class="row text-center">

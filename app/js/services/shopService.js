@@ -191,6 +191,7 @@ angular.module('healthLiteracy.shop')
               {
                 'key': 'hmo',
                 'label': 'HMO',
+                'longLabel': 'Health Maintenance Organization',
                 'premiums': 'Tend to be lower',
                 'primaryCare': 'Regardless of what is happening with you\'re health, you will probably have to first select and see a Primary Care Provider within the HMO network.',
                 'specialty': 'You are almost always required to first see your Primary Care Provider before you can see a specialist with a referral.',
@@ -199,6 +200,7 @@ angular.module('healthLiteracy.shop')
               {
                 'key': 'epo',
                 'label': 'EPO',
+                'longLabel': 'Exclusive Provider Organization',
                 'premiums': 'Tend to be lower',
                 'primaryCare': 'Limited Choice of Primary Care Providers you can see within the network.',
                 'specialty': 'Limited choice of specialists within the network.',
@@ -207,6 +209,7 @@ angular.module('healthLiteracy.shop')
               {
                 'key': 'ppo',
                 'label': 'PPO',
+                'longLabel': 'Preferred Provider Organization',
                 'premiums': 'Higher',
                 'primaryCare': 'Broad choice of primary care providers in the network.',
                 'specialty': 'You can choose to see a specialist often without a referral from your Primary Care Provider. Relatively broad choice of specialists.',
