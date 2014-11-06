@@ -16,8 +16,8 @@ angular.module('app', [
 ])
 
 .run(
-	[					 '$sce', '$timeout', '$rootScope', '$state', '$stateParams', 'metaInfo', 
-		function ($sce,   $timeout,   $rootScope,   $state,   $stateParams,   metaInfo) {
+	[					 '$sce', '$browser', '$rootScope', '$state', '$stateParams', 'metaInfo', 
+		function ($sce,   $browser,   $rootScope,   $state,   $stateParams,   metaInfo) {
 
 			// It's very handy to add references to $state and $stateParams to the $rootScope
 			$rootScope.$state = $state;
@@ -26,8 +26,6 @@ angular.module('app', [
       // Apply meta data if available
       $rootScope.$on('$stateChangeStart', 
         function(event, toState, toParams, fromState, fromParams){
-
-          $rootScope.transitioning = 'transitioning';
 
           // If we have any data
           if(toState.data) {
@@ -58,12 +56,10 @@ angular.module('app', [
           metaInfo.resetAll();
         }
       );
-      // Remove class
-      $rootScope.$on('$stateChangeSuccess', 
-        function(event, toState, toParams, fromState, fromParams){
-          $rootScope.transitioning = '';
-        }
-      );
+
+      $browser.notifyWhenNoOutstandingRequests(function () {
+        $rootScope.status = 'ready'; // or whatever
+      }
     }
 	]
 )
