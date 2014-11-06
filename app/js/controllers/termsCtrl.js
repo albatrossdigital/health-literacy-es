@@ -1,15 +1,22 @@
 'use strict';
 
-angular.module('app')
+angular.module('healthLiteracy.terms', [])
 
 .controller('termsCtrl',
   
-  ['$scope', 
-    function ($scope) {
+  ['$scope', '$rootScope', 'healthLiteracyTermsFactory',
+    function ($scope, $rootScope, healthLiteracyTermsFactory) {
+     
+      healthLiteracyTermsFactory.getTermsFlow().then(function(pages) {
+        $scope.terms = pages;
+      });
 
-      //$scope.termData = appTermsFactory.getTermsFlow();
-      //console.log($scope.termData);
+      $rootScope.active = null;
+      $scope.setActive = function(key) {
+        $rootScope.active = $rootScope.active === key ? null : key;
+      }
 
     }
   ]
-);
+)
+

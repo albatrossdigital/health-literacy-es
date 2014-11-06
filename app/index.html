@@ -63,9 +63,8 @@
         <main ng-class="$root.transitioning" class="main full-height" ui-view></main>
 
         <!-- Off Canvas Menu -->
-        <aside class="left-off-canvas-menu" ng-controller="termsCtrl">
-          <h2>Terms</h2>
-        </aside>
+        <ng-include src="'/views/terms.html'"></ng-include>
+
         <div class="footer-push"></div>
         <footer class="footer"><div class="row"><div class="columns">
             <div class="left">
@@ -121,19 +120,20 @@
     <!-- Routes -->
     <script src="js/routes/useRoutes.js"></script>
     <script src="js/routes/shopRoutes.js"></script>
-
+ 
+    <!-- Controllers -->
+    <script src="js/controllers/termsCtrl.js"></script>
+       
     <!-- Services -->
     <script src="js/services/termsService.js"></script>
     <script src="js/services/useService.js"></script>
     <script src="js/services/shopService.js"></script>
 
+
     <!-- Filters -->
     <script src="js/filters/weightFilter.js"></script>
 
-    <!-- Controllers -->
     <script src="js/controllers/metaInfoCtrl.js"></script>
-    <script src="js/controllers/termsCtrl.js"></script>
-
     <!-- Directives -->
     <script src="js/directives/smoothScroll.js"></script>
   </body>

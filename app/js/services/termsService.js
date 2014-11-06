@@ -2,28 +2,23 @@
 
 angular.module('app')
 
-// shop factory
+// terms factory
 .factory('appTermsFactory', 
 
   [         '$http', '$q', '$cacheFactory',
     function($http,   $q,   $cacheFactory) {
 
-      var shopFactory = {};
-      var cache = $cacheFactory('shopFactory');
+      var termsFactory = {};
+      var cache = $cacheFactory('termsFactory');
 
-      shopFactory.getTermsFlow = function () {
-        var callUrl  = 'shopFlow',
+      termsFactory.getTermsFlow = function () {
+        var callUrl  = 'termsFlow',
             deferred = $q.defer(),
             data     = cache.get(callUrl);
 
         // Nothing in cache
         if(!data) {
           var result = [
-            {
-              'key': 'premium',
-              'label': 'Premium',
-              'text': 'The amount you pay for your insurance plan every month. You pay this even if you don\'t use health care services that month.'
-            },
             {
               'key': 'deductible',
               'label': 'Deductible',
@@ -111,7 +106,7 @@ angular.module('app')
         return deferred.promise;
       }
 
-      return shopFactory;
+      return termsFactory;
     }
   ]
 );
