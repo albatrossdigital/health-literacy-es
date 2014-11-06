@@ -75,12 +75,12 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'PayingPremium_1.png',
                       showCosts: false,
                       hint: false
                     },
                     {
-                      text: 'Seeing your Primary Care Provider when you’re sick may mean you will need to pay a small copay.',
+                      text: 'Seeing your Primary Care Provider when you\'re sick may mean you will need to pay a small copay.',
                       costs: {
                         'insured': [
                           {
@@ -96,7 +96,7 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'FeelingSick_Primary_2.png',
                       showCosts: true,
                       hint: false
                     },
@@ -126,7 +126,7 @@ angular.module('app.use')
                           },
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'FeelingSick_Primary_3.png',
                       showCosts: true,
                       hint: false
                     },
@@ -160,7 +160,7 @@ angular.module('app.use')
                 {// URGENT
                   'stories': [
                     {
-                      text: 'You’ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
+                      text: 'You\'ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
                       costs: {
                         'insured': [
                           {
@@ -177,7 +177,7 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'PayingPremium_1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -198,7 +198,7 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'FeelingSick_Urgent_2.png',
                       showCosts: true,
                       hint: ["See what you’d pay if you went to your primary care provider"]
                     },
@@ -224,7 +224,7 @@ angular.module('app.use')
                           },
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'FeelingSick_Primary_3.png',
                       showCosts: true,
                       hint: false
                     },
@@ -255,7 +255,7 @@ angular.module('app.use')
                 {//ER
                   'stories': [
                     {
-                      text: 'You’ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
+                      text: 'You\'ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
                       costs: {
                         'insured': [
                           {
@@ -272,12 +272,12 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'PayingPremium_1.png',
                       showCosts: false,
                       hint: false
                     },
                     {
-                      text: 'Going to the ER will mean you will owe coinsurance to be seen.',
+                      text: 'Going to the ER will mean you will owe coinsurance or a large copay to be seen.',
                       costs: {
                         'insured': [
                           {
@@ -293,7 +293,7 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'FeelingSick_Urgent_2.png',
                       showCosts: true,
                       hint: ["See what you’d pay if you went to your primary care provider"]
                     },
@@ -328,7 +328,7 @@ angular.module('app.use')
                           },
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'FeelingSick_Primary_3.png',
                       showCosts: true,
                       hint: false
                     },
@@ -365,7 +365,7 @@ angular.module('app.use')
                 {// PRIMARY
                   'stories': [
                     {
-                      text: 'You’ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
+                      text: 'You\'ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
                       costs: {
                         'insured': [
                           {
@@ -382,7 +382,7 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'PayingPremium_1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -412,7 +412,7 @@ angular.module('app.use')
                           },
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'NastyCut_Primary_2.png',
                       showCosts: true,
                       hint: false
                     },
@@ -442,7 +442,7 @@ angular.module('app.use')
                           },
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'NastyCut_ER_3.png',
                       showCosts: true,
                       hint: false
                     },
@@ -493,7 +493,7 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'PayingPremium_1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -523,7 +523,7 @@ angular.module('app.use')
                           },
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'NastyCut_Urgent_2.png',
                       showCosts: true,
                       hint: false
                     },
@@ -553,7 +553,7 @@ angular.module('app.use')
                           },
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'NastyCut_ER_3.png',
                       showCosts: true,
                       hint: false
                     },
@@ -604,7 +604,7 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'PayingPremium_1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -634,7 +634,7 @@ angular.module('app.use')
                           },
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'NastyCut_ER_2.png',
                       showCosts: true,
                       hint: false
                     },
@@ -664,7 +664,7 @@ angular.module('app.use')
                           },
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'NastyCut_ER_3.png',
                       showCosts: true,
                       hint: false
                     },
@@ -702,14 +702,16 @@ angular.module('app.use')
                   'override': true,
                   'results': {
                     'text': 'Don\'t be stupid! That sharp, intense pain on the right side of your stomach could be serious. If you think you have appendicitis, GO TO THE EMERGENCY ROOM!!.'
-                  }
+                  },
+                  img: 'Appendicitis_Primary_1.png'
                 },
                 {// URGENT
                   'stories': [],
                   'override': true,
                   'results': {
                     'text': 'Don\'t be stupid! That sharp, intense pain on the right side of your stomach could be serious. If you think you have appendicitis, GO TO THE EMERGENCY ROOM!!.'
-                  }
+                  },
+                  img: 'Appendicitis_Primary_1.png'
                 },
                 {//ER
                   'stories': [
@@ -736,7 +738,7 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'PayingPremium_1.png',
                       showCosts: false,
                       hint: false
                     },
@@ -752,7 +754,7 @@ angular.module('app.use')
                         ],
                         'uninsured' : []
                       },
-                      img: 'premium-1.png',
+                      img: 'Appendicitis_ER_2.png',
                       showCosts: true,
                       hint: ["You just hit your health insurance deductible."]
                     },
@@ -786,7 +788,7 @@ angular.module('app.use')
                           }
                         ]
                       },
-                      img: 'premium-1.png',
+                      img: 'Appendicitis_ER_3.png',
                       showCosts: true,
                       hint: ['You pay $4,600 to reach your out-of-pocket maximum and your health insurance covers the rest!']
                     },
