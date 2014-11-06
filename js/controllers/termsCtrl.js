@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('healthLiteracy.terms', [])
+angular.module('app.terms', [])
 
 .controller('termsCtrl',
   
