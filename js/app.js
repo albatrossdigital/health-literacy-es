@@ -8,6 +8,7 @@
 
 angular.module('app', [
 	'app.terms',
+  'app.page',
 	'app.use',
   'app.shop',
   'metaInfo',
