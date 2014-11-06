@@ -1,10 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="en" ng-app="healthLiteracy">
-  <head>
+<html class="no-js" lang="en" ng-app="app">
+  <head ng-controller="metaInfoCtrl">
     <base href="/"></base>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation project</title>
+    <meta name="description" content="{{metaDescription()}}">
+    <meta name="keywords" content="{{metaKeywords()}}">
+    <title ng-bind="pageTitle();"></title>
     <!-- build:css css/libraries.min.css -->
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
     <!-- bower:css -->
@@ -58,7 +60,7 @@
             <i class="fa fa-plus"></i> Get Insurance
           </a>
         </div></div></header>
-        <main class="main full-height" ui-view></main>
+        <main ng-class="$root.transitioning" class="main full-height" ui-view></main>
 
         <!-- Off Canvas Menu -->
         <aside class="left-off-canvas-menu" ng-controller="termsCtrl">
@@ -113,6 +115,9 @@
     <script src="js/app.js"></script>
     <!-- endbuild -->
 
+    <!-- Providers -->
+    <script src="js/providers/metaInfo.js"></script>
+
     <!-- Routes -->
     <script src="js/routes/useRoutes.js"></script>
     <script src="js/routes/shopRoutes.js"></script>
@@ -126,6 +131,7 @@
     <script src="js/filters/weightFilter.js"></script>
 
     <!-- Controllers -->
+    <script src="js/controllers/metaInfoCtrl.js"></script>
     <script src="js/controllers/termsCtrl.js"></script>
 
     <!-- Directives -->

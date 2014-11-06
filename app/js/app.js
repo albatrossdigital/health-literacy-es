@@ -6,28 +6,75 @@
 
 //***************************************
 
-angular.module('healthLiteracy', [
-	'healthLiteracy.use',
-  'healthLiteracy.shop',
+angular.module('app', [
+	'app.use',
+  'app.shop',
+  'metaInfo',
   'ui.router',
   'ngAnimate',
 ])
 
 .run(
-	[					 '$sce', '$timeout', '$rootScope', '$state', '$stateParams', 
-		function ($sce,   $timeout,   $rootScope,   $state,   $stateParams) {
+	[					 '$sce', '$timeout', '$rootScope', '$state', '$stateParams', 'metaInfo', 
+		function ($sce,   $timeout,   $rootScope,   $state,   $stateParams,   metaInfo) {
 
 			// It's very handy to add references to $state and $stateParams to the $rootScope
 			$rootScope.$state = $state;
 			$rootScope.$stateParams = $stateParams;
 		
-		}
+      // Apply meta data if available
+      $rootScope.$on('$stateChangeStart', 
+        function(event, toState, toParams, fromState, fromParams){
+
+          $rootScope.transitioning = 'transitioning';
+
+          // If we have any data
+          if(toState.data) {
+            // Set title
+            var title = (toState.data.title && toState.data.title.length)
+                      ? toState.data.title
+                      : '';
+
+            metaInfo.setTitle(title);
+
+            // set description
+            var description = (toState.data.description && toState.data.description.length)
+                            ? toState.data.description
+                            : '';
+
+            metaInfo.setMetaDescription(description);
+
+            // set keywords
+            var keywords = (toState.data.keywords && toState.data.keywords.length)
+                         ? toState.data.keywords
+                         : [];
+
+            metaInfo.setMetaKeywords(keywords, toState.data.keywordAppend);
+            
+            return;
+          }
+
+          metaInfo.resetAll();
+        }
+      );
+      // Remove class
+      $rootScope.$on('$stateChangeSuccess', 
+        function(event, toState, toParams, fromState, fromParams){
+          $rootScope.transitioning = '';
+        }
+      );
+    }
 	]
 )
 
 .config(
-  [          '$locationProvider', '$stateProvider', '$urlRouterProvider',
-    function ($locationProvider,   $stateProvider,   $urlRouterProvider) {
+  [          '$locationProvider', '$stateProvider', '$urlRouterProvider', 'metaInfoProvider',
+    function ($locationProvider,   $stateProvider,   $urlRouterProvider,   metaInfoProvider) {
+
+      // Set base meta info
+      metaInfoProvider.setBaseTitle('Health Literacy');
+      metaInfoProvider.setBaseDescription('Health Literacy is an educational site giving straight forward info on healthcare options');
+      metaInfoProvider.setBaseKeywords('Health Literacy, Health, Education, Colorado, Healthcare');
 
     	// set location provider as regular urls
     	$locationProvider.html5Mode(true);
@@ -66,28 +113,12 @@ angular.module('healthLiteracy', [
 
           // Use a url of "/" to set a state as the "index".
           url: "/",
-
           templateUrl: 'views/home.html'
         });
 
     }
   ]
 );
-
-
-//***************************************
-
-// How to use workflow
-
-//***************************************
-
-
-//***************************************
-
-// How to use shop workflow
-
-//***************************************
-
 
 //***************************************
 

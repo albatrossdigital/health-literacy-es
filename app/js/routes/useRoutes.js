@@ -1,7 +1,8 @@
 
 
-angular.module('healthLiteracy.use', [
+angular.module('app.use', [
   'ui.router',
+  'metaInfo'
 ])
 
 .config(
@@ -11,10 +12,7 @@ angular.module('healthLiteracy.use', [
 
       // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
       $urlRouterProvider
-        .when('/use', '/use/scenario')
-        .when('/use/action', ['$match', '$stateParams', function ($match, $stateParams) {
-          console.log('oooooo');
-        }]);
+        .when('/use', '/use/scenario');
 
 
       // Use $stateProvider to configure your states.
@@ -30,8 +28,8 @@ angular.module('healthLiteracy.use', [
           url: "/use",
           templateUrl: 'views/use.html',
           resolve: {
-            useData: function(healthLiteracyUseFactory) {
-              return healthLiteracyUseFactory.getUseFlow().then(function(pages) {
+            useData: function(appUseFactory) {
+              return appUseFactory.getUseFlow().then(function(pages) {
                 return pages;
               });
             },
@@ -41,10 +39,10 @@ angular.module('healthLiteracy.use', [
           }
         })
         .state("use.option", {
-
+          data: { title: 'Pick a Scenario' },
           url: '/scenario',
           templateUrl: 'views/use.scenario.html',
-          controller: function($scope, useData) {
+          controller: function($scope, metaInfo, useData) {
             $scope.pageData = useData;
             $scope.currentPage = 'scenario';
 
@@ -54,7 +52,7 @@ angular.module('healthLiteracy.use', [
           }
         })
         .state("use.action", {
-
+          data: { title: 'Where do you go?' },
           url: '/action?scenarioId',
           templateUrl: 'views/use.action.html',
           controller: function($scope, $stateParams, useData) {
@@ -69,6 +67,7 @@ angular.module('healthLiteracy.use', [
           }
         })
         .state("use.premium", {
+          data: { title: 'Premuims' },
           url: '/premium/:premuimId?scenarioId&actionId',
           templateUrl: 'views/use.premium.html',
           controller: function($scope, $stateParams, useData, $location) {
@@ -103,6 +102,7 @@ angular.module('healthLiteracy.use', [
           }
         })
         .state("use.result", {
+          data: { title: "Results" },
           url: '/result?scenarioId&actionId',
           templateUrl: 'views/use.result.html',
           controller: function($scope, $stateParams, useData, $location, $anchorScroll) {

@@ -6023,6 +6023,60 @@ h3 {
   h6 {
     font-size: 1rem; } }
 
+/* Have to set height explicity on ui-view 
+to prevent collapsing during animation*/
+[ui-view] {
+  min-height: 65px;
+  z-index: 2; }
+  [ui-view] [ui-view]:not(:empty) {
+    background: #EEEEEE; }
+
+[ui-view].ng-enter, [ui-view].ng-enter-active, [ui-view].gn-leave, [ui-view].ng-leave-active {
+  overflow: hidden; }
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0; }
+
+[ui-view].ng-enter {
+  opacity: 1;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  z-index: 2; }
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  transform: translateY(0%); }
+
+[ui-view].ng-leave {
+  z-index: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  -moz-transform: scale3d(1, 1, 1);
+  -ms-transform: scale3d(1, 1, 1);
+  -o-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+
+[ui-view].ng-leave-active {
+  -webkit-transform: scale3d(0.5, 0.5, 0.5);
+  -moz-transform: scale3d(0.5, 0.5, 0.5);
+  -ms-transform: scale3d(0.5, 0.5, 0.5);
+  -o-transform: scale3d(0.5, 0.5, 0.5);
+  transform: scale3d(0.5, 0.5, 0.5); }
+
 .no-padding {
   padding-left: 0;
   padding-right: 0; }
@@ -6189,28 +6243,26 @@ body > * {
   .left-off-canvas-toggle, .get-insurance {
     top: 1.75rem; } }
 
-.main {
-  background: #EEEEEE; }
-  .main > [ui-view] {
-    padding-top: 2.5rem; }
-    .main > [ui-view] > *:last-child {
-      padding-bottom: 2.5rem; }
-      .main > [ui-view] > *:last-child.header-top {
-        padding-bottom: 0 !important; }
+.main > [ui-view] {
+  padding-top: 2.5rem; }
+  .main > [ui-view] > *:last-child {
+    padding-bottom: 2.5rem; }
+    .main > [ui-view] > *:last-child.header-top {
+      padding-bottom: 0 !important; }
 
 @media only screen and (min-width:46.9375rem) {
-  .main {
+  .main > [ui-view] {
+    padding-top: 0;
     overflow-y: auto;
-    overflow-x: hidden; }
-    .main > [ui-view] {
-      padding-top: 0; } }
+    overflow-x: hidden; } }
 
 .footer {
   background: #EEEEEE;
   padding-top: 1.875rem;
   font-size: 1.3125rem;
   clear: both;
-  position: relative; }
+  position: relative;
+  z-index: 4; }
   .footer a {
     color: #666666; }
     .footer a:hover {
@@ -6223,6 +6275,7 @@ body > * {
     z-index: 0;
     width: 100%;
     left: 0;
+    z-index: 3;
     background: -webkit-linear-gradient( rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.1) 100%);
     background: linear-gradient( rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.1) 100%); }
 

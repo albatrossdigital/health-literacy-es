@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('healthLiteracy.shop', [
+angular.module('app.shop', [
   'ui.router',
 ])
 
@@ -29,8 +29,8 @@ angular.module('healthLiteracy.shop', [
           url: "/shop",
           templateUrl: 'views/shop.html',
           resolve: {
-            shopData: function(healthLiteracyShopFactory) {
-              return healthLiteracyShopFactory.getShopFlow().then(function(pages) {
+            shopData: function(appShopFactory) {
+              return appShopFactory.getShopFlow().then(function(pages) {
                 return pages;
               });
             },
