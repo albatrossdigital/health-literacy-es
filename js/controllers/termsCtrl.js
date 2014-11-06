@@ -4,7 +4,7 @@ angular.module('app.terms', [])
 
 .controller('termsCtrl',
   
-  ['$scope', '$rootScope', 'healthLiteracyTermsFactory',
+  ['$scope', '$rootScope', 'appTermsFactory',
     function ($scope, $rootScope, healthLiteracyTermsFactory) {
      
       healthLiteracyTermsFactory.getTermsFlow().then(function(pages) {
