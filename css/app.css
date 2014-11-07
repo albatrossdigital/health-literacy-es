@@ -5979,7 +5979,7 @@ th.hide-for-touch {
     padding-left: 0;
     padding-right: 0; } }
 
-@media only screen and (min-width:46.9375rem) {
+@media only screen and (min-width:64.0625rem) {
   .move-right > .inner-wrap {
     -webkit-transform: translate3d(31.25rem, 0, 0);
     -moz-transform: translate3d(31.25rem, 0, 0);
