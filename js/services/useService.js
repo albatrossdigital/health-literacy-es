@@ -58,7 +58,7 @@ angular.module('app.use')
                 {// PRIMARY
                   'stories': [
                     {
-                      text: 'You’ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
+                      text: 'You’ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
                         'insured': [
                           {
@@ -80,7 +80,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Seeing your Primary Care Provider when you\'re sick may mean you will need to pay a small copay.',
+                      text: 'You may have to pay a copay to see your Primary Care Provider (doctor) when you\'re sick.',
                       costs: {
                         'insured': [
                           {
@@ -101,29 +101,37 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Your Primary Care Provider recommends you see a specialist. The specialist has you do a blood test and an MRI. You’ll pay a larger copay when you see this specialist and owe coinsurance for the MRI and blood test.',
+                      text: 'Your Primary Care Provider recommends you see a specialist. The specialist wants you to get a blood test and an MRI*. Your copay for the spcialist is more than your copay for your Primary Care Provider. You’ll also have to pay coinsurance for the MRI and blood test.',
                       costs: {
                         'insured': [
                           {
-                            label: "Copay",
+                            label: "2 Copays",
                             group: 'copay',
-                            amount: 50,
+                            amount: 85,
                           },
                           {
-                            label: "Coinsurance",
+                            label: "Coinsurance for blood test & MRI",
                             group: 'coinsurance',
-                            amount: 350,
+                            amount: 450,
                           },
                         ],
                         'uninsured' : [
                           {
-                            group: "visit",
-                            amount: 300 
+                            group: "primary",
+                            amount: 160 
                           },
                           {
-                            group: 'bloodmri',
-                            amount: 2125,
+                            group: "specialty",
+                            amount: 265 
                           },
+                          {
+                            group: 'blood',
+                            amount: 200,
+                          },
+                          {
+                            group: 'mri',
+                            amount: 1500,
+                          }
                         ]
                       },
                       img: 'FeelingSick_Primary_3.png',
@@ -148,19 +156,31 @@ angular.module('app.use')
                       'label': 'Doctor visits',
                       'weight': 1
                     },
-                    'bloodmri': {
-                      'label': 'Blood test/MRI',
+                    'primary': {
+                      'label': 'Primary Care visit',
+                      'weight': 1
+                    },
+                    'specialty': {
+                      'label': 'Specialty Care visit',
                       'weight': 2
+                    },
+                    'blood': {
+                      'label': 'Blood test/MRI',
+                      'weight': 3
+                    },
+                    'mri': {
+                      'label': 'MRI',
+                      'weight': 4
                     }
                   },
                   'results': {
-                    'text': 'You check out as healthy after the tests. You just had a bad virus, but your Primary Care Provider wants you to keep an eye on your cholesterol.'
+                    'text': 'Good news! Your tests show you are healthy. But your blood test shows that your cholesterol is a little high, and your Primary Care Provider wants you to keep an eye on it..'
                   }
                 },
                 {// URGENT
                   'stories': [
                     {
-                      text: 'You\'ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
+                      text: 'You’ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
                         'insured': [
                           {
@@ -182,39 +202,39 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Going to Urgent Care will mean you owe a larger copay or coinsurance.',
+                      text: 'It costs more to go to Urgent Care than to your Pirmary Care Provider. You owe a larger copay or coinsurance.',
                       costs: {
                         'insured': [
                           {
                             label: "Coinsurance",
                             group: 'coinsurance',
-                            amount: 150
+                            amount: 75
                           },
                         ],
                         'uninsured' : [
                           {
                             group: "visit",
-                            amount: 300 
+                            amount: 300  // @todo: not in spreadsheet doc
                           }
                         ]
                       },
                       img: 'FeelingSick_Urgent_2.png',
                       showCosts: true,
-                      hint: ["See what you’d pay if you went to your primary care provider"]
+                      hint: ["See what you’d pay if you went to your Primary Care Provider."]
                     },
                     {
-                      text: 'The doctor/nurse practitioner sends you to get an MRI and blood test, for which you will owe more coinsurance.',
+                      text: 'The doctor or nurse practitioner at Urgent Care sends you to get an MRI* and blood test. You have to pay coinsurance for these tests, too.',
                       costs: {
                         'insured': [
                           {
                             label: "Blood test",
                             group: 'bloodmri',
-                            amount: 75
+                            amount: 55
                           },
                           {
                             label: "MRI Coinsurance",
                             group: 'bloodmri',
-                            amount: 1200
+                            amount: 1000
                           },
                         ],
                         'uninsured' : [
@@ -249,19 +269,19 @@ angular.module('app.use')
                   },
                   'results': {
                     'hint': 'If you’d gone to your Primary Care Provider?',
-                    'text': 'You check out as healthy after the tests. You just had a bad virus, but your Primary Care Provider wants you to keep an eye on your cholesterol.'
+                    'text': 'Good news! Your tests show you are healthy. But your blood test shows that your cholesterol is a little high, and your provider wants you to keep an eye on it.'
                   }
                 },
                 {//ER
                   'stories': [
                     {
-                      text: 'You\'ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
+                      text: 'It costs more to go to the Emergency Room than to you Primary Care Provider of Urgent Care. You will owe higher coinsurance or a large copay to be seen.',
                       costs: {
                         'insured': [
                           {
-                            label: "Premium",
+                            label: "Copay",
                             group: 'premium',
-                            amount: 220,
+                            amount: 500,
                             suffix: '/month'
                           }
                         ],
@@ -295,10 +315,10 @@ angular.module('app.use')
                       },
                       img: 'FeelingSick_Urgent_2.png',
                       showCosts: true,
-                      hint: ["See what you’d pay if you went to your primary care provider"]
+                      hint: ["See what you’d pay if you went to your Primary Care Provider"]
                     },
                     {
-                      text: 'The doctor/nurse practitioner sends you to get an MRI and blood test, for which you will owe more coinsurance.',
+                      text: 'The doctor or nurse practitioner at the ER sends you to get an MRI* and blood test. You have to pay coinsurance for these tests, too.',
                       costs: {
                         'insured': [
                           {
