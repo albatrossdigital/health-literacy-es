@@ -16,15 +16,12 @@
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/app_override.css">
     <!-- endbuild -->
-    <!-- build:js js/vendor/modernizr.min.js -->
-    <?php 
-    /**
-     * Delayed loading of typekit scripts vs Flicker-free loading
-     * Source: https://www.farbeyondcode.com/Delayed-loading-of-typekit-scripts-vs-Flicker-free-loading-5-2304.html
-     * Avg. Load Time: 66ms; 91ms; 113ms
-     */
-    ?>
     <script type="text/javascript">
+        /**
+         * Delayed loading of typekit scripts vs Flicker-free loading
+         * Source: https://www.farbeyondcode.com/Delayed-loading-of-typekit-scripts-vs-Flicker-free-loading-5-2304.html
+         * Avg. Load Time: 66ms; 91ms; 113ms
+         */
         /* <![CDATA[ */ 
         TypekitConfig = {
             kitId: 'aje6baa'
@@ -44,11 +41,11 @@
         })(); 
         /* ]]> */
     </script>
-
+    <!-- build:js js/vendor/modernizr.min.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body page-ready>
     <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
         <header class="l-header"><div class="row"><div class="columns">
@@ -60,7 +57,7 @@
             <i class="fa fa-plus"></i> Get Insurance
           </a>
         </div></div></header>
-        <main class="main full-height transform" ui-view></main>
+        <main id="main" class="main full-height transform" ui-view></main>
 
         <!-- Off Canvas Menu -->
         <ng-include src="'/views/terms.html'"></ng-include>
@@ -112,30 +109,25 @@
     <!-- endbuild -->
     <!-- build:js js/app.min.js -->
     <script src="js/app.js"></script>
-    <!-- endbuild -->
-
     <!-- Providers -->
     <script src="js/providers/metaInfo.js"></script>
-
     <!-- Routes -->
     <script src="js/routes/pageRoutes.js"></script>
     <script src="js/routes/useRoutes.js"></script>
     <script src="js/routes/shopRoutes.js"></script>
- 
     <!-- Controllers -->
+    <script src="js/controllers/metaInfoCtrl.js"></script>
     <script src="js/controllers/termsCtrl.js"></script>
-       
     <!-- Services -->
     <script src="js/services/termsService.js"></script>
     <script src="js/services/useService.js"></script>
     <script src="js/services/shopService.js"></script>
-
-
     <!-- Filters -->
     <script src="js/filters/weightFilter.js"></script>
-
-    <script src="js/controllers/metaInfoCtrl.js"></script>
     <!-- Directives -->
     <script src="js/directives/smoothScroll.js"></script>
+    <script src="js/directives/pageReady.js"></script>
+    <!-- endbuild -->
+
   </body>
 </html>
