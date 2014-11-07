@@ -1,0 +1,3 @@
+http://phantomjs.org/download.html
+extract -> /var/www/workspace/phantomjs
+sudo ln -s /var/www/workspace/phantomjs/bin/phantomjs /usr/local/bin

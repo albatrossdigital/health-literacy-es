@@ -32,9 +32,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
-		
-
 		jshint: {
 			options: {
 				jshintrc: '.jshintrc'
@@ -93,7 +90,7 @@ module.exports = function(grunt) {
 		},
 
 		usemin: {
-			html: ['<%= dist %>/**/*.html', '!<%= app %>/bower_components/**'],
+			html: ['<%= dist %>/**/*.html', '!<%= dist %>/snapshots/*.html', '!<%= app %>/bower_components/**'],
 			css: ['<%= dist %>/css/**/*.css'],
 			options: {
 				dirs: ['<%= dist %>']
@@ -120,7 +117,7 @@ module.exports = function(grunt) {
 		connect: {
 			app: {
 				options: {
-					port: 9000,
+					port: 9005,
 					base: '<%= app %>/',
 					open: true,
 					livereload: 35727,
@@ -133,14 +130,29 @@ module.exports = function(grunt) {
 	        }
 				}
 			},
+			distQuick: {
+				options: {
+					port: 9008,
+					base: '<%= dist %>/',
+					open: false,
+					livereload: false,
+					hostname: 'localhost',
+					middleware:  function (connect) {
+            return [
+              modRewrite ([filesRedirect]),
+              mountFolder(connect, 'dist')
+            ];        
+	        }
+				}
+			},
 			dist: {
 				options: {
-					port: 9001,
+					port: 9007,
 					base: '<%= dist %>/',
 					open: true,
 					keepalive: true,
 					livereload: false,
-					hostname: 'healthliteracy.local',
+					hostname: 'localhost',
 					middleware:  function (connect) {
             return [
               modRewrite ([filesRedirect]),
@@ -154,7 +166,8 @@ module.exports = function(grunt) {
 		wiredep: {
 			target: {
 				src: [
-					'<%= app %>/**/*.html'
+					'<%= app %>/**/*.html',
+					'!<%= app %>/snapshots/*.html'
 				],
 				exclude: [
 					'modernizr',
@@ -164,7 +177,21 @@ module.exports = function(grunt) {
 					'foundation'
 				]
 			}
-		}
+		},
+		'node-inspector': {
+		  custom: {
+		    options: {
+		    	'web-port': 8081, 
+		    	'debug-port': 5856,
+		      'web-host': 'localhost'
+		    }
+		  }
+		},
+		execute: {
+      target: {
+        src: ['phantomscreenshots.js']
+      }
+	  }
 
 	});
 
@@ -176,6 +203,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('validate-js', ['jshint']);
 	grunt.registerTask('server-dist', ['connect:dist']);
 	
-	grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
+	grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'connect:distQuick', 'execute']);
 
 };
