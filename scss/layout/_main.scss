@@ -1,9 +1,11 @@
 
-.main {
-  //background: $smoke;
 
-  & > [ui-view]{
+.main {
+  //min-height: 600px;
+
+  & > [ui-view] {
     padding-top: rem-calc(40px);
+    min-height: 600px;
 
     & > *:last-child {
       padding-bottom: rem-calc(40px);
@@ -16,9 +18,21 @@
   } 
 }
 
+.page-section {
+  padding-bottom: rem-calc(40px);
+  @include clearfix;
+
+  .choice-header {
+    margin-bottom: rem-calc(40px);
+  }
+}
+
 @media #{$medium-up} {
   .main {
-    & > [ui-view] {
+    //min-height: auto;
+
+    & > [ui-view],
+    .page-section {
       padding-top: 0;
       overflow-y: auto;
       overflow-x: hidden;

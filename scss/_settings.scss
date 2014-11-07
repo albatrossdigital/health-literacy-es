@@ -10,6 +10,7 @@ $rem-base: 16px;
 // Layout 
 // --------------------------------
 
+$small-header-height: rem-calc(130);
 $header-height: rem-calc(90);
 
 $choice-header-height: rem-calc(105);
@@ -861,7 +862,7 @@ $button-round: $global-rounded;
 // $tabbar-header-margin: 0;
 
 // Off Canvas Menu Variables
-$off-canvas-width: 25%;
+$off-canvas-width: 100%;
 // $off-canvas-bg: $oil;
 // $off-canvas-bg-hover: scale-color($tabbar-bg, $lightness: -30%);
 

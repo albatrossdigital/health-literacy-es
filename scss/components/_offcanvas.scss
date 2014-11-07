@@ -1,0 +1,37 @@
+
+
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+// @media #{$medium-up} {
+//   $offcanvas-w: rem-calc(500);
+//   .move-right > .inner-wrap {
+//     @include transform(translate3d($offcanvas-w, 0, 0));
+//     // /@include transform(translateX());
+//   }
+
+//   .left-off-canvas-menu {
+//     //@include transform(translate3d(none));
+//     @include transform(none);
+//     left: -$offcanvas-w;
+//     width: $offcanvas-w;
+//   }
+// }
+
+@media #{$large-up} {
+  $offcanvas-w: rem-calc(500);
+  .move-right > .inner-wrap {
+    @include transform(translate3d($offcanvas-w, 0, 0));
+    // /@include transform(translateX());
+  }
+
+  .left-off-canvas-menu {
+    //@include transform(translate3d(none));
+    @include transform(none);
+    left: -$offcanvas-w;
+    width: $offcanvas-w;
+  }
+}
