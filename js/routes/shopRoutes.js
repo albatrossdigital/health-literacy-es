@@ -164,6 +164,7 @@ angular.module('app.shop', [
           templateUrl: 'views/shop.tier.tab.html',
           controller: function($scope, $stateParams, shopData, $state) {
             $scope.stats = $scope.getChildByKey(shopData.tiers, $stateParams.tierId).stats;
+            $scope.note = $scope.getChildByKey(shopData.tiers, $stateParams.tierId).note;
           }
         })
 
