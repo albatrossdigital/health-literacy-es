@@ -39,7 +39,7 @@ angular.module('app.shop')
                 ]
               },
               {
-                'question': 'Do you typically see a specialist? (like a...)',
+                'question': 'Do you normally see a specialist? (like a heart doctor, brain doctor, asthma or lung doctor)',
                 'options': [
                   {
                     'label': 'No',
@@ -52,18 +52,18 @@ angular.module('app.shop')
                 ]
               },
               {
-                'question': 'Could you see yourself in the Emergency Room because of health or lifestyle...',
+                'question': 'Could you see yourself going to the Emergency Room because of health or lifestyle...',
                 'options': [
                   {
                     'label': 'Once or less per year',
                     'value': -1
                   },
                   {
-                    'label': ' Maybe a couple times',
+                    'label': 'Maybe a couple times a year',
                     'value': 0
                   },
                   {
-                    'label': 'Jane the ER receptionist and I are becoming best friends',
+                    'label': 'Jane, the ER receptionist, and I are becoming best friends',
                     'value': 1
                   }
                 ]
@@ -112,7 +112,7 @@ angular.module('app.shop')
                 ]
               },
               {
-                'question': 'Do you need access to medical equipment (such as an insulin pen, ...)?',
+                'question': 'Do you need access to medical equipment (such as an insulin pen)?',
                 'options': [
                   {
                     'label': 'No',
@@ -125,7 +125,7 @@ angular.module('app.shop')
                 ]
               },
               {
-                'question': 'Is your income between the following per month? (if below these ranges, you may qualify for Medicaid a low cost state insurance program) (chart showing 138-250% FPL per month by family size to 6)',
+                'question': 'Is your monthly income in the range shown on the cart below? (if below these ranges, you may qualify for Medicaid a low cost state insurance program) (chart showing 138-250% FPL per month by family size to 6)',
                 'options': [
                   {
                     'label': 'Yes',
@@ -143,46 +143,56 @@ angular.module('app.shop')
               {
                 'key': 'bronze',
                 'label': 'Bronze',                
-                'text': 'Sounds like a Bronze level plan might be right for you. These plans have the lowest premiums, but if you end up needing more health care services than anticipated, you\'ll have to pay more out of pocket up front. A bronze plan covers an average of 60% of health care services before you reach your out of pocket maximum.',
+                'text': 'Sounds like a Bronze level plan might be right for you. Bronze plans have lower premiums, but higher deductibles and out-of-pocket costs.',
                 'stats': {
-                  'premium': 100,
-                  'copay': 100,
-                  'deductible': 100,
-                  'primaryCare': 100,
-                  'er': 100,
-                  'prescriptions': 100,
-                  'maternity': 100,
-                  'devices': 100
-                }
+                  'premium': '$127.71',
+                  'deductible': '$6,500',
+                  'outOfPocket': '$6,500',
+                  'preventiveCare': '$0',
+                  'primaryCare': '100% *',
+                  'specialtyCare': '100% *',
+                  'copay': '100% *',
+                  'hospital': '100% *',
+                  'genericDrugs': '$20/100% *',
+                  'specialtyDrugs': '100% *',
+                  'xray': '100% *'
+                },
+                'note': '* Until deductible met'
               },
               {
                 'key': 'silver',
                 'label': 'Silver',
-                'text': 'Sounds like a Silver level plan may be right for you. Silver level plans are generally the most popular with moderate premiums, and cover an average of 70% of costs of health care services before you reach your out of pocket maximum.',
+                'text': 'Sounds like a Silver level plan may be right for you. Silver level plans are often the most popular with moderate premiums and moderate deductibles and out-of-pocket costs.',
                 'stats': {
-                  'premium': 10,
-                  'copay': 100,
-                  'deductible': 100,
-                  'primaryCare': 100,
-                  'er': 100,
-                  'prescriptions': 100,
-                  'maternity': 100,
-                  'devices': 100
+                  'premium': '$220.21',
+                  'deductible': '$2,050',
+                  'outOfPocket': '$6,600',
+                  'preventiveCare': '$0',
+                  'primaryCare': '$25',
+                  'specialtyCare': '$60',
+                  'copay': '$500',
+                  'hospital': '40%',
+                  'genericDrugs': '$15/$40',
+                  'specialtyDrugs': '40%',
+                  'xray': '40%'
                 }
               },
               {
                 'key': 'gold',
                 'label': 'Gold',
-                'text': 'Sounds like a Gold level plan may be right for you, because you anticipate using more health care services. Gold level plans have higher premiums but cover more expenses up front. Gold plans cover an average of 80% of costs of health care services before you reach your out of pocket maximum.',
+                'text': 'Sounds like a Gold level plan may be right for you, because you think you will use more health care services. Gold level plans have higher premiums, but lower deductibles and out-of-pocket costs.',
                 'stats': {
-                  'premium': 1,
-                  'copay': 100,
-                  'deductible': 100,
-                  'primaryCare': 100,
-                  'er': 100,
-                  'prescriptions': 100,
-                  'maternity': 100,
-                  'devices': 100
+                  'premium': '$269.52',
+                  'deductible': '$3,750',
+                  'outOfPocket': '$1,000',
+                  'preventiveCare': '$0',
+                  'primaryCare': '$30',
+                  'specialtyCare': '$60',
+                  'copay': '$350',
+                  'hospital': '35%',
+                  'genericDrugs': '$0/$30',
+                  'specialtyDrugs': '35%',
+                  'xray': '35%'
                 }
               }
             ],
@@ -193,18 +203,18 @@ angular.module('app.shop')
                 'label': 'HMO',
                 'longLabel': 'Health Maintenance Organization',
                 'premiums': 'Tend to be lower',
-                'primaryCare': 'Regardless of what is happening with you\'re health, you will probably have to first select and see a Primary Care Provider within the HMO network.',
+                'primaryCare': 'Regardless of what is happening with your health, you will probably have to first select and see a Primary Care Provider within the HMO network.',
                 'specialty': 'You are almost always required to first see your Primary Care Provider before you can see a specialist with a referral.',
-                'outOfNetwork': 'No out-of-network coverage in your insurance except in emergency situations when no HMO providers are available.'
+                'outOfNetwork': 'Your insurance does not cover out-of-network providers except in emergency situations when no HMO providers are available.'
               },
               {
                 'key': 'epo',
                 'label': 'EPO',
                 'longLabel': 'Exclusive Provider Organization',
                 'premiums': 'Tend to be lower',
-                'primaryCare': 'Limited Choice of Primary Care Providers you can see within the network.',
+                'primaryCare': 'Limited choice of Primary Care Providers you can see within the network.',
                 'specialty': 'Limited choice of specialists within the network.',
-                'outOfNetwork': 'No out-of-network coverage in your insurance except maybe in emergency situations when no in-network providers are available.'
+                'outOfNetwork': 'Your insurance does not cover out-of-network providers except in emergency situations when no in-network providers are available.'
               },
               {
                 'key': 'ppo',
@@ -213,7 +223,7 @@ angular.module('app.shop')
                 'premiums': 'Higher',
                 'primaryCare': 'Broad choice of primary care providers in the network.',
                 'specialty': 'You can choose to see a specialist often without a referral from your Primary Care Provider. Relatively broad choice of specialists.',
-                'outOfNetwork': 'You can see providers out-of-network, but you will have to cover the full costs until you reach a separate, more expensive out-of-pocket maximum. (often double your in-network maximum).'
+                'outOfNetwork': 'You can see providers out-of-network, but you will have to cover the full costs until you reach a separate, more expensive out-of-pocket maximum. (often double your in-network maximum)'
               }
             ]
 
