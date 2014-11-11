@@ -60,31 +60,31 @@
 
 %header-2 {
   @extend %header-core;
-  font-size: $h2-font-size - $h2-font-reduction;;
+  font-size: $h2-font-size - $h2-font-reduction;
   line-height: 1.5;
   font-weight: $font-weight-normal;
 }
 
 %header-3 {
   @extend %header-core;
-  font-size: $h3-font-size - $h3-font-reduction;;
+  font-size: $h3-font-size - $h3-font-reduction;
   line-height: $header-line-height;
   font-weight: $font-weight-semi-bold;
 }
 
 %header-4 {
   @extend %header-core;
-  font-size: $h4-font-size - $h4-font-reduction;;
+  font-size: $h4-font-size - $h4-font-reduction;
 }
 
 %header-5 {
   @extend %header-core;
-  font-size: $h5-font-size - $h5-font-reduction;;
+  font-size: $h5-font-size - $h5-font-reduction;
 }
 
 %header-6 {
   @extend %header-core;
-  font-size: $h6-font-size - $h6-font-reduction;;
+  font-size: $h6-font-size - $h6-font-reduction;
 }
 // general extend
 // use: +e(hide)

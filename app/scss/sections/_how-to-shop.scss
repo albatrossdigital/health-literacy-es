@@ -120,6 +120,13 @@ $tier-dimension: 40px;
 }
 
 @media #{$medium-up} {
+  // progress dots
+  .status-dots {
+    li {
+      margin-bottom: 0;
+    }
+  }
+
   $tier-dimension: 80px;
 
   .tier {
