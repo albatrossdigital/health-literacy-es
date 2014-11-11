@@ -1,0 +1,15 @@
+<div class="choice-header triangle-bottom columns">
+  <h2 ng-bind="question.question"></h2>
+  <ul class="status-dots">
+    <li ng-repeat="n in range(1, answers.total)" ng-class="questionClass(n)">{{n}}</li>
+  </ul>
+</div>
+<div class="full-all header-top clearfix">
+  <div class="columns blues no-padding full-height medium-{{colClass}}" 
+       ng-repeat="option in question.options">
+
+    <a class="full-all full-link h3" ng-click="answer($index)">
+      <span>{{option.label}}</span>
+    </a>
+  </div>
+</div>
