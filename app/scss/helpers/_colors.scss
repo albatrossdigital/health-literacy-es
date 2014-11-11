@@ -1,0 +1,59 @@
+.white-background {
+  background: #fff;
+}
+
+.red-light {
+  @include b(red-light);
+  @include b(trans);
+}
+
+.red {
+  @include b(red-true);
+  @include b(trans);
+}
+
+.red-dark {
+  @include b(red-dark);
+  @include b(trans);
+}
+
+.blue-light {
+  @include b(blue-light);
+  @include b(trans);
+}
+
+.blue {
+  @include b(blue-true);
+  @include b(trans);
+}
+
+.blue-dark {
+  @include b(blue-dark);
+  @include b(trans);
+}
+
+.reds {
+  @include b(red-light);
+  @include b(trans);
+
+  & + .reds {
+    @include b(red-true);
+
+    & + .reds {
+      @include b(red-dark);
+    }
+  }
+}
+
+.blues {
+  @include b(blue-light);
+  @include b(trans);
+
+  & + .blues {
+    @include b(blue-true);
+
+    & + .blues {
+      @include b(blue-dark);
+    }
+  }
+}

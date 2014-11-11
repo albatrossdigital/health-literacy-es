@@ -1,0 +1,53 @@
+
+.left-off-canvas-menu {
+
+  h2 {
+    background: $accordion-navigation-active-bg-color;
+    //border-bottom: 2px solid $accordion-navigation-bg-color;
+    margin-bottom: rem-calc(0);
+    padding-bottom: rem-calc(12);
+    padding-top: rem-calc(12);
+    //padding-left: rem-calc(50px);
+  }
+
+  i {
+    color: $orange;
+    float: right;
+    line-height: rem-calc(42);
+  }
+}
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+// @media #{$medium-up} {
+//   $offcanvas-w: rem-calc(500);
+//   .move-right > .inner-wrap {
+//     @include transform(translate3d($offcanvas-w, 0, 0));
+//     // /@include transform(translateX());
+//   }
+
+//   .left-off-canvas-menu {
+//     //@include transform(translate3d(none));
+//     @include transform(none);
+//     left: -$offcanvas-w;
+//     width: $offcanvas-w;
+//   }
+// }
+
+@media #{$large-up} {
+  $offcanvas-w: rem-calc(500);
+  .move-right > .inner-wrap {
+    @include transform(translate3d($offcanvas-w, 0, 0));
+    // /@include transform(translateX());
+  }
+
+  .left-off-canvas-menu {
+    //@include transform(translate3d(none));
+    @include transform(none);
+    left: -$offcanvas-w;
+    width: $offcanvas-w;
+  }
+}
