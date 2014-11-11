@@ -41,7 +41,6 @@ p.text-small {
 // *
 // ******************************************************
 
-
 @media #{$medium-up} {
 
   h1, .h1 { font-size: $h1-font-size; }
@@ -50,4 +49,31 @@ p.text-small {
   h4 { font-size: $h4-font-size; }
   h5 { font-size: $h5-font-size; }
   h6 { font-size: $h6-font-size; }
+}
+
+@media #{$short-only} {
+  
+  h1, .h1 {
+    font-size: $h1-font-size - $h1-font-reduction;
+  }
+
+  h2, .h2 {
+    font-size: $h2-font-size - $h2-font-reduction;
+  }
+
+  h3, .h3 {
+    font-size: $h3-font-size - $h3-font-reduction;
+  }
+
+  h4, .h4 {
+    font-size: $h4-font-size - $h4-font-reduction;
+  }
+
+  h5, .h5 {
+    font-size: $h5-font-size - $h5-font-reduction;
+  }
+
+  h6, .h6 {
+    font-size: $h6-font-size - $h6-font-reduction;
+  }
 }
