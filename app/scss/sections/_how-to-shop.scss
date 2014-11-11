@@ -94,8 +94,15 @@ $tier-dimension: 40px;
 }
 
 // Plans
-.plan-title-graphic  > * {
-  padding: rem-calc(30);
+.plan-title-graphic {
+  
+  &, & ~ .columns {
+    margin-bottom: rem-calc(50);
+  }
+
+  & > * {
+    padding: rem-calc(30);
+  }
 }
 
 .plan-title {
@@ -104,6 +111,10 @@ $tier-dimension: 40px;
 
 .plan-graphic {
   background: #fff; 
+}
+
+.plan-details .medium-3 {
+  margin-bottom: rem-calc(20);
 }
 
 

@@ -55,25 +55,25 @@ angular.module('app.use')
             },
             'results': [
               [// Feeling Sick
-                {// PRIMARY
+                {// Feeling Sick - PRIMARY
                   'stories': [
                     {
                       text: 'You’ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
-                        'insured': [
+                        'insured': [/*
                           {
                             label: "Premium",
                             group: 'premium',
                             amount: 220,
                             suffix: '/month'
                           }
-                        ],
-                        'uninsured': [
+                        */],
+                        'uninsured': [/*
                           {
                             group: "premium",
                             amount: 0
                           }
-                        ]
+                        */]
                       },
                       img: 'PayingPremium_1.png',
                       showCosts: false,
@@ -91,9 +91,9 @@ angular.module('app.use')
                         ],
                         'uninsured' : [
                           {
-                            group: "visit",
-                            amount: 125
-                          }
+                            group: "primary",
+                            amount: 160 
+                          },
                         ]
                       },
                       img: 'FeelingSick_Primary_2.png',
@@ -105,9 +105,9 @@ angular.module('app.use')
                       costs: {
                         'insured': [
                           {
-                            label: "2 Copays",
+                            label: "Copay",
                             group: 'copay',
-                            amount: 85,
+                            amount: 60,
                           },
                           {
                             label: "Coinsurance for blood test & MRI",
@@ -116,10 +116,6 @@ angular.module('app.use')
                           },
                         ],
                         'uninsured' : [
-                          {
-                            group: "primary",
-                            amount: 160 
-                          },
                           {
                             group: "specialty",
                             amount: 265 
@@ -145,16 +141,12 @@ angular.module('app.use')
                       'weight': 0
                     },
                     'copay': {
-                      'label': 'Copays',
+                      'label': '2 Copays',
                       'weight': 1
                     },
                     'coinsurance': {
-                      'label': 'Coinsurance',
+                      'label': 'Coinsurance for Blood test & MRI',
                       'weight': 2
-                    },
-                    'visit': {
-                      'label': 'Doctor visits',
-                      'weight': 1
                     },
                     'primary': {
                       'label': 'Primary Care visit',
@@ -174,28 +166,29 @@ angular.module('app.use')
                     }
                   },
                   'results': {
-                    'text': 'Good news! Your tests show you are healthy. But your blood test shows that your cholesterol is a little high, and your Primary Care Provider wants you to keep an eye on it..'
+                    'text': 'Good news! Your tests show you are healthy. But your blood test shows that your cholesterol is a little high, and your Primary Care Provider wants you to keep an eye on it.',
+                    'hint': 'Please note: These costs are an example. Actual costs will vary based on your health insurance plan, level of coverage, and where you get your care.'
                   }
                 },
-                {// URGENT
+                {// Feeling Sick - URGENT
                   'stories': [
                     {
                       text: 'You’ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
-                        'insured': [
+                        'insured': [/*
                           {
                             label: "Premium",
                             group: 'premium',
                             amount: 220,
                             suffix: '/month'
                           }
-                        ],
-                        'uninsured': [
+                        */],
+                        'uninsured': [/*
                           {
                             group: "premium",
                             amount: 0
                           }
-                        ]
+                        */]
                       },
                       img: 'PayingPremium_1.png',
                       showCosts: false,
@@ -214,7 +207,7 @@ angular.module('app.use')
                         'uninsured' : [
                           {
                             group: "visit",
-                            amount: 300  // @todo: not in spreadsheet doc
+                            amount: 150
                           }
                         ]
                       },
@@ -228,25 +221,29 @@ angular.module('app.use')
                         'insured': [
                           {
                             label: "Blood test",
-                            group: 'bloodmri',
+                            group: 'blood',
                             amount: 55
                           },
                           {
                             label: "MRI Coinsurance",
-                            group: 'bloodmri',
+                            group: 'mri',
                             amount: 1000
                           },
                         ],
                         'uninsured' : [
                           {
-                            group: "bloodmri",
-                            amount: 1800 
+                            group: 'blood',
+                            amount: 200
+                          },
+                          {
+                            group: 'mri',
+                            amount: 1600
                           },
                         ]
                       },
                       img: 'FeelingSick_Primary_3.png',
                       showCosts: true,
-                      hint: false
+                      hint: '*MRI (Magnetic Resonance Imaging) is a body imaging test.'
                     },
                   ],
                   'groups': {
@@ -262,35 +259,39 @@ angular.module('app.use')
                       'label': 'Urgent Care visit',
                       'weight': 1
                     },
-                    'bloodmri': {
-                      'label': 'Blood test/MRI',
+                    'blood': {
+                      'label': 'Blood test',
                       'weight': 2
+                    },
+                    'mri': {
+                      'label': 'MRI',
+                      'weight': 3
                     }
                   },
                   'results': {
-                    'hint': 'If you’d gone to your Primary Care Provider?',
-                    'text': 'Good news! Your tests show you are healthy. But your blood test shows that your cholesterol is a little high, and your provider wants you to keep an eye on it.'
+                    'text': 'Good news! Your tests show you are healthy. But your blood test shows that your cholesterol is a little high, and your provider wants you to keep an eye on it.',
+                    'hint': 'Please note: These costs are an example. Actual costs will vary based on your health insurance plan, level of coverage, and where you get your care.'
                   }
                 },
-                {//ER
+                {// Feeling Sick - ER
                   'stories': [
                     {
                       text: 'It costs more to go to the Emergency Room than to you Primary Care Provider of Urgent Care. You will owe higher coinsurance or a large copay to be seen.',
                       costs: {
-                        'insured': [
+                        'insured': [/*
                           {
                             label: "Copay",
                             group: 'premium',
                             amount: 500,
                             suffix: '/month'
                           }
-                        ],
-                        'uninsured': [
+                        */],
+                        'uninsured': [/*
                           {
                             group: "premium",
                             amount: 0
                           }
-                        ]
+                        */]
                       },
                       img: 'PayingPremium_1.png',
                       showCosts: false,
@@ -301,15 +302,15 @@ angular.module('app.use')
                       costs: {
                         'insured': [
                           {
-                            label: "Coinsurance",
-                            group: 'coinsurance',
-                            amount: 400
+                            label: "Copay",
+                            group: 'copay',
+                            amount: 500
                           },
                         ],
                         'uninsured' : [
                           {
                             group: "visit",
-                            amount: 600 
+                            amount: 800 
                           }
                         ]
                       },
@@ -323,24 +324,23 @@ angular.module('app.use')
                         'insured': [
                           {
                             label: "Blood test",
-                            group: 'bloodmri',
+                            group: 'blood',
                             amount: 150
                           },
                           {
                             label: "MRI Coinsurance",
-                            group: 'bloodmri',
-                            amount: 2500
-                          },
-                          {
-                            label: "Facility fee coinsurance",
-                            group: 'facility',
-                            amount: 1000
+                            group: 'mri',
+                            amount: 1750
                           },
                         ],
                         'uninsured' : [
                           {
-                            group: "bloodmri",
-                            amount: 3000 
+                            group: "blood",
+                            amount: 300 
+                          },
+                          {
+                            group: "mri",
+                            amount: 2700 
                           },
                           {
                             group: 'facility',
@@ -358,48 +358,52 @@ angular.module('app.use')
                       'label': 'Premium',
                       'weight': 0
                     },
-                    'coinsurance': {
-                      'label': 'Coinsurance',
+                    'copay': {
+                      'label': 'Copay',
                       'weight': 1
                     },
                     'visit': {
                       'label': ' ER visit',
                       'weight': 1
                     },
-                    'bloodmri': {
-                      'label': 'Blood test/MRI',
+                    'blood': {
+                      'label': 'Blood test',
                       'weight': 2
+                    },
+                    'mri': {
+                      'label': 'MRI',
+                      'weight': 3
                     },
                     'facility': {
                       'label': 'Facility fee',
-                      'weight': 3
+                      'weight': 4
                     }
                   },
                   'results': {
-                    'hint': 'If you’d gone to your Primary Care Provider?',
-                    'text': 'You check out as healthy after the tests. You just had a bad virus, but your Primary Care Provider wants you to keep an eye on your cholesterol.'
+                    'text': 'You check out as healthy after the tests. You just had a bad virus, but your Primary Care Provider wants you to keep an eye on your cholesterol.',
+                    'hint': 'Please note: These costs are an example. Actual costs will vary based on your health insurance plan, level of coverage, and where you get your care.'
                   }
                 } 
               ],
               [// Nasty Cut
-                {// PRIMARY
+                {// Nasty Cut - PRIMARY
                   'stories': [
                     {
                       text: 'You\'ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
                       costs: {
                         'insured': [
-                          {
+                          /*{
                             label: "Premium",
                             group: 'premium',
                             amount: 220,
                             suffix: '/month'
-                          }
+                          }*/
                         ],
                         'uninsured': [
-                          {
+                          /*{
                             group: "premium",
                             amount: 0
-                          }
+                          }*/
                         ]
                       },
                       img: 'PayingPremium_1.png',
@@ -407,7 +411,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Depending on how bad the cut is, your regular primary care provider may be able to stitch you up. Call them to find out.',
+                      text: 'If the cut is not too bad, your regular Primary Care Provider may be able to stitch you up. Call them first to find out.',
                       costs: {
                         'insured': [
                           {
@@ -437,7 +441,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Unfortunately your cut starts looking a little like something from a horror film. It\'s getting infected. It happens, so don\'t freak out. Just get it taken care of! You go back to your provider to get it cleaned and restitched.',
+                      text: 'Oh no! Your cut starts to look a little like something from a horror film. It\'s getting infected. It happens, so don\'t freak out. Just get it taken care of! You go back to your provider to get it cleaned and stitched again.',
                       costs: {
                         'insured': [
                           {
@@ -448,7 +452,7 @@ angular.module('app.use')
                           {
                             label: "Thorough cleaning / stitching",
                             group: 'coinsurance',
-                            amount: 100,
+                            amount: 90,
                           },
                         ],
                         'uninsured' : [
@@ -468,50 +472,51 @@ angular.module('app.use')
                     },
                   ],
                   'groups': {
-                    'premium': {
+                    'premium': {/*
                       'label': 'Premium',
                       'weight': 0
-                    },
+                    */},
                     'copay': {
-                      'label': 'Copays',
+                      'label': '2 Copays',
                       'weight': 1
                     },
                     'coinsurance': {
-                      'label': 'Coinsurance',
+                      'label': 'Coinsurance for 2 visits',
                       'weight': 2
                     },
                     'visit': {
-                      'label': 'Doctor visits',
+                      'label': '2 Doctor visits',
                       'weight': 1
                     },
                     'stitches': {
-                      'label': 'Cleanings / Stitches',
+                      'label': '2 rounds of stitches',
                       'weight': 2
                     }
                   },
                   'results': {
-                    'text': 'You check out as healthy after the tests. You just had a bad virus, but your Primary Care Provider wants you to keep an eye on your cholesterol.'
+                    'text': 'After about a week, your stitches are ready to come out and you\'re on the mend.',
+                    'hint': 'Please note: These costs are an example. Actual costs will vary based on your health insurance plan, level of coverage, and where you get your care.'
                   }
                 },
-                {// URGENT
+                {// Nasty Cut - URGENT
                   'stories': [
                     {
                       text: 'You’ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
                       costs: {
-                        'insured': [
+                        'insured': [/*
                           {
                             label: "Premium",
                             group: 'premium',
                             amount: 220,
                             suffix: '/month'
                           }
-                        ],
-                        'uninsured': [
+                        */],
+                        'uninsured': [/*
                           {
                             group: "premium",
                             amount: 0
                           }
-                        ]
+                        */]
                       },
                       img: 'PayingPremium_1.png',
                       showCosts: false,
@@ -535,7 +540,7 @@ angular.module('app.use')
                         'uninsured' : [
                           {
                             group: "visit",
-                            amount: 150
+                            amount: 200
                           },
                           {
                             group: 'stitches',
@@ -548,7 +553,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Unfortunately your cut starts looking a little like something from a horror film. It\'s getting infected. It happens, so don\'t freak out. Just get it taken care of! You go back to your provider to get it cleaned and restitched.',
+                      text: 'Oh no! Your cut starts to look a little like something from a horror film. It\'s getting infected. It happens, so don\'t freak out. Just get it taken care of! You go back to Urgent Care to get it cleaned and stitched again.',
                       costs: {
                         'insured': [
                           {
@@ -565,7 +570,7 @@ angular.module('app.use')
                         'uninsured' : [
                           {
                             group: "visit",
-                            amount: 150
+                            amount: 200
                           },
                           {
                             group: 'stitches',
@@ -579,10 +584,10 @@ angular.module('app.use')
                     },
                   ],
                   'groups': {
-                    'premium': {
+                    'premium': {/*
                       'label': 'Premium',
                       'weight': 0
-                    },
+                    */},
                     'copay': {
                       'label': 'Copays',
                       'weight': 1
@@ -601,15 +606,16 @@ angular.module('app.use')
                     }
                   },
                   'results': {
-                    'text': 'You check out as healthy after the tests. You just had a bad virus, but your Primary Care Provider wants you to keep an eye on your cholesterol.'
+                    'text': 'After about a week, your stitches are ready to come out and you\'re on the mend.',
+                    'hint': 'Please note: These costs are an example. Actual costs will vary based on your health insurance plan, level of coverage, and where you get your care.'
                   }
                 },
-                {//ER
+                {// Nasty Cut - ER
                   'stories': [
                     {
                       text: 'You’ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
                       costs: {
-                        'insured': [
+                        'insured': [/*
                           {
                             label: "Premium",
                             group: 'premium',
@@ -622,7 +628,7 @@ angular.module('app.use')
                             group: "premium",
                             amount: 0
                           }
-                        ]
+                        */]
                       },
                       img: 'PayingPremium_1.png',
                       showCosts: false,
@@ -635,7 +641,7 @@ angular.module('app.use')
                           {
                             label: "Copay",
                             group: 'copay',
-                            amount: 150,
+                            amount: 500,
                           },
                           {
                             label: "Coinsurance / Stitches",
@@ -646,7 +652,7 @@ angular.module('app.use')
                         'uninsured' : [
                           {
                             group: "visit",
-                            amount: 250
+                            amount: 700
                           },
                           {
                             group: 'stitches',
@@ -659,24 +665,24 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Unfortunately your cut starts looking a little like something from a horror film. It\'s getting infected. It happens, so don\'t freak out. Just get it taken care of! You go back to your provider to get it cleaned and restitched.',
+                      text: 'Oh no! Your cut starts to look a little like something from a horror film. It\'s getting infected. It happens, so don\'t freak out. Just get it taken care of! You go back to the ER to get it cleaned and stitched again.',
                       costs: {
                         'insured': [
                           {
                             label: "Copay",
                             group: 'copay',
-                            amount: 150,
+                            amount: 500,
                           },
                           {
                             label: "Coinsurance / Stitches",
                             group: 'coinsurance',
-                            amount: 350,
+                            amount: 250,
                           },
                         ],
                         'uninsured' : [
                           {
                             group: "visit",
-                            amount: 250
+                            amount: 800
                           },
                           {
                             group: 'stitches',
@@ -690,34 +696,35 @@ angular.module('app.use')
                     },
                   ],
                   'groups': {
-                    'premium': {
+                    'premium': {/*
                       'label': 'Premium',
                       'weight': 0
-                    },
+                    */},
                     'copay': {
-                      'label': 'Copays',
+                      'label': '2 Copays',
                       'weight': 1
                     },
                     'coinsurance': {
-                      'label': 'Coinsurance',
+                      'label': 'Coinsurance for 2 rounds of stitches',
                       'weight': 2
                     },
                     'visit': {
-                      'label': 'Being seen in ER',
+                      'label': '2 visits to ER',
                       'weight': 1
                     },
                     'stitches': {
-                      'label': 'Cleanings / Stitches',
+                      'label': '2 rounds of stitches',
                       'weight': 2
-                    }
+                    },
                   },
                   'results': {
-                    'text': 'After a few days to a week, your stitches are ready to come out and you\'re on the mend.'
+                    'text': 'After a few days to a week, your stitches are ready to come out and you\'re on the mend.',
+                    'hint': 'Please note: These costs are an example. Actual costs will vary based on your health insurance plan, level of coverage, and where you get your care.'
                   }
                 } 
               ],
               [// Appendicitis
-                {// PRIMARY
+                {// Appendicitis - PRIMARY
                   'stories': [],
                   'override': true,
                   'results': {
@@ -725,7 +732,7 @@ angular.module('app.use')
                   },
                   img: 'Appendicitis_Primary_1.png'
                 },
-                {// URGENT
+                {// Appendicitis -  URGENT
                   'stories': [],
                   'override': true,
                   'results': {
@@ -733,29 +740,29 @@ angular.module('app.use')
                   },
                   img: 'Appendicitis_Primary_1.png'
                 },
-                {//ER
+                {// Appendicitis - ER
                   'stories': [
                     {
                       text: 'You’ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
                       costs: {
                         'insured': [
-                          {
+                          /*{
                             label: "Premium",
                             group: 'premium',
                             amount: 220,
                             suffix: '/month'
-                          },
+                          },*/
                           {
                             label: "Pocket",
                             group: 'outofpocket',
                             amount: 4600
                           },
                         ],
-                        'uninsured': [
+                        'uninsured': [/*
                           {
                             group: "premium",
                             amount: 0
-                          }
+                          }*/
                         ]
                       },
                       img: 'PayingPremium_1.png',
@@ -763,7 +770,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'In the ER, a CT scan shows your appendix is ready to burst. You\'re admitted to the hospital.',
+                      text: 'In the Emergency Room, a CT scan shows your appendix is ready to burst. You have to stay in the hospital.',
                       costs: {
                         'insured': [
                           {
@@ -779,7 +786,7 @@ angular.module('app.use')
                       hint: ["You just hit your health insurance deductible."]
                     },
                     {
-                      text: 'You have your appendix removed and you\'re in the hospital for 3 days to recover. Since you met your deductible, you pay 20% of remaining costs until you reach your out-of-pocket maximum.',
+                      text: 'You have your appendix removed and you\'re in the hospital for 3 days to recover. Since you met your deductible, you pay 20% of the rest of the costs until you reach your out-of-pocket maximum.',
                       costs: {
                         'insured': [
                           {
@@ -792,7 +799,7 @@ angular.module('app.use')
                         'uninsured' : [
                           {
                             group: "supplies",
-                            amount: 6823
+                            amount: 6832
                           },
                           {
                             group: 'surgery',
@@ -810,7 +817,7 @@ angular.module('app.use')
                       },
                       img: 'Appendicitis_ER_3.png',
                       showCosts: true,
-                      hint: ['You pay $4,600 to reach your out-of-pocket maximum and your health insurance covers the rest!']
+                      hint: ['You pay $4,600 to reach your out-of-pocket maximum and your health insurance pays for the rest!']
                     },
                   ],
                   'groups': {
@@ -819,7 +826,7 @@ angular.module('app.use')
                       'weight': 0
                     },
                     'scan': {
-                      'label': 'Deductible/CT scan',
+                      'label': 'Deductible / CT scan',
                       'weight': 1
                     },
                     'outofpocket': {
@@ -849,7 +856,8 @@ angular.module('app.use')
                     },
                   },
                   'results': {
-                    'text': 'That was a close call, but thankfully your insurance helped protect you from going into medical debt to pay for an emergency you had no control over.'
+                    'text': 'That was a close call, but thankfully your insurance helped protect you from going into debt to pay for an emergency you had no control over.',
+                    'hint': 'Please note: These costs are an example. Actual costs will vary based on your health insurance plan, level of coverage, and where you get your care.'
                   }
                 } 
               ]

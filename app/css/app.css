@@ -6149,6 +6149,9 @@ to prevent collapsing during animation*/
   padding-left: 0;
   padding-right: 0; }
 
+.clear-both {
+  clear: both; }
+
 .columns.image {
   text-align: center; }
 
@@ -6562,6 +6565,8 @@ a.icon-only {
   background: -webkit-radial-gradient(50% 50%,   rgba(235, 190, 69, 0.1) 0%, rgba(235, 190, 69, 0.6) 50%, rgba(235, 190, 69, 0.9) 100%);
   background: radial-gradient(  at 50% 50%, rgba(235, 190, 69, 0.1) 0%, rgba(235, 190, 69, 0.6) 50%, rgba(235, 190, 69, 0.9) 100%); }
 
+.plan-title-graphic, .plan-title-graphic ~ .columns {
+  margin-bottom: 3.125rem; }
 .plan-title-graphic > * {
   padding: 1.875rem; }
 
@@ -6570,6 +6575,9 @@ a.icon-only {
 
 .plan-graphic {
   background: #fff; }
+
+.plan-details .medium-3 {
+  margin-bottom: 1.25rem; }
 
 @media only screen and (max-width: 46.875rem) {
   .plan-title {
