@@ -77,6 +77,7 @@ angular.module('app.use', [
             $scope.override = pageData.override;
             // If not, then what do we print
             $scope.resultsText = pageData.results.text;
+            $scope.resultsImg = pageData.img;
             // Load story
             $scope.story = pageData.stories[premuimId];
             
