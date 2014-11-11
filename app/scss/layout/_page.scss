@@ -1,0 +1,47 @@
+
+
+html, body {
+  height: 100%;
+}
+
+body > * {
+  font-size: rem-calc(18px);
+}
+
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+
+@media #{$medium-up} {
+  body > * {
+    font-size: rem-calc(21);
+  }
+
+  .off-canvas-wrap {
+    clear: both;
+    margin-bottom: -$footer-height;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+  }
+
+  .inner-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    font-size: 
+  }
+
+  .inner-wrap > .full-height {
+    top: $header-height;
+    bottom: $footer-height;
+    width: 100%;
+  }
+
+  .footer-push {
+    //height: $footer-height;
+  }
+}

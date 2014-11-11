@@ -1,0 +1,90 @@
+/* Have to set height explicity on ui-view 
+to prevent collapsing during animation*/
+.transform{
+  z-index: 2;
+
+  .transform:not(:empty) {
+    background: $smoke;
+  }
+}
+
+.ui-view-container {
+  //position: relative;
+}
+
+.transform.ng-enter, .transform.ng-enter-active, .transform.gn-leave, .transform.ng-leave-active {
+  overflow: hidden;
+}
+
+// .transform.ng-enter,
+// .transform.ng-leave {
+//   min-height: 600px;
+// }
+
+.transform.ng-enter {
+  z-index: 2;
+}
+
+.transform.ng-leave {
+  z-index: 1;
+}
+
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+@media #{$small-only} {
+
+  .transform.ng-enter,
+  .transform.ng-leave {
+    @include transition(all .5s linear);
+  }
+
+  .transform.ng-enter {
+    @include transform(translateY(100%));
+    position: absolute;
+    top: $small-header-height;
+    height: 100%;
+    left: 0;
+  }
+
+  .transform.ng-enter-active {
+    @include transform(translateY(0%));
+  }
+
+  .transform.ng-leave {
+    opacity: 1;
+  }
+
+  .transform.ng-leave-active {
+    opacity: 0;
+  }
+}
+
+@media #{$medium-up} {
+  .transform.ng-enter,
+  .transform.ng-leave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    @include transition(all .5s ease-in-out);
+  }
+
+  .transform.ng-enter {
+    @include transform(translateY(100%));
+  }
+
+  .transform.ng-enter-active {
+    @include transform(translateY(0%));
+  }
+
+  .transform.ng-leave {
+    @include transform(scale3d(1, 1, 1));
+  }
+
+  .transform.ng-leave-active {
+    @include transform(scale3d(0.5, 0.5, 0.5));
+  }
+}

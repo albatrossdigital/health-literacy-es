@@ -1,0 +1,54 @@
+
+.button {
+  drop-shadow: 0 4px 3px rgba($silver, .7);
+
+  &, &:hover {
+    color: $orange;
+  }
+}
+
+
+.next-button {
+  padding-top: rem-calc(40);
+  overflow: hidden;
+  clear: both;
+
+  .button {
+    border: 1px solid $orange;
+    background: rgba(#ffffff, 0);
+    padding: 0;
+    line-height: $next-button-width;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    &:hover {
+      background: rgba(#ffffff, .70);
+    }
+  }
+
+  .button, i {
+    height: $next-button-width;
+    width: $next-button-width;
+  }
+}
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+
+@media #{$medium-up} {
+
+  .next-button {
+
+    &:not(.relative) {
+      position: absolute;
+      bottom: rem-calc(20);
+      left: 50%;
+      margin-left: -($next-button-width);
+    }
+  }
+}

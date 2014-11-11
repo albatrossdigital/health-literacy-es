@@ -1,0 +1,113 @@
+// colors 
+
+@mixin background-hover($color: $red, $amount: 10%) {
+  background-color: $color;
+  
+
+  &:hover {
+    background-color: darken($color, $amount);
+  }
+}
+
+
+%background-trans {
+  @include transition (all .20s ease-in-out);
+}
+
+%background-red-light {
+  @include background-hover($red-light);
+}
+
+%background-red-true {
+  @include background-hover();
+}
+
+%background-red-dark {
+  @include background-hover($red-dark);
+}
+
+%background-blue-light {
+  @include background-hover($blue-light);
+}
+
+%background-blue-true {
+  @include background-hover($blue);
+}
+
+%background-blue-dark {
+  @include background-hover($blue-dark);
+}
+
+
+
+// headers
+// -----------------------------------
+// use the +h() mixin
+
+%header-core {
+  font-color: $header-font-color;
+  font-family: $header-font-family;
+  font-style: $header-font-style;
+  text-rendering: $header-text-rendering;
+}
+
+%header-1 {
+  @extend %header-core;
+  font-size: $h1-font-size - $h1-font-reduction;
+  line-height: 1.3;
+  font-weight: $font-weight-bold;
+}
+
+%header-2 {
+  @extend %header-core;
+  font-size: $h2-font-size - $h2-font-reduction;
+  line-height: 1.5;
+  font-weight: $font-weight-normal;
+}
+
+%header-3 {
+  @extend %header-core;
+  font-size: $h3-font-size - $h3-font-reduction;
+  line-height: $header-line-height;
+  font-weight: $font-weight-semi-bold;
+}
+
+%header-4 {
+  @extend %header-core;
+  font-size: $h4-font-size - $h4-font-reduction;
+}
+
+%header-5 {
+  @extend %header-core;
+  font-size: $h5-font-size - $h5-font-reduction;
+}
+
+%header-6 {
+  @extend %header-core;
+  font-size: $h6-font-size - $h6-font-reduction;
+}
+// general extend
+// use: +e(hide)
+@mixin e($extend){
+  @extend %#{$extend};
+}
+// extend for backgrounds
+// use: +b(reset)
+@mixin b($extend){
+  @extend %background-#{$extend};
+}
+// extend for text color
+// use: +c(normal)
+@mixin c($extend){
+  @extend %color-#{$extend};
+}
+// extend for font styles
+// use: +f(reset)
+@mixin f($extend){
+  @extend %font-#{$extend};
+}
+// extend for header styles
+// use: +h(1)
+@mixin h($extend){
+  @extend %header-#{$extend};
+}
