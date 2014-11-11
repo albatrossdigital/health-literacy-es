@@ -21,7 +21,8 @@ module.exports = function(grunt) {
 				includePaths: [
 					'<%= app %>/bower_components/foundation/scss',
 					'<%= app %>/bower_components/bourbon/dist'
-				]
+				],
+				imagePath: '../images'
 			},
 			dist: {
 				options: {

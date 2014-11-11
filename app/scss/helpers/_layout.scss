@@ -59,6 +59,8 @@
   padding: rem-calc(80px) $column-gutter;
   display: block;
   text-align: center;
+  position: relative;
+  z-index: 1;
 
   &, &:hover {
     color: $white;

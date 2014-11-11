@@ -93,11 +93,31 @@ $tier-dimension: 40px;
   }
 }
 
+// Plans
+.plan-title-graphic  > * {
+  padding: rem-calc(30);
+}
+
+.plan-title {
+  background: $silver;
+}
+
+.plan-graphic {
+  background: #fff; 
+}
+
+
 // *
 // * Media Queries
 // *
 // ******************************************************
 
+@media #{$small-only} {
+  .plan-title {
+    margin-left: 0!important;
+    margin-right: 0!important;
+  }
+}
 
 @media #{$medium-up} {
   $tier-dimension: 80px;

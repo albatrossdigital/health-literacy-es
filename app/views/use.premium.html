@@ -1,29 +1,31 @@
 
-<div class="premium-override columns medium-7 medium-centered big-pad" ng-if="override">
-  <p>{{resultsText}}</p>
-  <p>&nbsp;</p>
-  <div class="text-center">
-    <a ui-sref="use" class="button radius">Start Over</a>
+<div class="row premium-wrap">
+  <div class="columns medium-6 big-pad image small-margin-bottom">
+    <img ng-if="override" ng-src="../images/icons/{{resultsImg}}" />
+    <img ng-if="!override" ng-src="../images/icons/{{story.img}}" />
   </div>
-</div>
-<div ng-if="!override" class="full-all">
-  <div class="row">
-    <div class="columns medium-6 big-pad image small-margin-bottom"><img ng-src="../images/icons/{{story.img}}" /></div>
-    <div class="columns medium-6 big-pad big-pad-right">
-      <div class="story-text">{{story.text}}</div>
-      <div ng-if="story.showCosts" class="story-pricing row" 
-           ng-repeat="cost in story.costs.insured | orderBy:weight">
-        <div class="columns small-6">{{cost.label}}:</div>
-        <div class="columns small-6">${{cost.amount}}{{cost.suffix}}</div>
-      </div>
-      <div ng-if="story.hint" class="hint" 
-           ng-repeat="hint in story.hint">
-           
-        <p>{{hint}}</p>
-      </div>
+  <div ng-if="override" class="columns medium-6 big-pad big-pad-right">
+    <p>{{resultsText}}</p>
+    <p>&nbsp;</p>
+    <div class="text-center">
+      <a ui-sref="use" class="button radius">Start Over</a>
     </div>
   </div>
-  <div class="next-button" 
+  <div ng-if="!override" class="columns medium-6 big-pad big-pad-right">
+    <div class="story-text">{{story.text}}</div>
+    <div ng-if="story.showCosts" class="story-pricing row" 
+         ng-repeat="cost in story.costs.insured | orderBy:weight">
+      <div class="columns small-6">{{cost.label}}:</div>
+      <div class="columns small-6">${{cost.amount}}{{cost.suffix}}</div>
+    </div>
+    <div ng-if="story.hint" class="hint" 
+         ng-repeat="hint in story.hint">
+         
+      <p>{{hint}}</p>
+    </div>
+  </div>
+  <div ng-if="!override"
+       class="next-button" 
        ng-init="location = goToPage(key);">
 
     <a ui-sref="{{location}}" class="button round">

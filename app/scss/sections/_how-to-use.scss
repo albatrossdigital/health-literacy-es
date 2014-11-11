@@ -1,5 +1,4 @@
 
-
 .story-text {
   padding-top: 1.5rem;
 
@@ -72,6 +71,11 @@
 
 
 @media #{$medium-up} {
+  .premium-wrap {
+    padding-bottom: rem-calc(185px)!important;
+    position: relative;
+  }
+
   .compare-section-insured {
     padding-left: rem-calc(40);
   }
