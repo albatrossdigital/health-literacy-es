@@ -44,7 +44,7 @@ angular.module('app.use')
                   'id': 'doctor'
                 },
                 {
-                  'title': 'Immediate Care Clinic',
+                  'title': 'Urgent Care Clinic',
                   'id': 'clinic'
                 },
                 {
@@ -197,7 +197,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'It costs more to go to Urgent Care than to your Pirmary Care Provider. You owe a larger copay or coinsurance.',
+                      text: 'It costs more to go to Urgent Care than to your Primary Care Provider. You owe a larger copay or coinsurance.',
                       costs: {
                         'insured': [
                           {
@@ -280,7 +280,7 @@ angular.module('app.use')
                 {// Feeling Sick - ER
                   'stories': [
                     {
-                      text: 'It costs more to go to the Emergency Room than to you Primary Care Provider of Urgent Care. You will owe higher coinsurance or a large copay to be seen.',
+                      text: 'It costs more to go to the Emergency Room than to your Primary Care Provider of Urgent Care. You will owe higher coinsurance or a large copay to be seen.',
                       costs: {
                         'insured': [/*
                           {

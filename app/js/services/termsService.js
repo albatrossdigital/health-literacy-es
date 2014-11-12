@@ -32,7 +32,7 @@ angular.module('app')
             {
               'key': 'copay',
               'label': 'Co-pay',
-              'text': 'The amount you pay every time you get a health service. For example, if your co-pay for a visit to your family doctor is $20, you will pay that amount every time to visit the doctor. You health insurance plan must cover many preventive services and screenings at no charge to you, so these services to not have a copay.'
+              'text': 'The amount you pay every time you get a health service. For example, if your co-pay for a visit to your family doctor is $20, you will pay that amount every time to visit the doctor. You health insurance plan must cover many preventive services and screenings at no charge to you, so these services do not have a copay.'
             },
             {
               'key': 'coinsurance',
@@ -57,7 +57,7 @@ angular.module('app')
             {
               'key': 'primary-care',
               'label': 'Primary Care Provider',
-              'text': 'Your main health care doctor or nurse practitioner. This is usually who you see first for most health problems, screenings, and check-ups (preventive care). Sometimes, you will have to see your Primary Care Provider to get a referral to specialist.'
+              'text': 'Your main health care doctor or nurse practitioner. This is usually who you see first for most health problems, screenings, and check-ups (preventive care). Sometimes, you will have to see your Primary Care Provider to get a referral to see a specialist.'
             },
             {
               'key': 'preventive',

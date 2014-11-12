@@ -1,0 +1,18 @@
+<aside class="left-off-canvas-menu" ng-controller="termsCtrl">
+  <h2 class="columns"><a class="exit-off-canvas"></a><i class="fa fa-times-circle"></i> Terms</h2>
+  <div class="columns">{{term.label}}</div>
+
+  <dl class="accordion" data-accordion="myAccordionGroup">
+    <dd class="accordion-navigation" 
+        ng-repeat="term in terms" 
+        ng-class="active === term.key ? 'active' : ''">
+
+      <a ng-click="setActive(term.key)">{{term.label}}</a>
+      <div class="content" ng-class="active === term.key ? 'active' : ''">
+        {{term.text}}
+      </div>
+    </dd>
+    
+  </dl>
+
+</aside>

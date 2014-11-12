@@ -15,16 +15,16 @@
   <p ng-if="showCompareDoctor" class="text-center columns clear-both">
     <a open-reveal="compareModal">If you’d gone to your Primary Care Provider?</a></p>
   </p>
+  <p class="result-hint columns medium-7 medium-centered text-center text-small"
+       ng-if="pageData.results.hint">
+
+       {{pageData.results.hint}}
+  </p>
   <div class="text-center clear-both">
     <a ui-sref="get-insurance" class="button radius">Get Insurance!</a>
   </div>
   <div class="text-center">
     <a ui-sref="use" class="button radius">Start Over</a>
-  </div>
-  <div class="result-hint columns medium-7 medium-centered text-center text-small"
-       ng-if="pageData.results.hint">
-
-       {{pageData.results.hint}}
   </div>
 
 </div>

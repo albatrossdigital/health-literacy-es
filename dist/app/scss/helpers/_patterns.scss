@@ -1,0 +1,67 @@
+
+%patterning {
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    bottom: 0;
+    right: 0;
+    @include b(trans);
+  }
+
+  &:hover {
+    &:after {
+      opacity: 0.5;
+    }
+  }
+}
+
+@mixin patterning($img) {
+  @extend %patterning;
+
+  &:after {
+    background: image-url("patterns/#{$img}") repeat;
+  }
+}
+
+.bg-desk-repeat {
+  @include patterning('How_to_use_health_insurance.jpg');
+}
+
+.bg-case-repeat {
+  @include patterning('How_to_shop_health_insurance.jpg');
+}
+
+.bg-thermometer-repeat,
+.scenario-pattern-0 {
+  @include patterning('feeling_sick.jpg');
+}
+
+.bg-bandaid-repeat,
+.scenario-pattern-1  {
+  @include patterning('Nasty_cut.jpg');
+}
+
+.bg-bed-repeat,
+.scenario-pattern-2  {
+  @include patterning('Appendicitis.jpg');
+}
+
+.bg-stethoscope-repeat,
+.action-pattern-0  {
+  @include patterning('Primary_care.jpg');
+}
+
+.bg-nurse-repeat,
+.action-pattern-1 {
+  @include patterning('Urgent_care.jpg');
+}
+
+.bg-hospital-repeat,
+.action-pattern-2 {
+  @include patterning('ER.jpg');
+  
+}

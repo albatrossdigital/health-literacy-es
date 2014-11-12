@@ -1,9 +1,20 @@
 
 .button {
-  drop-shadow: 0 4px 3px rgba($silver, .7);
+  box-shadow: 0 4px 3px rgba($silver, .7);
+
+  &.secondary {
+    box-shadow: none;
+    &, &:hover {
+      color: $orange;
+    }
+  }
 
   &, &:hover {
     color: $orange;
+  }
+
+  i {
+    margin-right: 0.5em;
   }
 }
 
