@@ -13,7 +13,8 @@ angular.module('app', [
   'app.shop',
   'metaInfo',
   'ui.router',
-  'ngAnimate',
+  'ngSanitize',
+  'ngAnimate'
 ])
 
 .run(
@@ -121,12 +122,13 @@ angular.module('app', [
         }
       );
 
-      // $rootScope.$on('$stateChangeSuccess', 
-      //   function(event, toState, toParams, fromState, fromParams){
-      //     // init foundation;
-      //     app.init();
-      //   }
-      // );
+      $rootScope.$on('$stateChangeSuccess', 
+        function(event, toState, toParams, fromState, fromParams){
+          // init foundation;
+          //app.init();
+          console.log('hash');
+        }
+      );
     }
 	]
 )

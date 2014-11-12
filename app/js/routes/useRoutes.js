@@ -140,12 +140,10 @@ angular.module('app.use', [
                 angular.forEach(story.costs, function(costBucket, key) {
                   angular.forEach(costBucket, function(cost) {
                     // if we're skipping, just set to 0
-                    if(cost.skipCount) {
-                      cost.amount = 0;
-                    }
+                    var amount = cost.skipCount ? 0 : cost.amount;
                     // Already added
                     if(compare[key].items.hasOwnProperty(cost.group)) {
-                      compare[key].items[cost.group].amount += cost.amount;
+                      compare[key].items[cost.group].amount += amount;
                     }
                     else {
                       compare[key].items[cost.group] = {
@@ -156,7 +154,7 @@ angular.module('app.use', [
                         hide: pageData.groups[cost.group]['hide'] ? pageData.groups[cost.group]['hide'] : false
                       }
                     }
-                    compare[key].total += cost.amount;
+                    compare[key].total += amount;
                   });
                 });
               });

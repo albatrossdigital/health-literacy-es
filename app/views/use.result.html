@@ -1,7 +1,7 @@
 
 <div class="result-text columns medium-7 medium-centered text-center">
   <div class="choice-header"><h2>Result</h2></div>
-  <p>{{pageData.results.text}}</p>
+  <p bind-compiled-html="pageData.results.text | termsFilter"></p>
 </div>
 
 <div class="row">

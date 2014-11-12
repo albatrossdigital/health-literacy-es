@@ -4,10 +4,11 @@ angular.module('app.terms', [])
 
 .controller('termsCtrl',
   
-  ['$scope', '$rootScope', 'appTermsFactory',
-    function ($scope, $rootScope, healthLiteracyTermsFactory) {
+  [
+             '$scope', '$rootScope', 'appTermsFactory',
+    function ($scope,   $rootScope,   appTermsFactory) {
      
-      healthLiteracyTermsFactory.getTermsFlow().then(function(pages) {
+      appTermsFactory.getTermsFlow().then(function(pages) {
         $scope.terms = pages;
       });
 
@@ -15,6 +16,15 @@ angular.module('app.terms', [])
       $scope.setActive = function(key) {
         $rootScope.active = $rootScope.active === key ? null : key;
       }
+
+      // watch
+      $scope.$watch(function () {
+          return location.hash
+      }, function (value) {
+          if(value && value.length) {
+            $scope.setActive(value.substring(1));
+          }
+      });
 
     }
   ]

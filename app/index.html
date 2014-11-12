@@ -49,7 +49,7 @@
     <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
         <header class="l-header"><div class="row"><div class="columns">
-          <a class="left-off-canvas-toggle left">
+          <a class="left-off-canvas-toggle header-toggle left">
             <i class="fa fa-bars"></i> Terms
           </a>
           <h2 class="site-name"><a ui-sref="home"><img src="../images/logo.png" alt="Home" Title="Home" />Covered <span>U</span></a></h2>
@@ -71,7 +71,7 @@
               </ul>
             </div>
             <div class="right">
-              Share <a class="icon-only"><i class="fa fa-twitter"></i> Twitter</a> <a class="icon-only"><i class="fa fa-pinterest"></i> Pinterest</a> <a class="icon-only"><i class="fa fa-facebook"></i> Facebook</a>
+              Share <a target="_blank" href="http://twitter.com/COHealthAccess" class="icon-only"><i class="fa fa-twitter"></i> Twitter</a> <a target="_blank" href="http://www.pinterest.com/cohealthaccess/" class="icon-only"><i class="fa fa-pinterest"></i> Pinterest</a> <a target="_blank" href="http://facebook.com/cohealthaccess" class="icon-only"><i class="fa fa-facebook"></i> Facebook</a>
             </div>
         </div></div></footer>
       </div>
@@ -123,8 +123,11 @@
     <script src="js/services/useService.js"></script>
     <script src="js/services/shopService.js"></script>
     <!-- Filters -->
+    <script src="js/filters/termsFilter.js"></script>
     <script src="js/filters/weightFilter.js"></script>
     <!-- Directives -->
+    <script src="js/directives/bindCompiledHtml.js"></script>
+    <script src="js/directives/termLink.js"></script>
     <script src="js/directives/compareTable.js"></script>
     <script src="js/directives/openReveal.js"></script>
     <script src="js/directives/pageReady.js"></script>

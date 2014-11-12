@@ -4,7 +4,7 @@
     <h2>Result</h2>
     <div class="tier-details tier tier-{{suggestedTier}}"><h1>{{activeTier.label}}</h1></div>
     <div class="tier-details">
-      <p>{{activeTier.text}}</p>
+      <p bind-compiled-html="activeTier.text | termsFilter"></p>
 
       <p class="text-small"><strong>Please Note!</strong> This is an educational tool only and is not intended as advice or a recommendation.  Health insurance plans may differ dramatically in costs and benefits. You should seek professional assistance from a health insurance navigator or broker who can provide free help to find the health insurance plan that's right for your needs.</p>
     </div>

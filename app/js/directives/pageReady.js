@@ -9,8 +9,8 @@ angular.module('app')
 
       $browser.notifyWhenNoOutstandingRequests(function () {
         document.body.setAttribute('data-status', 'ready');
-        $scope.$emit('pageReady');
-        $scope.$broadcast('pageReady');
+        $scope.$root.$emit('pageReady');
+        $scope.$root.$broadcast('pageReady');
       });
     }
   }

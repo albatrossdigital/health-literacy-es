@@ -58,7 +58,7 @@ angular.module('app.use')
                 {// Feeling Sick - PRIMARY
                   'stories': [
                     {
-                      text: 'You’ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
+                      text: 'You\'ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
                         'insured': [/*
                           {
@@ -101,7 +101,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Your Primary Care Provider recommends you see a specialist. The specialist wants you to get a blood test and an MRI*. Your copay for the spcialist is more than your copay for your Primary Care Provider. You’ll also have to pay coinsurance for the MRI and blood test.',
+                      text: 'Your Primary Care Provider recommends you see a specialist. The specialist wants you to get a blood test and an MRI*. Your copay for the specialist is more than your copay for your Primary Care Provider. You’ll also have to pay coinsurance for the MRI and blood test.',
                       costs: {
                         'insured': [
                           {
@@ -175,7 +175,7 @@ angular.module('app.use')
                 {// Feeling Sick - URGENT
                   'stories': [
                     {
-                      text: 'You’ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
+                      text: 'You\'ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
                         'insured': [/*
                           {
@@ -280,7 +280,7 @@ angular.module('app.use')
                 {// Feeling Sick - ER
                   'stories': [
                     {
-                      text: 'It costs more to go to the Emergency Room than to your Primary Care Provider of Urgent Care. You will owe higher coinsurance or a large copay to be seen.',
+                      text: 'You\'ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
                         'insured': [/*
                           {
@@ -302,7 +302,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Going to the ER will mean you will owe coinsurance or a large copay to be seen.',
+                      text: 'It costs more to go to the Emergency Room than to your Primary Care Provider or Urgent Care. You will owe higher coinsurance or a large copay to be seen.',
                       costs: {
                         'insured': [
                           {
@@ -395,7 +395,7 @@ angular.module('app.use')
                 {// Nasty Cut - PRIMARY
                   'stories': [
                     {
-                      text: 'You\'ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
+                      text: 'You\'ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
                         'insured': [
                           /*{
@@ -507,7 +507,7 @@ angular.module('app.use')
                 {// Nasty Cut - URGENT
                   'stories': [
                     {
-                      text: 'You’ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
+                      text: 'You\'ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
                         'insured': [/*
                           {
@@ -619,7 +619,7 @@ angular.module('app.use')
                 {// Nasty Cut - ER
                   'stories': [
                     {
-                      text: 'You’ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
+                      text: 'You\'ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
                         'insured': [/*
                           {
@@ -734,7 +734,7 @@ angular.module('app.use')
                   'stories': [],
                   'override': true,
                   'results': {
-                    'text': 'Don\'t be stupid! That sharp, intense pain on the right side of your stomach could be serious. If you think you have appendicitis, GO TO THE EMERGENCY ROOM!!.'
+                    'text': 'Wait a minute! That sharp, intense pain on the right side of your stomach could be serious. If you think you have appendicitis, GO TO THE EMERGENCY ROOM!!'
                   },
                   img: 'Appendicitis_Primary_1.png'
                 },
@@ -742,14 +742,14 @@ angular.module('app.use')
                   'stories': [],
                   'override': true,
                   'results': {
-                    'text': 'Don\'t be stupid! That sharp, intense pain on the right side of your stomach could be serious. If you think you have appendicitis, GO TO THE EMERGENCY ROOM!!.'
+                    'text': 'Wait a minute! That sharp, intense pain on the right side of your stomach could be serious. If you think you have appendicitis, GO TO THE EMERGENCY ROOM!!'
                   },
                   img: 'Appendicitis_Primary_1.png'
                 },
                 {// Appendicitis - ER
                   'stories': [
                     {
-                      text: 'You’ve been paying your monthly premium for health insurance, so you have coverage when you need to be seen.',
+                      text: 'You\'ve been paying your monthly premium of $220 for health insurance, so you have coverage when you need health care.',
                       costs: {
                         'insured': [
                           /*{
