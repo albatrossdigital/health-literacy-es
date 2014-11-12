@@ -132,7 +132,9 @@ angular.module('app.use')
                       },
                       img: 'FeelingSick_Primary_3.png',
                       showCosts: true,
-                      hint: false
+                      hint: [
+                        '*MRI (Magnetic Resonance Imaging) is a body imaging test.'
+                      ]
                     },
                   ],
                   'groups': {
@@ -213,7 +215,7 @@ angular.module('app.use')
                       },
                       img: 'FeelingSick_Urgent_2.png',
                       showCosts: true,
-                      hint: ["See what you’d pay if you went to your Primary Care Provider."]
+                      hint: false
                     },
                     {
                       text: 'The doctor or nurse practitioner at Urgent Care sends you to get an MRI* and blood test. You have to pay coinsurance for these tests, too.',
@@ -243,7 +245,9 @@ angular.module('app.use')
                       },
                       img: 'FeelingSick_Primary_3.png',
                       showCosts: true,
-                      hint: '*MRI (Magnetic Resonance Imaging) is a body imaging test.'
+                      hint:  [
+                        '*MRI (Magnetic Resonance Imaging) is a body imaging test.'
+                      ]
                     },
                   ],
                   'groups': {
@@ -316,7 +320,7 @@ angular.module('app.use')
                       },
                       img: 'FeelingSick_Urgent_2.png',
                       showCosts: true,
-                      hint: ["See what you’d pay if you went to your Primary Care Provider"]
+                      hint: false
                     },
                     {
                       text: 'The doctor or nurse practitioner at the ER sends you to get an MRI* and blood test. You have to pay coinsurance for these tests, too.',
@@ -350,7 +354,9 @@ angular.module('app.use')
                       },
                       img: 'FeelingSick_Primary_3.png',
                       showCosts: true,
-                      hint: false
+                      hint: [
+                        '*MRI (Magnetic Resonance Imaging) is a body imaging test.'
+                      ]
                     },
                   ],
                   'groups': {

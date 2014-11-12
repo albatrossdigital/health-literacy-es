@@ -1144,8 +1144,8 @@ $off-canvas-back-hover-border-top: 1px solid scale-color($off-canvas-label-bg, $
 // $reveal-modal-bg: $white;
 // $reveal-position-top: rem-calc(100);
 // $reveal-default-width: 80%;
-// $reveal-max-width: $row-width;
-// $reveal-modal-padding: rem-calc(20);
+$reveal-modal-padding: rem-calc(20);
+$reveal-max-width: rem-calc(640) + $reveal-modal-padding*2;
 // $reveal-box-shadow: 0 0 10px rgba($black,.4);
 
 // We use these to style the reveal close button
