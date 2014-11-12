@@ -6470,7 +6470,7 @@ a.icon-only {
   padding-bottom: 1.5625rem;
   padding-top: 1.5625rem;
   margin-bottom: 1.5625rem; }
-  .compare-section-insured .header {
+  .compare-section-insured .header, .compare-section-doctor .header {
     background: #E0E0E0; }
   .compare-section-uninsured .header {
     background: #d84315;

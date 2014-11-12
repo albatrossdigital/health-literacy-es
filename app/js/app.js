@@ -120,6 +120,13 @@ angular.module('app', [
           metaInfo.resetAll();
         }
       );
+
+      // $rootScope.$on('$stateChangeSuccess', 
+      //   function(event, toState, toParams, fromState, fromParams){
+      //     // init foundation;
+      //     app.init();
+      //   }
+      // );
     }
 	]
 )

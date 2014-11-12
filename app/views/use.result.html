@@ -5,30 +5,18 @@
 </div>
 
 <div class="row">
-  <div ng-repeat="(key,group) in compare" class="compare-section-{{key}} columns medium-6">
-    <div class="table-wrap clearfix">
-      <div class="header h3 columns text-center">{{group.title}}</div>
-      <div class="columns">
-        <div class="cost-row row" 
-             ng-repeat="cost in group.items | orderByWeight : 'weight'"
-             ng-if="!cost.hide" >
-
-          <div class="columns small-6">
-            <span>{{cost.label}}:</span>
-          </div>
-          <div class="columns small-6">
-            <span>${{cost.amount}}{{cost.suffix}}</span>&nbsp;
-          </div>
-        </div>
-        <div class="total row">
-          <div class="columns small-6 h3">Total</div>
-          <div class="columns small-6 h3">${{group.total}}</div>
-        </div>
-      </div>
-    </div>
+  <div ng-repeat="(key,group) in compare"
+       compare-table 
+       compare-key="key" 
+       compare-group="group"
+       class="compare-section-{{key}} columns medium-6">
+    
   </div>
+  <p ng-if="showCompareDoctor" class="text-center columns clear-both">
+    <a open-reveal="compareModal">If you’d gone to your Primary Care Provider?</a></p>
+  </p>
   <div class="text-center clear-both">
-    <a class="button radius">Get Insurance!</a>
+    <a ui-sref="get-insurance" class="button radius">Get Insurance!</a>
   </div>
   <div class="text-center">
     <a ui-sref="use" class="button radius">Start Over</a>
@@ -38,4 +26,15 @@
 
        {{pageData.results.hint}}
   </div>
+
 </div>
+<div ng-if="showCompareDoctor" id="compareModal" class="reveal-modal" data-reveal>
+  <a class="close-reveal-modal">&#215;</a>
+  <div compare-table 
+       compare-key="0" 
+       compare-group="compareDoctor['insured']"
+       class="compare-section-doctor columns medium-12">
+
+  </div>
+</div>
+

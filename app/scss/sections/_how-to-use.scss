@@ -34,7 +34,8 @@
   padding-top: rem-calc(25);
   margin-bottom: rem-calc(25);
 
-  .compare-section-insured & {
+  .compare-section-insured &,
+  .compare-section-doctor & {
     background: $silver;
   }
 

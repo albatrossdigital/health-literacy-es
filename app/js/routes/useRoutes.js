@@ -71,6 +71,7 @@ angular.module('app.use', [
           url: '/premium/:premuimId?scenarioId&actionId',
           templateUrl: 'views/use.premium.html',
           controller: function($scope, $stateParams, useData, $location) {
+
             var pageData = useData['results'][$stateParams.scenarioId][$stateParams.actionId];
             var premuimId = $stateParams.premuimId;
             // Actually print story?
@@ -80,6 +81,16 @@ angular.module('app.use', [
             $scope.resultsImg = pageData.img;
             // Load story
             $scope.story = pageData.stories[premuimId];
+
+            // Do we show "if you'd gone to doctor" ?
+            if($stateParams.scenarioId < 2 && $stateParams.actionId > 0) {
+
+              // Grab doctor data
+              var compareData = useData['results'][$stateParams.scenarioId][0];
+              // Set compare doctor scope vars
+              $scope.showCompareDoctor = true;
+              $scope.compareStory = compareData.stories[premuimId];
+            }
             
             $scope.resultYet = function() {
               return (premuimId + 1) >= pageData.stories.length;
@@ -107,10 +118,9 @@ angular.module('app.use', [
           url: '/result?scenarioId&actionId',
           templateUrl: 'views/use.result.html',
           controller: function($scope, $stateParams, useData, $location, $anchorScroll) {
-            var pageData = useData['results'][$stateParams.scenarioId][$stateParams.actionId];
-            
-            //$scope.initCalc = function() {
-              var compare = {
+
+            var returnCompare = function() {
+              return {
                 'insured': {
                   'title': 'Cost with insurance',
                   'items': {},
@@ -122,6 +132,10 @@ angular.module('app.use', [
                   'total': 0
                 },
               };
+            }
+
+            // Calculates costs
+            var buildCompare = function(pageData, compare) {
               angular.forEach(pageData.stories, function(story) {
                 angular.forEach(story.costs, function(costBucket, key) {
                   angular.forEach(costBucket, function(cost) {
@@ -146,9 +160,34 @@ angular.module('app.use', [
                   });
                 });
               });
-              $scope.compare = compare;
-              $scope.pageData = pageData;
-            //}
+            }
+
+            // Pull page data
+            var pageData = useData['results'][$stateParams.scenarioId][$stateParams.actionId];
+
+            // Do we show "if you'd gone to doctor" ?
+            if($stateParams.scenarioId < 2 && $stateParams.actionId > 0) {
+              var compareDoctor = returnCompare();
+              compareDoctor.insured.title = "If you’d gone to your Primary Care Provider?";
+              var compareData = useData['results'][$stateParams.scenarioId][0];
+              
+              // init doctor compare 
+              buildCompare(compareData, compareDoctor);
+
+              // Set compare doctor scope vars
+              $scope.showCompareDoctor = true;
+              $scope.compareDoctor = compareDoctor;
+              $scope.compareData = compareData;
+            }
+
+            // Get regular compare
+            var compare = returnCompare();
+
+            // init main compare 
+            buildCompare(pageData, compare);
+            
+            $scope.compare = compare;
+            $scope.pageData = pageData;
           }
         });
 
