@@ -4,9 +4,17 @@
     <base href="/"></base>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{metaDescription()}}">
-    <meta name="keywords" content="{{metaKeywords()}}">
-    <title ng-bind="pageTitle();"></title>
+    <meta name="description" ng-attr-content="Health Literacy is an educational site giving straight forward info on healthcare options">
+    <meta name="keywords" ng-attr-content="Health Literacy, Health, Education, Colorado, Healthcare">
+    <title ng-bind="pageTitle();">Health Literacy</title>
+    <noscript>
+        <meta name="description" ng-attr-content="Health Literacy is an educational site giving straight forward info on healthcare options">
+        <meta name="keywords" ng-attr-content="Health Literacy, Health, Education, Colorado, Healthcare">
+    </noscript>
+    <meta property="og:image" content="images/logo.png" />
+    <meta property="og:title" content="MyFavNews is the best source for your favorite news." />
+    <meta property="og:description" content="MyFavNews is the best source for your favorite news." />
+    
     <!-- build:css css/libraries.min.css -->
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
     <!-- bower:css -->
@@ -71,7 +79,7 @@
               </ul>
             </div>
             <div class="right">
-              Share <div class="share42init" data-url="{{$root.pageUrl}}" data-title="{{pageTitle()}}" data-image="{{$root.pageUrl}}/images/logo.png" data-icons-file="../../images/share42icons.png" data-description="{{metaDescription()}}"></div>
+              Share <div class="share42init" ng-attr-data-url="{{$root.pageUrl}}" ng-attr-data-title="{{pageTitle()}}" ng-attr-data-image="{{$root.pageUrl}}/images/logo.png" data-icons-file="../../images/share42icons.png" ng-attr-data-description="{{metaDescription()}}"></div>
               <!--<a target="_blank" href="http://twitter.com/COHealthAccess" class="icon-only"><i class="fa fa-twitter"></i> Twitter</a> <a target="_blank" href="http://www.pinterest.com/cohealthaccess/" class="icon-only"><i class="fa fa-pinterest"></i> Pinterest</a> <a target="_blank" href="http://facebook.com/cohealthaccess" class="icon-only"><i class="fa fa-facebook"></i> Facebook</a>-->
             </div>
         </div></div></footer>

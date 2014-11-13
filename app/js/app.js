@@ -99,7 +99,10 @@ angular.module('app', [
 
           // scrollTo('#main');
 
-          // If we have any data
+          // Metatag info
+          // ---------------------------------
+
+          //If we have any incoming data
           if(toState.data) {
             // Set title
             var title = (toState.data.title && toState.data.title.length)
@@ -121,8 +124,10 @@ angular.module('app', [
                          : [];
 
             metaInfo.setMetaKeywords(keywords, toState.data.keywordAppend);
-            
-            return;
+          }
+          // we're coming from a state with meta info, reset
+          else if(fromState.data) {
+            metaInfo.resetAll();
           }
 
           // Did we already load share42 script?
@@ -133,8 +138,6 @@ angular.module('app', [
             share42.async = 'true';
             document.body.appendChild(share42);
           }
-
-          metaInfo.resetAll();
         }
       );
 
