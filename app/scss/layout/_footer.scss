@@ -28,25 +28,69 @@
   }
 }
 
-a.icon-only {
-  display: inline-block;
-  overflow: hidden;
-  margin-left: rem-calc(10px); 
+// a.icon-only, .share42init a {
+//   display: inline-block;
+//   overflow: hidden;
+//   margin-left: rem-calc(10px)!important; 
 
+//   &, i {
+//     height: $social-icon-dimension!important;
+//     width: $social-icon-dimension!important;
+//   } 
+
+//   i {
+//     padding-top: rem-calc(3);
+//     display: block;
+//     line-height: $social-icon-dimension!important;
+//     text-align: center;
+//   }
+// }
+
+.share42init {
+  display: inline;
+
+  a {
+    display: inline-block;
+    overflow: hidden;
+    margin-left: rem-calc(10px)!important; 
+    background: none!important;
+
+    &, &:before {
+      height: $social-icon-dimension!important;
+      width: $social-icon-dimension!important;
+    } 
+
+    &:before {
+      padding-top: rem-calc(3);
+      display: block;
+      line-height: $social-icon-dimension!important;
+      text-align: center;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit; // can't have font-size inherit on line above, so need to override
+      text-rendering: auto; // optimizelegibility throws things off #1094
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}
+
+// font awesome icons
+a:before {
+  .share42-item:first-child & {
+    content: "\f09a";
+  }
+  .share42-item:nth-child(2) & {
+    content: "\f0d2";
+  }
+  .share42-item:last-child & {
+    content: "\f099";
+  }
+}
+
+// margin
+.share42init .share42-item {
   &:first-of-type {
     margin-left: rem-calc(20);
-  }
-
-  &, i {
-    height: $social-icon-dimension;
-    width: $social-icon-dimension;
-  } 
-
-  i {
-    padding-top: rem-calc(3);
-    display: block;
-    line-height: $social-icon-dimension;
-    text-align: center;
   }
 }
 

@@ -63,7 +63,7 @@
         <ng-include src="'/views/terms.html'"></ng-include>
 
         <div class="footer-push"></div>
-        <footer class="footer"><div class="row"><div class="columns">
+        <footer class="footer" ng-controller="metaInfoCtrl"><div class="row"><div class="columns">
             <div class="left">
               <ul class="inline-list">
                 <li ui-sref-active="active"><a ui-sref="about">About</a></li>
@@ -71,7 +71,8 @@
               </ul>
             </div>
             <div class="right">
-              Share <a target="_blank" href="http://twitter.com/COHealthAccess" class="icon-only"><i class="fa fa-twitter"></i> Twitter</a> <a target="_blank" href="http://www.pinterest.com/cohealthaccess/" class="icon-only"><i class="fa fa-pinterest"></i> Pinterest</a> <a target="_blank" href="http://facebook.com/cohealthaccess" class="icon-only"><i class="fa fa-facebook"></i> Facebook</a>
+              Share <div class="share42init" data-url="{{$root.pageUrl}}" data-title="{{pageTitle()}}" data-image="{{$root.pageUrl}}/images/logo.png" data-icons-file="../../images/share42icons.png" data-description="{{metaDescription()}}"></div>
+              <!--<a target="_blank" href="http://twitter.com/COHealthAccess" class="icon-only"><i class="fa fa-twitter"></i> Twitter</a> <a target="_blank" href="http://www.pinterest.com/cohealthaccess/" class="icon-only"><i class="fa fa-pinterest"></i> Pinterest</a> <a target="_blank" href="http://facebook.com/cohealthaccess" class="icon-only"><i class="fa fa-facebook"></i> Facebook</a>-->
             </div>
         </div></div></footer>
       </div>

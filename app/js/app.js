@@ -21,9 +21,16 @@ angular.module('app', [
 	[					 '$sce', '$browser', '$rootScope', '$state', '$stateParams', 'metaInfo', 
 		function ($sce,   $browser,   $rootScope,   $state,   $stateParams,   metaInfo) {
 
+      // Set Url
+      $rootScope.pageUrl = 'http://localhost:9000';
+      //$rootScope.pageUrl = 'health-literacy.albatrossdemos.com';
+
 			// It's very handy to add references to $state and $stateParams to the $rootScope
 			$rootScope.$state = $state;
 			$rootScope.$stateParams = $stateParams;
+
+      // Share42 script
+      var share42 = document.createElement('script');
 		
       // Apply meta data if available
       $rootScope.$on('$stateChangeStart', 
@@ -116,6 +123,15 @@ angular.module('app', [
             metaInfo.setMetaKeywords(keywords, toState.data.keywordAppend);
             
             return;
+          }
+
+          // Did we already load share42 script?
+          if(!share42.src) {
+            // Load sharing
+            share42.src = '/js/vendor/share42.js';
+            share42.type = 'text/javascript';
+            share42.async = 'true';
+            document.body.appendChild(share42);
           }
 
           metaInfo.resetAll();
