@@ -22,8 +22,8 @@ angular.module('app', [
 		function ($sce,   $browser,   $rootScope,   $state,   $stateParams,   metaInfo) {
 
       // Set Url
-      $rootScope.pageUrl = 'http://localhost:9000';
-      //$rootScope.pageUrl = 'health-literacy.albatrossdemos.com';
+      //$rootScope.pageUrl = 'http://localhost:9000';
+      $rootScope.pageUrl = 'health-literacy.albatrossdemos.com';
 
 			// It's very handy to add references to $state and $stateParams to the $rootScope
 			$rootScope.$state = $state;
@@ -128,7 +128,7 @@ angular.module('app', [
           // Did we already load share42 script?
           if(!share42.src) {
             // Load sharing
-            share42.src = '/js/vendor/share42.js';
+            share42.src = '/vendor/share42.js';
             share42.type = 'text/javascript';
             share42.async = 'true';
             document.body.appendChild(share42);
