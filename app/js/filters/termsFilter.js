@@ -13,7 +13,7 @@ angular.module('app.terms')
       function realFilter(value) {
         angular.forEach(data, function(term) {
           var replacer = '<a term-link="' + term.key + '">$&</a>',
-              regex    = new RegExp("(" + term.regex + ")", "i");
+              regex    = new RegExp("(" + term.regex + ".*?(?=[^a-zA-Z]))", "i");
           value = value.replace(regex, replacer);
         });
 

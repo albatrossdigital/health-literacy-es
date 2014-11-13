@@ -125,7 +125,7 @@ angular.module('app.shop')
                 ]
               },
               {
-                'question': 'Is your monthly income in the range shown on the cart below? (if below these ranges, you may qualify for Medicaid a low cost state insurance program) (chart showing 138-250% FPL per month by family size to 6)',
+                'question': 'Is your monthly income in the range shown on <a open-reveal="compareModal">this cart</a>? (if below these ranges, you may qualify for Medicaid a low cost state insurance program)',
                 'options': [
                   {
                     'label': 'Yes',
@@ -183,8 +183,8 @@ angular.module('app.shop')
                 'text': 'Sounds like a Gold level plan may be right for you, because you think you will use more health care services. Gold level plans have higher premiums, but lower deductibles and out-of-pocket costs.',
                 'stats': {
                   'premium': '$270',
-                  'deductible': '$3,750',
-                  'outOfPocket': '$1,000',
+                  'deductible': '$1,000',
+                  'outOfPocket': '$3,750',
                   'preventiveCare': '$0',
                   'primaryCare': '$30',
                   'specialtyCare': '$60',
