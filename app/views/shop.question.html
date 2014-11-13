@@ -8,7 +8,7 @@
   <div class="columns blues no-padding full-height medium-{{colClass}}" 
        ng-repeat="option in question.options">
 
-    <a class="full-all full-link h3" ng-click="answer($index)">
+    <a class="full-all full-link h3" ng-click="answer(option.value)">
       <span>{{option.label}}</span>
     </a>
   </div>

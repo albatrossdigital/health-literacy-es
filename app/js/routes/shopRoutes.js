@@ -129,6 +129,7 @@ angular.module('app.shop', [
             if ($scope.answers.answered < $scope.answers.total) {
               // @todo
               //$state.go('shop.question', {questionId: $scope.answers.answered});
+              //$scope.suggestedTier = 'no_info';
             }
 
             // Calculate the tier
