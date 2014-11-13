@@ -125,7 +125,7 @@ angular.module('app.shop')
                 ]
               },
               {
-                'question': 'Is your monthly income in the range shown on <a open-reveal="compareModal">this cart</a>? (if below these ranges, you may qualify for Medicaid a low cost state insurance program)',
+                'question': 'Is your monthly income in the range shown on <a open-reveal="compareModal">this chart</a>? (if below these ranges, you may qualify for Medicaid a low cost state insurance program)',
                 'options': [
                   {
                     'label': 'Yes',
