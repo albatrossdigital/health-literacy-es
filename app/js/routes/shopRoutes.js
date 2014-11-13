@@ -49,8 +49,8 @@ angular.module('app.shop', [
             $scope.getChildByKey = function(obj, key) {
               var returnItem = false
               angular.forEach(obj, function(item) {
-                console.log(item);
-                console.log(key);
+                // console.log(item);
+                // console.log(key);
                 if (item.key == key) {
                   returnItem = item;
                 }

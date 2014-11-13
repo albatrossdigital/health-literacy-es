@@ -122,13 +122,13 @@ angular.module('app', [
         }
       );
 
-      $rootScope.$on('$stateChangeSuccess', 
-        function(event, toState, toParams, fromState, fromParams){
-          // init foundation;
-          //app.init();
-          console.log('hash');
-        }
-      );
+      // $rootScope.$on('$stateChangeSuccess', 
+      //   function(event, toState, toParams, fromState, fromParams){
+      //     // init foundation;
+      //     //app.init();
+      //     console.log('hash');
+      //   }
+      // );
     }
 	]
 )
