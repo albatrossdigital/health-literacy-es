@@ -1,0 +1,50 @@
+
+
+.header-toggle {
+  position: relative;
+  padding-left: 1.75em;
+
+  & > span {
+    top: .1em;
+  }
+
+  span {
+    position: absolute;
+    //top: 0;
+    //bottom: 0;
+    left: 0;
+    @include transition(all 0.2s ease);
+    overflow: hidden;
+    font-size: 0.8em;
+    height: 2em;
+    width: 2em;
+
+    span { 
+      display: block; 
+      background-color: $anchor-font-color; 
+      top: 0; 
+      left: 0; 
+    }
+
+    .s1 {
+      @include transform(scale(1,0.2) translate(0,-3em));
+    } 
+    .s2 {
+      @include transform(scale(1,0.2) translate(0,0));
+    } 
+    .s3 {
+      @include transform(scale(1,0.2) translate(0,3em));
+    }
+
+    .move-right & {
+      @include transform(rotate(45deg));
+
+      .s1, .s2 {
+        @include transform(scale(1,0.2));
+      } 
+      .s3 {
+        @include transform(scale(0.2,1));
+      }
+    }
+  }
+}

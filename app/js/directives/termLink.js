@@ -12,12 +12,13 @@ angular.module('app.terms')
       // listen for a click
       $element.on('click', function() {
         // open menu
-        jQuery('.off-canvas-wrap').foundation('offcanvas', 'show', 'move-right');
+        jQuery('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
         // if a term, open
         if($scope.termLink) {  
           // set hash
           location.hash = $scope.termLink;
-          $rootScope.scrollTo('term-' + $scope.termLink);
+          var poop = document.getElementById('term-' + $scope.termLink);
+          document.getElementById('term-' + $scope.termLink).scrollIntoView();
         }
       });
     }

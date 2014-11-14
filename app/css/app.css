@@ -6011,6 +6011,81 @@ th.hide-for-touch {
     left: -31.25rem;
     width: 31.25rem; } }
 
+.header-toggle {
+  position: relative;
+  padding-left: 1.75em; }
+  .header-toggle > span {
+    top: 0.1em; }
+  .header-toggle span {
+    position: absolute;
+    left: 0;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    overflow: hidden;
+    font-size: 0.8em;
+    height: 2em;
+    width: 2em; }
+    .header-toggle span span {
+      display: block;
+      background-color: #ff5722;
+      top: 0;
+      left: 0; }
+    .header-toggle span .s1 {
+      -webkit-transform: scale(1, 0.2) translate(0, -3em);
+      -moz-transform: scale(1, 0.2) translate(0, -3em);
+      -ms-transform: scale(1, 0.2) translate(0, -3em);
+      -o-transform: scale(1, 0.2) translate(0, -3em);
+      transform: scale(1, 0.2) translate(0, -3em); }
+    .header-toggle span .s2 {
+      -webkit-transform: scale(1, 0.2) translate(0, 0);
+      -moz-transform: scale(1, 0.2) translate(0, 0);
+      -ms-transform: scale(1, 0.2) translate(0, 0);
+      -o-transform: scale(1, 0.2) translate(0, 0);
+      transform: scale(1, 0.2) translate(0, 0); }
+    .header-toggle span .s3 {
+      -webkit-transform: scale(1, 0.2) translate(0, 3em);
+      -moz-transform: scale(1, 0.2) translate(0, 3em);
+      -ms-transform: scale(1, 0.2) translate(0, 3em);
+      -o-transform: scale(1, 0.2) translate(0, 3em);
+      transform: scale(1, 0.2) translate(0, 3em); }
+    .move-right .header-toggle span {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+      .move-right .header-toggle span .s1, .move-right .header-toggle span .s2 {
+        -webkit-transform: scale(1, 0.2);
+        -moz-transform: scale(1, 0.2);
+        -ms-transform: scale(1, 0.2);
+        -o-transform: scale(1, 0.2);
+        transform: scale(1, 0.2); }
+      .move-right .header-toggle span .s3 {
+        -webkit-transform: scale(0.2, 1);
+        -moz-transform: scale(0.2, 1);
+        -ms-transform: scale(0.2, 1);
+        -o-transform: scale(0.2, 1);
+        transform: scale(0.2, 1); }
+
+@media only screen and (max-width: 46.875rem) {
+  .reveal-modal > .columns, .reveal-modal > dialog {
+    padding-left: 0;
+    padding-right: 0; }
+  .reveal-modal > .row, .reveal-modal > dialog {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem; }
+  .reveal-modal .table-wrap, .reveal-modal dialog {
+    background: none; }
+    .reveal-modal .table-wrap .header, .reveal-modal .table-wrap dialog {
+      background: none;
+      text-align: left !important; }
+    .reveal-modal .table-wrap > .columns, .reveal-modal .table-wrap > dialog {
+      padding: 0; }
+    .reveal-modal .table-wrap .row, .reveal-modal .table-wrap dialog {
+      margin-left: -1.25rem;
+      margin-right: -1.25rem; } }
+
 .tabs {
   margin-top: 1.25rem; }
   .tabs dd {
@@ -6546,7 +6621,8 @@ body > * {
       background: #CCCCCC; }
     .status-dots li.active {
       border-color: #666666;
-      background: #666666; }
+      background: #666666;
+      cursor: pointer; }
 
 .tier-details {
   margin-top: 1.875rem; }

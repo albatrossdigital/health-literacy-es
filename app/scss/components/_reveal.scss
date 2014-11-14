@@ -1,0 +1,40 @@
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+@media #{$small-only} {
+  
+  .reveal-modal {
+    & > .columns {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    & > .row {
+      margin-left: -($column-gutter/2);
+      margin-right: -($column-gutter/2);
+    }
+
+    .table-wrap {
+      background: none;
+      
+      .header {
+        background: none;
+        text-align: left!important;
+      }
+
+      & > .columns {
+        padding: 0;
+      }
+
+      .row {
+        margin-left: -($column-gutter/2);
+        margin-right: -($column-gutter/2);
+      }
+
+    }
+  }
+
+}

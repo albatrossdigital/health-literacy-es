@@ -12,6 +12,7 @@ angular.module('app', [
 	'app.use',
   'app.shop',
   'metaInfo',
+  'scrollTo',
   'ui.router',
   'ngSanitize',
   'ngAnimate'
