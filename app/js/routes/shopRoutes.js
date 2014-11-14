@@ -111,7 +111,7 @@ angular.module('app.shop', [
 
             $scope.gotoQuestion = function(questionId){
               questionId--;
-              if (questionId < $scope.answers.total) {
+              if (questionId < $scope.answers.answered) {
                 var question = $scope.answers.question;
                 $scope.answers = {
                   'total': shopData.questions.length,
@@ -184,6 +184,11 @@ angular.module('app.shop', [
               //$location.hash('plan');
               //$anchorScroll();
               $state.go('shop.plan.tab', {planId: shopData.plans[0].key});
+            }
+
+            $scope.tabClick = function(tierId) {
+              $scope.suggestedTier = tierId;
+              $scope.activeTier = $scope.getChildByKey(shopData.tiers, $scope.suggestedTier);
             }
 
             //$scope.pageData = shopData['results'][$stateParams.scenarioId][$stateParams.actionId];
