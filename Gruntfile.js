@@ -47,6 +47,9 @@ module.exports = function(grunt) {
 			dist: {
 				src: ['<%= dist %>/*']
 			},
+			ghpages: {
+				src: ['gh-pages/*, !.git']
+			},
 		},
 		copy: {
 			dist: {
@@ -62,6 +65,14 @@ module.exports = function(grunt) {
 					dest: '<%= dist %>/fonts/',
 					filter: 'isFile'
 				} ]
+			},
+			ghpages: {
+				files: [{
+					expand: true,
+					cwd:'<%= dist %>/',
+					src: ['**/*'],
+					dest: 'gh-pages/'
+				}]
 			},
 		},
 
@@ -204,6 +215,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('validate-js', ['jshint']);
 	grunt.registerTask('server-dist', ['connect:dist']);
 	grunt.registerTask('server-phantom', ['connect:distQuick']);
+
+	grunt.registerTask('gh-pages', ['clean:ghpages', 'copy:ghpages']);
 	
 	grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'connect:distQuick', 'execute']);
 
