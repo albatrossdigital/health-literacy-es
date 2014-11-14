@@ -143,7 +143,7 @@ angular.module('app.shop')
               {
                 'key': 'bronze',
                 'label': 'Bronze',                
-                'text': 'Sounds like a Bronze level plan might be right for you. Bronze plans have lower premiums, but higher deductibles and out-of-pocket costs.',
+                'text': 'Bronze plans have lower premiums, but higher deductibles and out-of-pocket costs.',
                 'stats': {
                   'premium': '$128',
                   'deductible': '$6,500',
@@ -162,7 +162,7 @@ angular.module('app.shop')
               {
                 'key': 'silver',
                 'label': 'Silver',
-                'text': 'Sounds like a Silver level plan may be right for you. Silver level plans are often the most popular with moderate premiums and moderate deductibles and out-of-pocket costs.',
+                'text': 'Silver level plans are often the most popular with moderate premiums and moderate deductibles and out-of-pocket costs.',
                 'stats': {
                   'premium': '$220',
                   'deductible': '$2,050',
@@ -180,7 +180,7 @@ angular.module('app.shop')
               {
                 'key': 'gold',
                 'label': 'Gold',
-                'text': 'Sounds like a Gold level plan may be right for you, because you think you will use more health care services. Gold level plans have higher premiums, but lower deductibles and out-of-pocket costs.',
+                'text': 'A Gold level plan may be right for you, if you think you will use more health care services. Gold level plans have higher premiums, but lower deductibles and out-of-pocket costs.',
                 'stats': {
                   'premium': '$270',
                   'deductible': '$1,000',
