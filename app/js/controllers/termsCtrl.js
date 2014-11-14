@@ -12,12 +12,16 @@ angular.module('app.terms', [])
         $scope.terms = pages;
       });
 
+      $scope.closeSwipe = function() {
+        jQuery('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
+      }
+
       $scope.active = null;
       $scope.setActive = function(key) {
         $scope.active = $scope.active === key ? null : key;
       }
 
-      // watch
+      // watch hash for term opening
       $scope.$watch(function () {
           return location.hash
       }, function (value) {

@@ -8,6 +8,7 @@
     "angular-sanitize": "1.2.25",
     "angular-ui-router": "0.2.11",
     "angular-animate": "1.2.25",
+    "angular-touch": "1.2.25",
     "bourbon": "v3.2.3"
   }
 }

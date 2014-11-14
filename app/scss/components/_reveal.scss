@@ -15,11 +15,12 @@
     & > .row {
       margin-left: -($column-gutter/2);
       margin-right: -($column-gutter/2);
+      width: auto;
     }
 
     .table-wrap {
       background: none;
-      
+
       .header {
         background: none;
         text-align: left!important;

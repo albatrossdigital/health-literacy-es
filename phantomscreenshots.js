@@ -10,7 +10,7 @@ var phantom       = require('phantom'),
 function crawlPage(url, callback) {
   phantom.create(function createPhantom (ph) {
     ph.createPage(function createPage(page) {
-      page.open("http://localhost:9008" + url, function pageOpen(status) {
+      page.open("http://localhost:9009" + url, function pageOpen(status) {
         if (status == 'success') {
           var delay, checker = (function checkerLoop() {
             page.evaluate(function evaluatePage() {
@@ -63,14 +63,22 @@ function crawlAll(newPages, callback) {
       }
       else {
         //console.log(result);
-        var filename = result.url == "/" ? 'index' : result.url;
-        fs.writeFile("dist/snapshots/" + filename + '.html', result.html, function writeFile(err) {
-          if(err) {
-            console.log('Could not write html file');
-          } else {
-            console.log("The snapshot for " + filename + " was saved!");
-          }
-        }); 
+        var filename = result.url == "/" ? '/index' : result.url;
+        filename = "./dist/snapshots" + filename + '.html'
+        console.log("Writing the snapshot for " + filename + ".");
+        // Write the file
+        try {
+          fs.writeFileSync(filename, result.html);
+        } catch(e) {
+          console.log(e.stack);
+        }
+        // fs.writeFileSync(filename, result.html, function writeFile(err) {
+        //   if(err) {
+        //     console.log('Could not write html file: ' + err);
+        //   } else {
+        //     console.log("The snapshot for " + filename + " was saved!");
+        //   }
+        // }); 
 
         pagesComplete.push(result.url);
         if(result.pages.length) {

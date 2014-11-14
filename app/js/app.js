@@ -15,7 +15,8 @@ angular.module('app', [
   'scrollTo',
   'ui.router',
   'ngSanitize',
-  'ngAnimate'
+  'ngAnimate',
+  'ngTouch'
 ])
 
 .run(

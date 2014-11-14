@@ -6074,7 +6074,8 @@ th.hide-for-touch {
     padding-right: 0; }
   .reveal-modal > .row, .reveal-modal > dialog {
     margin-left: -1.25rem;
-    margin-right: -1.25rem; }
+    margin-right: -1.25rem;
+    width: auto; }
   .reveal-modal .table-wrap, .reveal-modal dialog {
     background: none; }
     .reveal-modal .table-wrap .header, .reveal-modal .table-wrap dialog {
@@ -6387,12 +6388,12 @@ to prevent collapsing during animation*/
 .bg-hospital-repeat:after, .action-pattern-2:after {
   background: url("../images/patterns/ER.jpg") repeat; }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6, p, a, .footer .right {
   opacity: 0;
   -webkit-transition: opacity 0.25s ease-in-out;
   -moz-transition: opacity 0.25s ease-in-out;
   transition: opacity 0.25s ease-in-out; }
-  .wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6, .wf-active p, .wf-active a {
+  .wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6, .wf-active p, .wf-active a, .wf-active .footer .right {
     opacity: 1; }
 
 html, body {
