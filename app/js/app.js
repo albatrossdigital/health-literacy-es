@@ -20,12 +20,12 @@ angular.module('app', [
 ])
 
 .run(
-	[					 '$sce', '$browser', '$rootScope', '$state', '$stateParams', 'metaInfo', 
-		function ($sce,   $browser,   $rootScope,   $state,   $stateParams,   metaInfo) {
+	[					 '$rootScope', '$state', '$stateParams', 'metaInfo', '$window', '$location', 
+		function ($rootScope,   $state,   $stateParams,   metaInfo,   $window,   $location) {
 
       // Set Url
       //$rootScope.pageUrl = 'http://localhost:9000';
-      $rootScope.pageUrl = 'health-literacy.albatrossdemos.com';
+      $rootScope.pageUrl = 'http://coveredu.org';
 
 			// It's very handy to add references to $state and $stateParams to the $rootScope
 			$rootScope.$state = $state;
@@ -33,69 +33,6 @@ angular.module('app', [
 
       // Share42 script
       var share42 = document.createElement('script');
-
-      /* scrollTo -
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-      $rootScope.scrollTo = function(eID) {
-
-        /* currentYPosition -
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-        function currentYPosition() {
-          // Firefox, Chrome, Opera, Safari
-          if (window.pageYOffset) {
-            return window.pageYOffset;
-          }
-          // Internet Explorer 6 - standards mode
-          if (document.documentElement && document.documentElement.scrollTop) {
-            return document.documentElement.scrollTop;
-          }
-          // Internet Explorer 6, 7 and 8
-          if (document.body.scrollTop) {
-            return document.body.scrollTop;
-          }
-          return 0;
-        }
-
-        /* scrollTo -
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-        function elmYPosition(eID) {
-          if(eID) {
-            var elm = document.getElementById(eID);
-            var y = elm.offsetTop;
-            var node = elm;
-            while (node.offsetParent && node.offsetParent != document.body) {
-              node = node.offsetParent;
-              y += node.offsetTop;
-            } return y;
-          }
-        }
-
-        // This scrolling function 
-        // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
-        
-        var i;
-        var startY = currentYPosition();
-        var stopY = elmYPosition(eID);
-        var distance = stopY > startY ? stopY - startY : startY - stopY;
-        if (distance < 100) {
-          scrollTo(0, stopY); return;
-        }
-        var speed = Math.round(distance / 100);
-        if (speed >= 20) speed = 20;
-        var step = Math.round(distance / 25);
-        var leapY = stopY > startY ? startY + step : startY - step;
-        var timer = 0;
-        if (stopY > startY) {
-          for (i = startY; i < stopY; i += step) {
-            setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);
-            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-          } return;
-        }
-        for (i = startY; i > stopY; i -= step) {
-          setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);
-          leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
-        }
-      }
 		
       // Apply meta data if available
       $rootScope.$on('$stateChangeStart', 
@@ -146,6 +83,14 @@ angular.module('app', [
       $rootScope.$on('$stateChangeSuccess', 
         function(event, toState, toParams, fromState, fromParams){
 
+          // send tracking
+          if ($window.ga){
+            $window.ga('send', 'pageview', { 
+              page: $location.path(),
+              title: toState.data && toState.data.title ? toState.data.title : 'Health Literacy'
+            });
+          }
+
           // first time, and are we changing the main / secondary route
           if(  fromState.name && fromState.name.length
             && (!toState.data  || !(toState.data && toState.data.skipScroll))) {
@@ -166,6 +111,14 @@ angular.module('app', [
       metaInfoProvider.setBaseTitle('Health Literacy');
       metaInfoProvider.setBaseDescription('Health Literacy is an educational site giving straight forward info on healthcare options');
       metaInfoProvider.setBaseKeywords('Health Literacy, Health, Education, Colorado, Healthcare');
+
+
+      // // Set up analytics tracking
+      // AnalyticsProvider.setAccount('UA-XXXXX-xx');
+      // AnalyticsProvider.trackPages(true);
+      // // change page event name
+      // AnalyticsProvider.setPageEvent('$stateChangeSuccess');
+
 
     	// set location provider as regular urls
     	$locationProvider.html5Mode(true);
