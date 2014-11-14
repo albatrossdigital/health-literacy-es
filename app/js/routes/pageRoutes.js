@@ -17,16 +17,19 @@ angular.module('app.page', [
 
         .state("about", {
           url: "/about",
+          data: { title: 'About' },
           templateUrl: 'views/about.html'
         })
 
         .state("resources", {
           url: "/resources",
+          data: { title: 'Resources' },
           templateUrl: 'views/resources.html'
         })
 
         .state("get-insurance", {
           url: "/get-insurance",
+          data: { title: 'Get Insurance' },
           templateUrl: 'views/get-insurance.html'
         })
 

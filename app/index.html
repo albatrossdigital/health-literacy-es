@@ -4,9 +4,17 @@
     <base href="/"></base>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{metaDescription()}}">
-    <meta name="keywords" content="{{metaKeywords()}}">
-    <title ng-bind="pageTitle();"></title>
+    <meta name="description" ng-attr-content="{{metaDescription()}}" />
+    <meta name="keywords" ng-attr-content="{{metaKeywords()}}" />
+    <title ng-bind="pageTitle();">Health Literacy</title>
+    <noscript>
+        <meta name="description" content="Health Literacy is an educational site giving straight forward info on healthcare options" />
+        <meta name="keywords" content="Health Literacy, Health, Education, Colorado, Healthcare" />
+    </noscript>
+    <meta property="og:image" content="/images/logo.png" />
+    <meta property="og:title" content="Health Literacy" />
+    <meta property="og:description" content="Health Literacy is an educational site giving straight forward info on healthcare options." />
+    
     <!-- build:css css/libraries.min.css -->
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
     <!-- bower:css -->
@@ -49,11 +57,11 @@
     <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
         <header class="l-header"><div class="row"><div class="columns">
-          <a class="left-off-canvas-toggle header-toggle left">
+          <a term-link class="header-toggle left">
             <i class="fa fa-bars"></i> Terms
           </a>
-          <h2 class="site-name"><a ui-sref="home"><img src="../images/logo.png" alt="Home" Title="Home" />Covered <span>U</span></a></h2>
-          <a class="right get-insurance" ui-sref="get-insurance">
+          <h2 class="site-name"><a href="#" ui-sref="home"><img src="../images/logo.png" alt="Home" Title="Home" />Covered <span>U</span></a></h2>
+          <a class="right get-insurance" href="#" ui-sref="get-insurance">
             <i class="fa fa-plus"></i> Get Insurance
           </a>
         </div></div></header>
@@ -63,15 +71,16 @@
         <ng-include src="'/views/terms.html'"></ng-include>
 
         <div class="footer-push"></div>
-        <footer class="footer"><div class="row"><div class="columns">
+        <footer class="footer" ng-controller="metaInfoCtrl"><div class="row"><div class="columns">
             <div class="left">
               <ul class="inline-list">
-                <li ui-sref-active="active"><a ui-sref="about">About</a></li>
-                <li ui-sref-active="active"><a ui-sref="resources">Resources</a></li>
+                <li ui-sref-active="active"><a href="#" ui-sref="about">About</a></li>
+                <li ui-sref-active="active"><a href="#" ui-sref="resources">Resources</a></li>
               </ul>
             </div>
             <div class="right">
-              Share <a target="_blank" href="http://twitter.com/COHealthAccess" class="icon-only"><i class="fa fa-twitter"></i> Twitter</a> <a target="_blank" href="http://www.pinterest.com/cohealthaccess/" class="icon-only"><i class="fa fa-pinterest"></i> Pinterest</a> <a target="_blank" href="http://facebook.com/cohealthaccess" class="icon-only"><i class="fa fa-facebook"></i> Facebook</a>
+              Share <div class="share42init" ng-attr-data-url="{{$root.pageUrl}}" ng-attr-data-title="{{pageTitle()}}" ng-attr-data-image="{{$root.pageUrl}}/images/logo.png" data-icons-file="../../images/share42icons.png" ng-attr-data-description="{{metaDescription()}}"></div>
+              <!--<a target="_blank" href="http://twitter.com/COHealthAccess" class="icon-only"><i class="fa fa-twitter"></i> Twitter</a> <a target="_blank" href="http://www.pinterest.com/cohealthaccess/" class="icon-only"><i class="fa fa-pinterest"></i> Pinterest</a> <a target="_blank" href="http://facebook.com/cohealthaccess" class="icon-only"><i class="fa fa-facebook"></i> Facebook</a>-->
             </div>
         </div></div></footer>
       </div>

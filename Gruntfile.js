@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd:'<%= app %>/',
-					src: ['fonts/**', '**/*.html', '!**/*.scss', '!bower_components/**'],
+					src: ['CNAME', 'fonts/**', 'vendor/**', '**/*.html', '!**/*.scss', '!bower_components/**'],
 					dest: '<%= dist %>/'
 				} , {
 					expand: true,
@@ -133,7 +133,7 @@ module.exports = function(grunt) {
 			},
 			distQuick: {
 				options: {
-					port: 9008,
+					port: 9009,
 					base: '<%= dist %>/',
 					open: false,
 					livereload: false,
@@ -203,6 +203,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['compile-sass', 'bower-install', 'connect:app', 'watch']);
 	grunt.registerTask('validate-js', ['jshint']);
 	grunt.registerTask('server-dist', ['connect:dist']);
+	grunt.registerTask('server-phantom', ['connect:distQuick']);
 	
 	grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'connect:distQuick', 'execute']);
 

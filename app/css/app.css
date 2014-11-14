@@ -6350,7 +6350,8 @@ body > * {
 
 .header-toggle, .get-insurance {
   position: absolute;
-  top: 5rem; }
+  top: 5rem;
+  z-index: 100; }
 
 .header-toggle {
   left: 1.25rem; }
@@ -6425,20 +6426,36 @@ body > * {
     background: -webkit-linear-gradient( rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.1) 100%);
     background: linear-gradient( rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.1) 100%); }
 
-a.icon-only {
-  display: inline-block;
-  overflow: hidden;
-  margin-left: 0.625rem; }
-  a.icon-only:first-of-type {
-    margin-left: 1.25rem; }
-  a.icon-only, a.icon-only i {
-    height: 25px;
-    width: 25px; }
-  a.icon-only i {
-    padding-top: 0.1875rem;
-    display: block;
-    line-height: 25px;
-    text-align: center; }
+.share42init {
+  display: inline; }
+  .share42init a {
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 0.625rem !important;
+    background: none !important; }
+    .share42init a, .share42init a:before {
+      height: 25px !important;
+      width: 25px !important; }
+    .share42init a:before {
+      padding-top: 0.1875rem;
+      display: block;
+      line-height: 25px !important;
+      text-align: center;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+
+.share42-item:first-child a:before {
+  content: "\f09a"; }
+.share42-item:nth-child(2) a:before {
+  content: "\f0d2"; }
+.share42-item:last-child a:before {
+  content: "\f099"; }
+
+.share42init .share42-item:first-of-type {
+  margin-left: 1.25rem; }
 
 @media only screen and (max-width: 46.875rem) {
   .footer {

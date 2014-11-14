@@ -14,7 +14,7 @@
     <h2>Compare plans</h2>
     <dl class="tabs">
       <dd ui-sref-active="active" ng-repeat="tier in tiers">
-        <a ui-sref="shop.tier.tab({tierId: tier.key})">{{tier.label}}</a>
+        <a href="#" ui-sref="shop.tier.tab({tierId: tier.key})">{{tier.label}}</a>
       </dd>
     </dl>
     <div class="tabs-content">
@@ -22,7 +22,9 @@
     </div>
     
   </div>
-  
+  <div class="text-center clear-both">
+    <a href="#" ui-sref="shop" class="button radius">Start Over</a>
+  </div>
   <div class="next-button relative">
     <a ng-click="goToPlan()" class="button round">
       <i class="fa fa-chevron-down"></i><span class="invisible">Next Page</span>

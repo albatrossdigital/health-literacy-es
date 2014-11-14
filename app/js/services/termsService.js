@@ -26,12 +26,6 @@ angular.module('app.terms')
               'text': 'The amount you pay for your insurance plan every month. You pay this even if you don\'t use health care services that month.'
             },
             {
-              'key': 'deductible',
-              'regex': 'deductible',
-              'label': 'Deductible',
-              'text': 'The amount you have to pay for your health care before the insurance company begins to pay. For example, if your deductible is $1,000, you need to spend $1,000 on your health care costs before your insurance begins to cover some of the costs. All plans must provide many preventive services and screenings at no charge to you, so these services do not apply to the deductible. Plans may also offer other services that are free of charge and do not apply to the deductible.'
-            },
-            {
               'key': 'copay',
               'regex': 'copay|co\-pay',
               'label': 'Co-pay',
@@ -44,22 +38,16 @@ angular.module('app.terms')
               'text': 'A percent you pay for a health service once you\'ve met your deductible. For example, if your co-insurance is 20% of a $1,000 medical bill, you will pay $200 and insurance will cover the rest.'
             },
             {
+              'key': 'deductible',
+              'regex': 'deductible',
+              'label': 'Deductible',
+              'text': 'The amount you have to pay for your health care before the insurance company begins to pay. For example, if your deductible is $1,000, you need to spend $1,000 on your health care costs before your insurance begins to cover some of the costs. All plans must provide many preventive services and screenings at no charge to you, so these services do not apply to the deductible. Plans may also offer other services that are free of charge and do not apply to the deductible.'
+            },
+            {
               'key': 'out-of-pocket-max',
               'regex': 'out\-of\-pocket\ maximum',
               'label': 'Out-of-pocket maximum/limit',
               'text': 'The total amount you have to pay during the year before your health insurance pays 100% of your medical costs. The out-of-pocket maximum is only for one year and resets each year.'
-            },
-            {
-              'key': 'in-network',
-              'regex': 'in\-network',
-              'label': 'In-Network',
-              'text': 'A group of providers (doctors), facilities (places), and suppliers (pharmacies and medical supplies) that work with your health insurance plan. You will pay less to use services in-network than out-of-network. Some health insurance plans will not pay at all for out-of-network services.'
-            },
-            {
-              'key': 'out-of-network',
-              'regex': 'out-of-network',
-              'label': 'Out-of-Network',
-              'text': 'A group of providers who DO NOT work with your health plan. You will pay more to see them, and some insurance plans will not pay for these services at all.'
             },
             {
               'key': 'primary-care',
@@ -74,16 +62,22 @@ angular.module('app.terms')
               'text': 'Regular health care, like screenings, check-ups, and patient counseling, to find sicknesses or problems before they get worse. Most preventive care is fully covered by your monthly premiums and you do not have to pay anything else.'
             },
             {
-              'key': 'explanation-of-benefits',
-              'regex': 'explanation\ of\ benefits\ \(eob\)',
-              'label': 'Explanation of Benefits (EOB)',
-              'text': 'A form sent to you by your insurance company after you get health care. It is not a bill, but it is important to read it. It tells you the services that were billed by a health care provider and how much of the costs you will have to pay when a bill is sent to you.'
-            },
-            {
               'key': 'specialist',
               'regex': 'specialist',
               'label': 'Specialist',
               'text': 'A doctor who focuses on a special or specific kind of health care. For example, a cardiologist focuses on heart diseases and an oncologist focuses on treating cancer.'
+            },
+            {
+              'key': 'in-network',
+              'regex': 'in\-network',
+              'label': 'In-Network',
+              'text': 'A group of providers (doctors), facilities (places), and suppliers (pharmacies and medical supplies) that work with your health insurance plan. You will pay less to use services in-network than out-of-network. Some health insurance plans will not pay at all for out-of-network services.'
+            },
+            {
+              'key': 'out-of-network',
+              'regex': 'out-of-network',
+              'label': 'Out-of-Network',
+              'text': 'A group of providers who DO NOT work with your health plan. You will pay more to see them, and some insurance plans will not pay for these services at all.'
             },
             {
               'key': 'open-enrollment',
@@ -96,6 +90,12 @@ angular.module('app.terms')
               'regex': 'special\ enrollment\ period',
               'label': 'Special enrollment period',
               'text': 'A period of time outside open enrollment when you can enroll in health insurance if you have a special event in your life. These events include losing your job, getting married/divorced, moving, or you turn 26 and can\'t be on your parent\'s health insurance anymore. '
+            },
+            {
+              'key': 'explanation-of-benefits',
+              'regex': 'explanation\ of\ benefits\ \(eob\)',
+              'label': 'Explanation of Benefits (EOB)',
+              'text': 'A form sent to you by your insurance company after you get health care. It is not a bill, but it is important to read it. It tells you the services that were billed by a health care provider and how much of the costs you will have to pay when a bill is sent to you.'
             },
             {
               'key': 'claim',

@@ -5,6 +5,7 @@
   <dl class="accordion" data-accordion="myAccordionGroup">
     <dd class="accordion-navigation" 
         ng-repeat="term in terms" 
+        id="term-{{term.key}}"
         ng-class="active === term.key ? 'active' : ''">
 
       <a ng-click="setActive(term.key)">{{term.label}}</a>

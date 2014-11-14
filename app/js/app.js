@@ -21,78 +21,88 @@ angular.module('app', [
 	[					 '$sce', '$browser', '$rootScope', '$state', '$stateParams', 'metaInfo', 
 		function ($sce,   $browser,   $rootScope,   $state,   $stateParams,   metaInfo) {
 
+      // Set Url
+      //$rootScope.pageUrl = 'http://localhost:9000';
+      $rootScope.pageUrl = 'health-literacy.albatrossdemos.com';
+
 			// It's very handy to add references to $state and $stateParams to the $rootScope
 			$rootScope.$state = $state;
 			$rootScope.$stateParams = $stateParams;
+
+      // Share42 script
+      var share42 = document.createElement('script');
+
+      /* scrollTo -
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+      $rootScope.scrollTo = function(eID) {
+
+        /* currentYPosition -
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+        function currentYPosition() {
+          // Firefox, Chrome, Opera, Safari
+          if (window.pageYOffset) {
+            return window.pageYOffset;
+          }
+          // Internet Explorer 6 - standards mode
+          if (document.documentElement && document.documentElement.scrollTop) {
+            return document.documentElement.scrollTop;
+          }
+          // Internet Explorer 6, 7 and 8
+          if (document.body.scrollTop) {
+            return document.body.scrollTop;
+          }
+          return 0;
+        }
+
+        /* scrollTo -
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+        function elmYPosition(eID) {
+          if(eID) {
+            var elm = document.getElementById(eID);
+            var y = elm.offsetTop;
+            var node = elm;
+            while (node.offsetParent && node.offsetParent != document.body) {
+              node = node.offsetParent;
+              y += node.offsetTop;
+            } return y;
+          }
+        }
+
+        // This scrolling function 
+        // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
+        
+        var i;
+        var startY = currentYPosition();
+        var stopY = elmYPosition(eID);
+        var distance = stopY > startY ? stopY - startY : startY - stopY;
+        if (distance < 100) {
+          scrollTo(0, stopY); return;
+        }
+        var speed = Math.round(distance / 100);
+        if (speed >= 20) speed = 20;
+        var step = Math.round(distance / 25);
+        var leapY = stopY > startY ? startY + step : startY - step;
+        var timer = 0;
+        if (stopY > startY) {
+          for (i = startY; i < stopY; i += step) {
+            setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);
+            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+          } return;
+        }
+        for (i = startY; i > stopY; i -= step) {
+          setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);
+          leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+        }
+      }
 		
       // Apply meta data if available
       $rootScope.$on('$stateChangeStart', 
         function(event, toState, toParams, fromState, fromParams){
 
-          // /* scrollTo -
-          // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-          // function scrollTo(eID) {
-     
-          //   // This scrolling function 
-          //   // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
-            
-          //   var i;
-          //   var startY = currentYPosition();
-          //   var stopY = elmYPosition(eID);
-          //   var distance = stopY > startY ? stopY - startY : startY - stopY;
-          //   if (distance < 100) {
-          //     scrollTo(0, stopY); return;
-          //   }
-          //   var speed = Math.round(distance / 100);
-          //   if (speed >= 20) speed = 20;
-          //   var step = Math.round(distance / 25);
-          //   var leapY = stopY > startY ? startY + step : startY - step;
-          //   var timer = 0;
-          //   if (stopY > startY) {
-          //     for (i = startY; i < stopY; i += step) {
-          //       setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);
-          //       leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-          //     } return;
-          //   }
-          //   for (i = startY; i > stopY; i -= step) {
-          //     setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);
-          //     leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
-          //   }
-          // }
-          
-          // /* currentYPosition -
-          // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-          // function currentYPosition() {
-          //   // Firefox, Chrome, Opera, Safari
-          //   if (window.pageYOffset) {
-          //     return window.pageYOffset;
-          //   }
-          //   // Internet Explorer 6 - standards mode
-          //   if (document.documentElement && document.documentElement.scrollTop) {
-          //     return document.documentElement.scrollTop;
-          //   }
-          //   // Internet Explorer 6, 7 and 8
-          //   if (document.body.scrollTop) {
-          //     return document.body.scrollTop;
-          //   }
-          //   return 0;
-          // }
-     
-          // /* scrollTo -
-          // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-          // function elmYPosition(eID) {
-          //   var elm = document.getElementById(eID);
-          //   var y = elm.offsetTop;
-          //   var node = elm;
-          //   while (node.offsetParent && node.offsetParent != document.body) {
-          //     node = node.offsetParent;
-          //     y += node.offsetTop;
-          //   } return y;
-          // }
+          // Metatag info
+          // ---------------------------------
 
-          // scrollTo('#main');
-
-          // If we have any data
+          //If we have any incoming data
           if(toState.data) {
             // Set title
             var title = (toState.data.title && toState.data.title.length)
@@ -114,21 +124,34 @@ angular.module('app', [
                          : [];
 
             metaInfo.setMetaKeywords(keywords, toState.data.keywordAppend);
-            
-            return;
+          }
+          // we're coming from a state with meta info, reset
+          else if(fromState.data) {
+            metaInfo.resetAll();
           }
 
-          metaInfo.resetAll();
+          // Did we already load share42 script?
+          if(!share42.src) {
+            // Load sharing
+            share42.src = '/vendor/share42.js';
+            share42.type = 'text/javascript';
+            share42.async = 'true';
+            document.body.appendChild(share42);
+          }
         }
       );
 
-      // $rootScope.$on('$stateChangeSuccess', 
-      //   function(event, toState, toParams, fromState, fromParams){
-      //     // init foundation;
-      //     //app.init();
-      //     console.log('hash');
-      //   }
-      // );
+      $rootScope.$on('$stateChangeSuccess', 
+        function(event, toState, toParams, fromState, fromParams){
+
+          // first time, and are we changing the main / secondary route
+          if(  fromState.name && fromState.name.length
+            && (!toState.data  || !(toState.data && toState.data.skipScroll))) {
+
+            $rootScope.scrollTo('main');
+          }
+        }
+      );
     }
 	]
 )

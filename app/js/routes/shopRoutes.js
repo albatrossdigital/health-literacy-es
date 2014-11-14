@@ -27,6 +27,7 @@ angular.module('app.shop', [
 
           // shop a url of "/" to set a state as the "index".
           url: "/shop",
+          data: { title: 'Shop for Insurance' },
           templateUrl: 'views/shop.html',
           resolve: {
             shopData: function(appShopFactory) {
@@ -62,6 +63,7 @@ angular.module('app.shop', [
 
         .state("shop.intro", {
           url: '/intro',
+          data: { title: 'Shop for Insurance' },
           templateUrl: 'views/shop.intro.html',
           controller: function($scope, shopData) {
             //$scope.pageData = shopData;
@@ -77,6 +79,7 @@ angular.module('app.shop', [
 
         .state("shop.question", {
           url: '/question/:questionId',
+          data: { title: 'Shop for Insurance' },
           templateUrl: 'views/shop.question.html',
           controller: function($scope, $stateParams, shopData, $state) {
             //$scope.pageData = shopData;
@@ -121,6 +124,7 @@ angular.module('app.shop', [
 
         .state("shop.tier", {
           url: '/tier',
+          data: { title: 'Insurance Tiers' },
           templateUrl: 'views/shop.tier.html',
           controller: function($scope, $stateParams, shopData, $state, $anchorScroll, $location) {
             $scope.tiers = shopData.tiers;
@@ -162,6 +166,7 @@ angular.module('app.shop', [
         })
         .state("shop.tier.tab", {
           url: '/:tierId',
+          data: { skipScroll: true },
           templateUrl: 'views/shop.tier.tab.html',
           controller: function($scope, $stateParams, shopData, $state) {
             $scope.stats = $scope.getChildByKey(shopData.tiers, $stateParams.tierId).stats;
@@ -171,6 +176,7 @@ angular.module('app.shop', [
 
         .state("shop.plan", {
           url: '/plan',
+          data: { title: 'Insurance Plans' },
           templateUrl: 'views/shop.plan.html',
           controller: function($scope, $stateParams, shopData, $state) {
             $scope.plans = shopData.plans;
