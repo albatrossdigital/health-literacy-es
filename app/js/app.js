@@ -133,19 +133,20 @@ angular.module('app', [
           /* scrollTo -
           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
           function elmYPosition(eID) {
-            var elm = document.getElementById(eID);
-            var y = elm.offsetTop;
-            var node = elm;
-            while (node.offsetParent && node.offsetParent != document.body) {
-              node = node.offsetParent;
-              y += node.offsetTop;
-            } return y;
+            if(eID) {
+              var elm = document.getElementById(eID);
+              var y = elm.offsetTop;
+              var node = elm;
+              while (node.offsetParent && node.offsetParent != document.body) {
+                node = node.offsetParent;
+                y += node.offsetTop;
+              } return y;
+            }
           }
 
           // first time, and are we changing the main / secondary route
-          if(  fromState.name 
-            && fromState.name.length 
-            && toState.name.split(".").length < 2) {
+          if(  fromState.name && fromState.name.length
+            && !toState.data  || !(toState.data && toState.data.skipScroll)) {
             scrollTo('main');
           }
         }

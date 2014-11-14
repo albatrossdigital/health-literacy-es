@@ -166,6 +166,7 @@ angular.module('app.shop', [
         })
         .state("shop.tier.tab", {
           url: '/:tierId',
+          data: { skipScroll: true },
           templateUrl: 'views/shop.tier.tab.html',
           controller: function($scope, $stateParams, shopData, $state) {
             $scope.stats = $scope.getChildByKey(shopData.tiers, $stateParams.tierId).stats;
