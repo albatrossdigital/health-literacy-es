@@ -11,11 +11,14 @@ angular.module('app.terms')
     link: function($scope, $element, $attrs) {
       // listen for a click
       $element.on('click', function() {
-        // set hash
-        location.hash = $scope.termLink;
         // open menu
         jQuery('.off-canvas-wrap').foundation('offcanvas', 'show', 'move-right');
-        $rootScope.scrollTo('term-' + $scope.termLink);
+        // if a term, open
+        if($scope.termLink) {  
+          // set hash
+          location.hash = $scope.termLink;
+          $rootScope.scrollTo('term-' + $scope.termLink);
+        }
       });
     }
   }
