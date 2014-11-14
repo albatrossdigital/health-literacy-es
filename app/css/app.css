@@ -6350,7 +6350,8 @@ body > * {
 
 .header-toggle, .get-insurance {
   position: absolute;
-  top: 5rem; }
+  top: 5rem;
+  z-index: 100; }
 
 .header-toggle {
   left: 1.25rem; }

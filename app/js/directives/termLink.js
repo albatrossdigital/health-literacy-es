@@ -2,7 +2,7 @@
 
 angular.module('app.terms')
 
-.directive('termLink', function factory() {
+.directive('termLink', function factory($rootScope) {
   return {
     restrict: 'A',
     scope: {
@@ -15,6 +15,7 @@ angular.module('app.terms')
         location.hash = $scope.termLink;
         // open menu
         jQuery('.off-canvas-wrap').foundation('offcanvas', 'show', 'move-right');
+        $rootScope.scrollTo('term-' + $scope.termLink);
       });
     }
   }

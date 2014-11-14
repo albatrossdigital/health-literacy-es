@@ -12,9 +12,9 @@ angular.module('app.terms', [])
         $scope.terms = pages;
       });
 
-      $rootScope.active = null;
+      $scope.active = null;
       $scope.setActive = function(key) {
-        $rootScope.active = $rootScope.active === key ? null : key;
+        $scope.active = $scope.active === key ? null : key;
       }
 
       // watch
