@@ -28,6 +28,7 @@
     &.active {
       border-color: $body-font-color;
       background: $body-font-color;
+      cursor: pointer;
     }
   }
 }

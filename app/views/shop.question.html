@@ -1,7 +1,7 @@
 <div class="choice-header triangle-bottom columns">
   <h2 bind-compiled-html="question.question | termsFilter"></h2>
   <ul class="status-dots">
-    <li ng-repeat="n in range(1, answers.total)" ng-class="questionClass(n)">{{n}}</li>
+    <li ng-repeat="n in range(1, answers.total)" ng-class="questionClass(n)" ng-click="gotoQuestion(n)">{{n}}</li>
   </ul>
 </div>
 <div class="full-all header-top clearfix">

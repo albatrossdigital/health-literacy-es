@@ -44,7 +44,8 @@ angular.module('app.shop', [
               '-1': 0,
               '0': 0,
               '1': 0,
-              'special': 0
+              'special': 0,
+              'question': []
             };
 
             $scope.getChildByKey = function(obj, key) {
@@ -91,6 +92,7 @@ angular.module('app.shop', [
             $scope.answer = function(key) {
               $scope.answers[key] ++;
               $scope.answers.answered ++;
+              $scope.answers.question[$scope.questionId] = key;
               // Done with the questions
               if ($scope.questionId+1 >= $scope.answers.total) {
                 $state.go('shop.tier');
@@ -106,6 +108,30 @@ angular.module('app.shop', [
               for (var i = min; i <= max; i ++) input.push(i);
               return input;
             };
+
+            $scope.gotoQuestion = function(questionId){
+              questionId--;
+              if (questionId < $scope.answers.total) {
+                var question = $scope.answers.question;
+                $scope.answers = {
+                  'total': shopData.questions.length,
+                  'answered': 0,
+                  '-1': 0,
+                  '0': 0,
+                  '1': 0,
+                  'special': 0,
+                  'question': []
+                };
+                for (var i=0; i<questionId; i++) {
+                  $scope.answers.question[i] = question[i];
+                  $scope.answers[question[i]] ++;
+                  $scope.answers.answered ++;
+                }
+                $scope.questionId = questionId;
+                console.log($scope.answers);
+                $state.go('shop.question', {questionId: $scope.questionId + 1});
+              }
+            }
 
             $scope.questionClass = function(n) {
               var id = parseInt($stateParams.questionId);
