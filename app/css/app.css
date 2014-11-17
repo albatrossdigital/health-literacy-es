@@ -6490,6 +6490,13 @@ body > * {
     color: #666666; }
     .footer a:hover {
       color: #424242; }
+  .footer small {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    bottom: -34px;
+    left: 0;
+    padding: 0 1.25rem; }
   .footer:before {
     content: "";
     height: 6px;
@@ -6535,7 +6542,7 @@ body > * {
 
 @media only screen and (max-width: 46.875rem) {
   .footer {
-    padding-bottom: 1.875rem; }
+    padding-bottom: 2.875rem; }
     .footer .left, .footer .right {
       float: none !important; } }
 
@@ -6544,7 +6551,10 @@ body > * {
     height: 5.9375rem;
     bottom: 0;
     width: 100%;
-    position: absolute; } }
+    position: absolute; }
+    .footer small {
+      bottom: -4px;
+      text-align: center; } }
 
 .story-text {
   padding-top: 1.5rem; }
