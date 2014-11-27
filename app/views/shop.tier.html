@@ -1,17 +1,17 @@
 <div class="row small-pad">
   <div class="columns medium-6 small-margin-bottom big-pad-right">
 
-    <h2>Result</h2>
+    <h2>Resultado</h2>
     <div class="tier-details tier tier-{{suggestedTier}}"><h1>{{activeTier.label}}</h1></div>
     <div class="tier-details">
       <p bind-compiled-html="activeTier.text | termsFilter"></p>
 
-      <p class="text-small"><strong>Please Note!</strong> This is an educational tool only and is not intended as advice or a recommendation.  Health insurance plans may differ dramatically in costs and benefits. You should seek professional assistance from a health insurance navigator or broker who can provide free help to find the health insurance plan that's right for your needs.</p>
+      <p class="text-small"><strong>¡Tenga en cuenta esto!</strong> Esta es solamente una herramienta educativa y no tiene como finalidad brindar asesoramiento ni recomendaciones.  Los planes de seguro médico pueden diferir drásticamente en cuanto a los costos y los beneficios. Encuentre a un asesor o agente de seguros médicos, quien le brindará ayuda gratuita para encontrar el plan de seguro médico adecuado para sus necesidades.</p>
     </div>
   </div>
   
   <div class="columns medium-6 tabs-wrapper big-pad-right">
-    <h2>Compare plans</h2>
+    <h2>Comparar planes</h2>
     <dl class="tabs">
       <dd ui-sref-active="active" ng-repeat="tier in tiers">
         <a ui-sref="shop.tier.tab({tierId: tier.key})" ng-click="tabClick(tier.key)">{{tier.label}}</a>
@@ -23,11 +23,11 @@
     
   </div>
   <div class="text-center">
-    <a href="#" ui-sref="shop" class="button radius">Start Over</a>
+    <a href="#" ui-sref="shop" class="button radius">Vuelva a comenzar</a>
   </div>
   <div class="next-button relative">
     <a ng-click="goToPlan()" class="button round">
-      <i class="fa fa-chevron-down"></i><span class="invisible">Next Page</span>
+      <i class="fa fa-chevron-down"></i><span class="invisible">Página siguiente</span>
     </a>
   </div>
 </div>

@@ -39,7 +39,7 @@ angular.module('app.use', [
           }
         })
         .state("use.option", {
-          data: { title: 'Pick a Scenario' },
+          data: { title: 'Elegir un escenario' },
           url: '/scenario',
           templateUrl: 'views/use.scenario.html',
           controller: function($scope, metaInfo, useData) {
@@ -52,7 +52,7 @@ angular.module('app.use', [
           }
         })
         .state("use.action", {
-          data: { title: 'Where do you go?' },
+          data: { title: '¿Adónde vas?' },
           url: '/action?scenarioId',
           templateUrl: 'views/use.action.html',
           controller: function($scope, $stateParams, useData) {
@@ -67,7 +67,7 @@ angular.module('app.use', [
           }
         })
         .state("use.premium", {
-          data: { title: 'Premuims' },
+          data: { title: 'Cuotas' },
           url: '/premium/:premuimId?scenarioId&actionId',
           templateUrl: 'views/use.premium.html',
           controller: function($scope, $stateParams, useData, $location) {
@@ -114,7 +114,7 @@ angular.module('app.use', [
           }
         })
         .state("use.result", {
-          data: { title: "Results" },
+          data: { title: "Resultados" },
           url: '/result?scenarioId&actionId',
           templateUrl: 'views/use.result.html',
           controller: function($scope, $stateParams, useData, $location, $anchorScroll) {
@@ -122,12 +122,12 @@ angular.module('app.use', [
             var returnCompare = function() {
               return {
                 'insured': {
-                  'title': 'Cost with insurance',
+                  'title': 'Sus costos si no tenía seguro',
                   'items': {},
                   'total': 0
                 },
                 'uninsured': {
-                  'title': 'Cost with NO insurance',
+                  'title': 'Sus costos si no tenía seguro',
                   'items': {},
                   'total': 0
                 },
@@ -166,7 +166,7 @@ angular.module('app.use', [
             // Do we show "if you'd gone to doctor" ?
             if($stateParams.scenarioId < 2 && $stateParams.actionId > 0) {
               var compareDoctor = returnCompare();
-              compareDoctor.insured.title = "If you’d gone to your Primary Care Provider?";
+              compareDoctor.insured.title = "¿Y si hubiese visitado al proveedor de atención médica primaria?";
               var compareData = useData['results'][$stateParams.scenarioId][0];
               
               // init doctor compare 

@@ -1,6 +1,6 @@
 
 <div class="result-text columns medium-7 medium-centered text-center">
-  <div class="choice-header"><h2>Result</h2></div>
+  <div class="choice-header"><h2>Resultado</h2></div>
   <p bind-compiled-html="pageData.results.text | termsFilter"></p>
 </div>
 
@@ -13,7 +13,7 @@
     
   </div>
   <p ng-if="showCompareDoctor" class="text-center columns clear-both">
-    <a open-reveal="compareModal">If you’d gone to your Primary Care Provider?</a></p>
+    <a open-reveal="compareModal">¿Y si hubiese visitado al proveedor de atención médica primaria?</a></p>
   </p>
   <p class="result-hint columns medium-7 medium-centered text-center text-small"
        ng-if="pageData.results.hint">
@@ -21,10 +21,10 @@
        {{pageData.results.hint}}
   </p>
   <div class="text-center clear-both">
-    <a href="#" ui-sref="get-insurance" class="button radius">Get Insurance!</a>
+    <a href="#" ui-sref="get-insurance" class="button radius">¡Obtenga seguro!</a>
   </div>
   <div class="text-center">
-    <a href="#" ui-sref="use" class="button radius">Start Over</a>
+    <a href="#" ui-sref="use" class="button radius">Vuelva a comenzar y pruebe con otra opción</a>
   </div>
 
 </div>

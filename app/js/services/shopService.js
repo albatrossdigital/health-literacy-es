@@ -22,117 +22,117 @@ angular.module('app.shop')
             // QUESTIONS
             'questions': [
               {
-                'question': 'How often do you see your primary care provider?',
+                'question': '¿Con qué frecuencia consulta a su proveedor de atención médica primaria?',
                 'options': [
                   {
-                    'label': 'Annual Physical',
+                    'label': 'Anualmente para examen físico',
                     'value': -1
                   },
                   {
-                    'label': '1-3 times/year',
+                    'label': 'De 1 a 3 veces/año',
                     'value': 0
                   },
                   {
-                    'label': '4+ times/year',
+                    'label': 'Más de 4 veces/año',
                     'value': 1
                   }
                 ]
               },
               {
-                'question': 'Do you normally see a specialist? (like a heart doctor, brain doctor, asthma or lung doctor)',
+                'question': '¿Suele consultar a especialistas? (como a un cardiólogo, un neurólogo, un especialista en asma o un neumonólogo)',
                 'options': [
                   {
                     'label': 'No',
                     'value': -1
                   },
                   {
-                    'label': 'Yes',
+                    'label': 'Sí',
                     'value': 1
                   }
                 ]
               },
               {
-                'question': 'Could you see yourself going to the Emergency Room because of health or lifestyle...',
+                'question': 'Se puede ver visitando la sala de emergencia por cuestiones de salud o estilo de vida...',
                 'options': [
                   {
-                    'label': 'Once or less per year',
+                    'label': 'Una vez o menos al año',
                     'value': -1
                   },
                   {
-                    'label': 'Maybe a couple times a year',
+                    'label': 'Quizá un par de veces al año',
                     'value': 0
                   },
                   {
-                    'label': 'Jane, the ER receptionist, and I are becoming best friends',
+                    'label': 'Ana la recepcionista de la sala de emergencia, y yo nos estamos convirtiendo en mejores amigos',
                     'value': 1
                   }
                 ]
               },
               {
-                'question': 'How many prescription drugs do you regularly use/need?',
+                'question': '¿Cuántos medicamentos recetados usa/necesita con regularidad?',
                 'options': [
                   {
-                    'label': 'None',
+                    'label': 'Ninguno',
                     'value': -1
                   },
                   {
-                    'label': '1-3 prescriptions',
+                    'label': 'De 1 a 3 medicamentos recetados',
                     'value': 0
                   },
                   {
-                    'label': '4+ prescriptions',
+                    'label': 'Más de 4 medicamentos recetados',
                     'value': 1
                   }
                 ]
               },
               {
-                'question': 'Are you planning to have any surgery this year?',
+                'question': '¿Planea someterse a alguna cirugía este año?',
                 'options': [
                   {
                     'label': 'No',
                     'value': -1
                   },
                   {
-                    'label': 'Yes',
+                    'label': 'Sí',
                     'value': 1
                   }
                 ]
               },
               {
-                'question': 'Thinking of having a baby this year?',
+                'question': '¿Piensa en tener un bebé este año?',
                 'options': [
                   {
                     'label': 'No',
                     'value': -1
                   },
                   {
-                    'label': 'Yes',
+                    'label': 'Sí',
                     'value': 1
                   }
                 ]
               },
               {
-                'question': 'Do you need access to medical equipment (such as an insulin pen)?',
+                'question': '¿Necesita acceso a equipos médicos (como por ejemplo una pluma de insulina,...)?',
                 'options': [
                   {
                     'label': 'No',
                     'value': -1
                   },
                   {
-                    'label': 'Yes',
+                    'label': 'Sí',
                     'value': 1
                   }
                 ]
               },
               {
-                'question': 'Is your monthly income in the range shown on <a open-reveal="compareModal">this chart</a>? (if below these ranges, you may qualify for Medicaid a low cost state insurance program)',
+                'question': '¿Se encuentra su ingreso mensual dentro del rango que se muestra en <a open-reveal="compareModal">esta tabla</a>? (si es menos que estos rangos, posiblemente califique para Medicaid, un programa de seguro estatal de bajo costo)',
                 'options': [
                   {
-                    'label': 'Yes',
+                    'label': 'Sí',
                     'value': 'special' // special (always silver)
                   },
                   {
-                    'label': 'No, my monthly income is not in this range',
+                    'label': 'No, mi ingreso mensual es superior',
                     'value': 0
                   }
                 ]
@@ -142,8 +142,8 @@ angular.module('app.shop')
             'tiers': [
               {
                 'key': 'bronze',
-                'label': 'Bronze',                
-                'text': 'Bronze plans have lower premiums, but higher deductibles and out-of-pocket costs.',
+                'label': 'Bronce',                
+                'text': 'Los planes Bronce tienen cuotas más bajas, pero deducibles y desembolsos más altos.',
                 'stats': {
                   'premium': '$128',
                   'deductible': '$6,500',
@@ -161,8 +161,8 @@ angular.module('app.shop')
               },
               {
                 'key': 'silver',
-                'label': 'Silver',
-                'text': 'Silver level plans are often the most popular with moderate premiums and moderate deductibles and out-of-pocket costs.',
+                'label': 'Plata',
+                'text': 'Los planes de nivel Plata suelen ser los más populares debido a que tienen cuotas, deducibles y desembolsos moderados.',
                 'stats': {
                   'premium': '$220',
                   'deductible': '$2,050',
@@ -179,8 +179,8 @@ angular.module('app.shop')
               },
               {
                 'key': 'gold',
-                'label': 'Gold',
-                'text': 'A Gold level plan may be right for you, if you think you will use more health care services. Gold level plans have higher premiums, but lower deductibles and out-of-pocket costs.',
+                'label': 'Oro',
+                'text': 'Un plan de nivel Oro podría ser adecuado para usted si cree que usará mas servicios de atención médica. Los planes de nivel Oro tienen cuotas más altas, pero deducibles y desembolsos más bajos.',
                 'stats': {
                   'premium': '$270',
                   'deductible': '$1,000',
@@ -201,29 +201,29 @@ angular.module('app.shop')
               {
                 'key': 'hmo',
                 'label': 'HMO',
-                'longLabel': 'Health Maintenance Organization',
-                'premiums': 'Tend to be lower',
-                'primaryCare': 'Regardless of what is happening with your health, you will probably have to first select and see a Primary Care Provider within the HMO network.',
-                'specialty': 'You are almost always required to first see your Primary Care Provider before you can see a specialist with a referral.',
-                'outOfNetwork': 'Your insurance does not cover out-of-network providers except in emergency situations when no HMO providers are available.'
+                'longLabel': 'Organización para el mantenimiento de la salud',
+                'premiums': 'tienden a ser más económicas',
+                'primaryCare': 'independientemente de lo que esté ocurriendo con su salud, probablemente primero deba seleccionar y consultar a un proveedor de atención médica primaria perteneciente a la red de HMO.',
+                'specialty': 'casi siempre se le exige que primero consulte al proveedor de atención médica primaria antes de poder visitar a un especialista con una remisión.',
+                'outOfNetwork': 'su seguro no cubre a los proveedores fuera de la red, excepto en situaciones de emergencia en la que no hay proveedores HMO disponibles.'
               },
               {
                 'key': 'epo',
                 'label': 'EPO',
-                'longLabel': 'Exclusive Provider Organization',
-                'premiums': 'Tend to be lower',
-                'primaryCare': 'Limited choice of Primary Care Providers you can see within the network.',
-                'specialty': 'Limited choice of specialists within the network.',
-                'outOfNetwork': 'Your insurance does not cover out-of-network providers except in emergency situations when no in-network providers are available.'
+                'longLabel': 'Organización de proveedores exclusivos',
+                'premiums': 'tienden a ser más económicas',
+                'primaryCare': 'elección limitada de proveedores de atención médica primaria a quienes puede consultar dentro de la red.',
+                'specialty': 'elección limitada de especialistas dentro de la red.',
+                'outOfNetwork': 'su seguro no cubre a los proveedores fuera de la red, excepto en situaciones de emergencia en la que no hay proveedores dentro de la red disponibles.'
               },
               {
                 'key': 'ppo',
                 'label': 'PPO',
-                'longLabel': 'Preferred Provider Organization',
-                'premiums': 'Higher',
-                'primaryCare': 'Broad choice of primary care providers in the network.',
-                'specialty': 'You can choose to see a specialist often without a referral from your Primary Care Provider. Relatively broad choice of specialists.',
-                'outOfNetwork': 'You can see providers out-of-network, but you will have to cover the full costs until you reach a separate, more expensive out-of-pocket maximum. (often double your in-network maximum)'
+                'longLabel': 'Organización de proveedores preferidos',
+                'premiums': 'más altas',
+                'primaryCare': 'amplia elección de proveedores de atención médica primaria en la red.',
+                'specialty': 'puede optar por consultar a un especialista a menudo sin una remisión del proveedor de atención médica primaria. Elección relativamente amplia de especialistas.',
+                'outOfNetwork': 'puede consultar a proveedores fuera de la red, pero deberá cubrir los costos completos hasta alcanzar un desembolso máximo más costoso por separado. (a menudo, del doble del máximo dentro de la red)'
               }
             ]
 

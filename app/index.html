@@ -3,14 +3,14 @@
   <head ng-controller="metaInfoCtrl">
     <base href="/"></base>
     <meta charset="utf-8">
-    <meta property="og:image" content="http://coveredu.org/images/coveredu.jpg" />
-    <meta property="og:url" content="http://coveredu.org" />
-    <meta property="og:title" content="Health Literacy" />
+    <meta property="og:image" content="http://segurotu.org/images/segurotu.jpg" />
+    <meta property="og:url" content="http://segurotu.org" />
+    <meta property="og:title" content="SeguroTU" />
     <meta property="og:description" content="Health Literacy is an educational site giving straight forward info on healthcare options." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" ng-attr-content="{{metaDescription()}}" />
     <meta name="keywords" ng-attr-content="{{metaKeywords()}}" />
-    <title ng-bind="pageTitle();">Health Literacy</title>
+    <title ng-bind="pageTitle();">SeguroTU</title>
     <noscript>
         <meta name="description" content="Health Literacy is an educational site giving straight forward info on healthcare options" />
         <meta name="keywords" content="Health Literacy, Health, Education, Colorado, Healthcare" />
@@ -69,11 +69,11 @@
           <a term-link class="header-toggle left">
             <span>
                 <span class="s1"></span><span class="s2"></span><span class="s3"></span>
-            </span> Terms
+            </span> Términos
           </a>
-          <h2 class="site-name"><a href="#" ui-sref="home"><img src="../images/logo.png" alt="Home" Title="Home" />Covered <span>U</span></a></h2>
+          <h2 class="site-name"><a href="#" ui-sref="home"><img src="../images/logo.png" alt="Home" Title="Home" />Seguro <span>TU</span></a></h2>
           <a class="right get-insurance" href="#" ui-sref="get-insurance">
-            <i class="fa fa-plus"></i> Get Insurance
+            <i class="fa fa-plus"></i> ¡Obtenga seguro!
           </a>
         </div></div></header>
         <main id="main" class="main full-height transform" ui-view></main>
@@ -85,12 +85,12 @@
         <footer class="footer" ng-controller="metaInfoCtrl"><div class="row"><div class="columns">
             <div class="left">
               <ul class="inline-list">
-                <li ui-sref-active="active"><a href="#" ui-sref="about">About</a></li>
-                <li ui-sref-active="active"><a href="#" ui-sref="resources">Resources</a></li>
+                <li ui-sref-active="active"><a href="#" ui-sref="about">Acerca de</a></li>
+                <li ui-sref-active="active"><a href="#" ui-sref="resources">Recursos</a></li>
               </ul>
             </div>
             <div class="right">
-              Share <div class="share42init" ng-attr-data-url="{{$root.pageUrl}}" ng-attr-data-title="{{pageTitle()}}" ng-attr-data-image="{{$root.pageUrl}}/images/logo.png" data-icons-file="../../images/share42icons.png" ng-attr-data-description="{{metaDescription()}}"></div>
+              Compartir <div class="share42init" ng-attr-data-url="{{$root.pageUrl}}" ng-attr-data-title="{{pageTitle()}}" ng-attr-data-image="{{$root.pageUrl}}/images/logo.png" data-icons-file="../../images/share42icons.png" ng-attr-data-description="{{metaDescription()}}"></div>
               <!--<a target="_blank" href="http://twitter.com/COHealthAccess" class="icon-only"><i class="fa fa-twitter"></i> Twitter</a> <a target="_blank" href="http://www.pinterest.com/cohealthaccess/" class="icon-only"><i class="fa fa-pinterest"></i> Pinterest</a> <a target="_blank" href="http://facebook.com/cohealthaccess" class="icon-only"><i class="fa fa-facebook"></i> Facebook</a>-->
             </div>
         </div></div></footer>
