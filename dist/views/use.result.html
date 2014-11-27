@@ -1,0 +1,40 @@
+
+<div class="result-text columns medium-7 medium-centered text-center">
+  <div class="choice-header"><h2>Resultado</h2></div>
+  <p bind-compiled-html="pageData.results.text | termsFilter"></p>
+</div>
+
+<div class="row">
+  <div ng-repeat="(key,group) in compare"
+       compare-table 
+       compare-key="key" 
+       compare-group="group"
+       class="compare-section-{{key}} columns medium-6">
+    
+  </div>
+  <p ng-if="showCompareDoctor" class="text-center columns clear-both">
+    <a open-reveal="compareModal">¿Y si hubiese visitado al proveedor de atención médica primaria?</a></p>
+  </p>
+  <p class="result-hint columns medium-7 medium-centered text-center text-small"
+       ng-if="pageData.results.hint">
+
+       {{pageData.results.hint}}
+  </p>
+  <div class="text-center clear-both">
+    <a href="#" ui-sref="get-insurance" class="button radius">¡Obtenga seguro!</a>
+  </div>
+  <div class="text-center">
+    <a href="#" ui-sref="use" class="button radius">Vuelva a comenzar y pruebe con otra opción</a>
+  </div>
+
+</div>
+<div ng-if="showCompareDoctor" id="compareModal" class="reveal-modal" data-reveal>
+  <a class="close-reveal-modal">&#215;</a>
+  <div compare-table 
+       compare-key="0" 
+       compare-group="compareDoctor['insured']"
+       class="compare-section-doctor columns medium-12">
+
+  </div>
+</div>
+
