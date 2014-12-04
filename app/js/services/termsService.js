@@ -45,8 +45,8 @@ angular.module('app.terms')
             },
             {
               'key': 'out-of-pocket-max',
-              'regex': 'límite de desembolso\/Desembolso máximo',
-              'label': 'Límite de desembolso/Desembolso máximo',
+              'regex': 'límite de desembolso\/Desembolso máximo máximo',
+              'label': 'Límite de desembolso/Desembolso máximo máximo',
               'text': 'El monto total que tiene que pagar durante el año antes de que el seguro médico pague el 100% de sus costos médicos. El desembolso máximo es solo para un año y vuelve a empezar cada año.'
             },
             {

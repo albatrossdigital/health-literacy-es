@@ -39,7 +39,7 @@ angular.module('app.use', [
           }
         })
         .state("use.option", {
-          data: { title: 'Elegir un escenario' },
+          data: { title: 'Elija una situación' },
           url: '/scenario',
           templateUrl: 'views/use.scenario.html',
           controller: function($scope, metaInfo, useData) {
@@ -52,7 +52,7 @@ angular.module('app.use', [
           }
         })
         .state("use.action", {
-          data: { title: '¿Adónde vas?' },
+          data: { title: '¿Adónde va ud.?' },
           url: '/action?scenarioId',
           templateUrl: 'views/use.action.html',
           controller: function($scope, $stateParams, useData) {

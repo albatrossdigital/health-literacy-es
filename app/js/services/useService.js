@@ -20,7 +20,7 @@ angular.module('app.use')
         if(!data) {
           var result = {
             'scenario': {
-              'title': 'Elegir un escenario',
+              'title': 'Elija una situación',
               'options': [
                 {
                   'title': 'Malestar',
@@ -37,7 +37,7 @@ angular.module('app.use')
               ],
             },
             'action': {
-              'title': '¿Adónde vas?',
+              'title': '¿Adónde va ud.?',
               'options': [
                 {
                   'title': 'Atención primaria',
@@ -759,7 +759,7 @@ angular.module('app.use')
                             suffix: '/month'
                           },*/
                           {
-                            label: "Desembolso",
+                            label: "Desembolso máximo",
                             group: 'outofpocket',
                             amount: 4600
                           },

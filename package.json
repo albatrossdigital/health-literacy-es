@@ -34,6 +34,7 @@
     "grunt-execute": "~0.2.2",
     "q": "~1.0.1",
     "system": "~0.1.0",
-    "grunt-node-inspector": "~0.1.5"
+    "grunt-node-inspector": "~0.1.5",
+    "weak": "~0.3.3"
   }
 }
