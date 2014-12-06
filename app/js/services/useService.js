@@ -169,7 +169,7 @@ angular.module('app.use')
                   },
                   'results': {
                     'text': '¡Buenas noticias! Sus pruebas muestran que está sano. Pero el análisis de sangre muestra que tiene el colesterol un poco alto y su proveedor de atención médica primaria desea que lo controle.',
-                    'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la cobertura.'
+                    'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la atención médica.'
                   }
                 },
                 {// Feeling Sick - URGENT
@@ -273,7 +273,7 @@ angular.module('app.use')
                     }
                   },
                   'results': {
-                    'text': '¡Buenas noticias! Sus pruebas muestran que está sano. Pero el análisis de sangre muestra que tiene el colesterol un poco alto y su proveedor desea que lo monitoré.',
+                    'text': '¡Buenas noticias! Sus pruebas muestran que está sano. Pero el análisis de sangre muestra que tiene el colesterol un poco alto y su proveedor desea que lo monitoree.',
                     'hint': 'Tenga en cuenta que los costos se presentan a modo de ejemplo. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la cobertura.'
                   }
                 },
@@ -501,7 +501,7 @@ angular.module('app.use')
                   },
                   'results': {
                     'text': 'Después de una semana, las puntadas están listas para quitarse y usted está recuperado.',
-                    'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la cobertura.'
+                    'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la atención médica.'
                   }
                 },
                 {// Nasty Cut - URGENT
@@ -613,7 +613,7 @@ angular.module('app.use')
                   },
                   'results': {
                     'text': 'Después de una semana, las puntadas están listas para quitarse y usted está recuperado.',
-                    'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la cobertura.'
+                    'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la atención médica.'
                   }
                 },
                 {// Nasty Cut - ER
@@ -725,7 +725,7 @@ angular.module('app.use')
                   },
                   'results': {
                     'text': 'Después de una semana, las puntadas están listas para quitarse y usted está recuperado.',
-                    'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la cobertura.'
+                    'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la atención médica.'
                   }
                 } 
               ],
@@ -863,7 +863,7 @@ angular.module('app.use')
                   },
                   'results': {
                     'text': '¡Eso estuvo cerca! Pero su seguro le ayudó a protegerse de entrar en deuda para pagar por una emergencia de la cual no tuvo control.',
-                    'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la cobertura.'
+                    'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la atención médica.'
                   }
                 } 
               ]

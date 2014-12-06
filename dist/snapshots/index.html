@@ -67,7 +67,7 @@
         </div></div></header>
         <!-- uiView:  --><main id="main" class="main full-height transform ng-scope" ui-view=""><div class="clearfix full-height small-12 home ng-scope">
   <div class="left medium-6 columns no-padding use-panel full-height red-light bg-desk-repeat">
-    <a class="full-all full-link h1" href="/use" ui-sref="use"><span>Cómo USAR seguro de salud</span></a>
+    <a class="full-all full-link h1" href="/use" ui-sref="use"><span>Cómo USAR su seguro de salud</span></a>
   </div>
   <div class="right medium-6 columns no-padding shop-panel full-height blue-light bg-case-repeat">
     <a class="full-all full-link h1" href="/shop" ui-sref="shop"><span>Cómo ADQUIRIR UN PLAN de seguro de salud</span></a>
@@ -77,7 +77,7 @@
 
         <!-- Off Canvas Menu -->
         <!-- ngInclude: undefined --><ng-include src="'/views/terms.html'" class="ng-scope"><aside class="left-off-canvas-menu ng-scope" ng-controller="termsCtrl" ng-swipe-left="closeSwipe()">
-  <h2 class="columns"><a class="exit-off-canvas"></a><i class="fa fa-times-circle"></i> Terms</h2>
+  <h2 class="columns"><a class="exit-off-canvas"></a><i class="fa fa-times-circle"></i> Términos</h2>
   <div class="columns ng-binding"></div>
 
   <dl class="accordion" data-accordion="myAccordionGroup">
@@ -107,7 +107,7 @@
       </div>
     </dd><!-- end ngRepeat: term in terms --><dd class="accordion-navigation ng-scope" ng-repeat="term in terms" id="term-out-of-pocket-max" ng-class="active === term.key ? 'active' : ''">
 
-      <a ng-click="setActive(term.key)" class="ng-binding">Límite de desembolso/Desembolso máximo máximo</a>
+      <a ng-click="setActive(term.key)" class="ng-binding">Límite de desembolso/Desembolso máximo</a>
       <div class="content ng-binding" ng-class="active === term.key ? 'active' : ''">
         El monto total que tiene que pagar durante el año antes de que el seguro médico pague el 100% de sus costos médicos. El desembolso máximo es solo para un año y vuelve a empezar cada año.
       </div>

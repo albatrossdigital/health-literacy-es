@@ -122,12 +122,12 @@ angular.module('app.use', [
             var returnCompare = function() {
               return {
                 'insured': {
-                  'title': 'Sus costos si no tenía seguro',
+                  'title': 'Sus costos',
                   'items': {},
                   'total': 0
                 },
                 'uninsured': {
-                  'title': 'Sus costos si no tenía seguro',
+                  'title': 'Si no tenía seguro',
                   'items': {},
                   'total': 0
                 },

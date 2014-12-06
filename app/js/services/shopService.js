@@ -132,7 +132,7 @@ angular.module('app.shop')
                     'value': 'special' // special (always silver)
                   },
                   {
-                    'label': 'No, mi ingreso mensual es superior',
+                    'label': 'No, mi ingreso mensual cae fuera de ese rango',
                     'value': 0
                   }
                 ]
@@ -180,7 +180,7 @@ angular.module('app.shop')
               {
                 'key': 'gold',
                 'label': 'Oro',
-                'text': 'Un plan de nivel Oro podría ser adecuado para usted si cree que usará mas servicios de atención médica. Los planes de nivel Oro tienen cuotas más altas, pero deducibles y desembolsos más bajos.',
+                'text': 'Un plan de nivel Oro podría ser adecuado para usted si cree que usará más servicios de atención médica. Los planes de nivel Oro tienen cuotas más altas, pero deducibles y desembolsos más bajos.',
                 'stats': {
                   'premium': '$270',
                   'deductible': '$1,000',
@@ -202,28 +202,28 @@ angular.module('app.shop')
                 'key': 'hmo',
                 'label': 'HMO',
                 'longLabel': 'Organización para el mantenimiento de la salud',
-                'premiums': 'tienden a ser más económicas',
-                'primaryCare': 'independientemente de lo que esté ocurriendo con su salud, probablemente primero deba seleccionar y consultar a un proveedor de atención médica primaria perteneciente a la red de HMO.',
-                'specialty': 'casi siempre se le exige que primero consulte al proveedor de atención médica primaria antes de poder visitar a un especialista con una remisión.',
-                'outOfNetwork': 'su seguro no cubre a los proveedores fuera de la red, excepto en situaciones de emergencia en la que no hay proveedores HMO disponibles.'
+                'premiums': 'Tienden a ser más económicas',
+                'primaryCare': 'Independientemente de lo que esté ocurriendo con su salud, probablemente primero deba seleccionar y consultar a un proveedor de atención médica primaria perteneciente a la red de HMO.',
+                'specialty': 'Casi siempre se le exige que primero consulte al proveedor de atención médica primaria antes de poder visitar a un especialista con una remisión.',
+                'outOfNetwork': 'Su seguro no cubre a los proveedores fuera de la red, excepto en situaciones de emergencia en la que no hay proveedores HMO disponibles.'
               },
               {
                 'key': 'epo',
                 'label': 'EPO',
                 'longLabel': 'Organización de proveedores exclusivos',
-                'premiums': 'tienden a ser más económicas',
-                'primaryCare': 'elección limitada de proveedores de atención médica primaria a quienes puede consultar dentro de la red.',
-                'specialty': 'elección limitada de especialistas dentro de la red.',
-                'outOfNetwork': 'su seguro no cubre a los proveedores fuera de la red, excepto en situaciones de emergencia en la que no hay proveedores dentro de la red disponibles.'
+                'premiums': 'Tienden a ser más económicas',
+                'primaryCare': 'Elección limitada de proveedores de atención médica primaria a quienes puede consultar dentro de la red.',
+                'specialty': 'Elección limitada de especialistas dentro de la red.',
+                'outOfNetwork': 'Su seguro no cubre a los proveedores fuera de la red, excepto en situaciones de emergencia en la que no hay proveedores dentro de la red disponibles.'
               },
               {
                 'key': 'ppo',
                 'label': 'PPO',
                 'longLabel': 'Organización de proveedores preferidos',
-                'premiums': 'más altas',
-                'primaryCare': 'amplia elección de proveedores de atención médica primaria en la red.',
-                'specialty': 'puede optar por consultar a un especialista a menudo sin una remisión del proveedor de atención médica primaria. Elección relativamente amplia de especialistas.',
-                'outOfNetwork': 'puede consultar a proveedores fuera de la red, pero deberá cubrir los costos completos hasta alcanzar un desembolso máximo más costoso por separado. (a menudo, del doble del máximo dentro de la red)'
+                'premiums': 'Más altas',
+                'primaryCare': 'Amplia elección de proveedores de atención médica primaria en la red.',
+                'specialty': 'Puede optar por consultar a un especialista a menudo sin una remisión del proveedor de atención médica primaria. Elección relativamente amplia de especialistas.',
+                'outOfNetwork': 'Puede consultar a proveedores fuera de la red, pero deberá cubrir los costos completos hasta alcanzar un desembolso máximo más costoso por separado. (A menudo, del doble del máximo dentro de la red).'
               }
             ]
 
