@@ -168,7 +168,7 @@ angular.module('app.use')
                     }
                   },
                   'results': {
-                    'text': '¡Buenas noticias! Sus pruebas muestran que está sano. Pero el análisis de sangre muestra que tiene el colesterol un poco alto y su proveedor de atención médica primaria desea que lo controle.',
+                    'text': '¡Buenas noticias! Sus pruebas muestran que está sano. Pero el análisis de sangre muestra que tiene el colesterol un poco alto y su proveedor de atención médica primaria desea que lo monitoree.',
                     'hint': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la atención médica.'
                   }
                 },
@@ -386,7 +386,7 @@ angular.module('app.use')
                     }
                   },
                   'results': {
-                    'text': '¡Buenas noticias! Sus pruebas muestran que está sano. Pero el análisis de sangre muestra que tiene el colesterol un poco alto y su proveedor desea que lo controle.',
+                    'text': '¡Buenas noticias! Sus pruebas muestran que está sano. Pero el análisis de sangre muestra que tiene el colesterol un poco alto y su proveedor desea que lo monitoree.',
                     'hint': 'Tenga en cuenta que los costos se presentan a modo de ejemplo. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la cobertura.'
                   }
                 } 
