@@ -87,7 +87,7 @@ angular.module('app', [
           if ($window.ga){
             $window.ga('send', 'pageview', { 
               page: $location.path(),
-              title: toState.data && toState.data.title ? toState.data.title : 'Health Literacy'
+              title: toState.data && toState.data.title ? toState.data.title : 'SeguroTU'
             });
           }
 
@@ -108,9 +108,9 @@ angular.module('app', [
     function ($locationProvider,   $stateProvider,   $urlRouterProvider,   metaInfoProvider) {
 
       // Set base meta info
-      metaInfoProvider.setBaseTitle('Health Literacy');
-      metaInfoProvider.setBaseDescription('Health Literacy is an educational site giving straight forward info on healthcare options');
-      metaInfoProvider.setBaseKeywords('Health Literacy, Health, Education, Colorado, Healthcare');
+      metaInfoProvider.setBaseTitle('SeguroTU');
+      metaInfoProvider.setBaseDescription('SeguroTu es un sitio web educativo con información simple y directa sobre opciones para el cuidado de la salud.');
+      metaInfoProvider.setBaseKeywords('educación sobre la salud, salud, educación, Colorado, cuidado de la salud');
 
 
       // // Set up analytics tracking
