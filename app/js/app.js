@@ -25,7 +25,7 @@ angular.module('app', [
 
       // Set Url
       //$rootScope.pageUrl = 'http://localhost:9000';
-      $rootScope.pageUrl = 'http://coveredu.org';
+      $rootScope.pageUrl = 'http://segurotu.org';
 
 			// It's very handy to add references to $state and $stateParams to the $rootScope
 			$rootScope.$state = $state;
