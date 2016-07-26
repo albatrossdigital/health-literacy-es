@@ -359,7 +359,7 @@ html, body {
 
 body {
   background: #fff;
-  color: #666666;
+  color: #333333;
   padding: 0;
   margin: 0;
   font-family: "jaf-facitweb";
@@ -3132,7 +3132,7 @@ label.error {
   display: block;
   width: 0;
   height: inherit;
-  background: #666666; }
+  background: #333333; }
 
 .joyride-close-tip {
   position: absolute;
@@ -3760,7 +3760,7 @@ ul.pagination {
   left: 0;
   background-color: #FFFFFF;
   padding: 1.25rem;
-  border: solid 1px #666666;
+  border: solid 1px #333333;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   padding: 1.875rem; }
   @media only screen and (max-width: 46.875rem) {
@@ -4176,7 +4176,7 @@ table {
         background-color: #d3d3d3; }
     .tabs dd.active a, .tabs .tab-title.active a {
       background-color: #FFFFFF;
-      color: #666666; }
+      color: #333333; }
   .tabs.radius dd:first-child a, .tabs.radius .tab:first-child a {
     -webkit-border-bottom-left-radius: 3px;
     -webkit-border-top-left-radius: 3px;
@@ -4958,14 +4958,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "jaf-facitweb";
   font-weight: 600;
   font-style: 400;
-  color: #666666;
+  color: #333333;
   text-rendering: optimizeLegibility;
   margin-top: 0;
   margin-bottom: 1.875rem;
   line-height: 1.4; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     font-size: 60%;
-    color: #9c9c9c;
+    color: #7a7a7a;
     line-height: 0; }
 
 h1 {
@@ -4988,7 +4988,7 @@ h6 {
 
 .subheader {
   line-height: 1.4;
-  color: #9c9c9c;
+  color: #7a7a7a;
   font-weight: 400;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem; }
@@ -5076,7 +5076,7 @@ dl dd {
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: #666666;
+  color: #333333;
   cursor: help; }
 
 abbr {
@@ -5092,15 +5092,15 @@ blockquote {
   blockquote cite {
     display: block;
     font-size: 0.8125rem;
-    color: #898989; }
+    color: #626262; }
     blockquote cite:before {
       content: "\2014 \0020"; }
     blockquote cite a, blockquote cite a:visited {
-      color: #898989; }
+      color: #626262; }
 
 blockquote, blockquote p {
   line-height: 1.6;
-  color: #9c9c9c; }
+  color: #7a7a7a; }
 
 /* Microformats */
 .vcard {
@@ -5914,7 +5914,7 @@ th.hide-for-touch {
     background-color: #013b68; }
 
 .h1, .h2, .h3 {
-  font-color: #666666;
+  font-color: #333333;
   font-family: "jaf-facitweb";
   font-style: 400;
   text-rendering: optimizeLegibility; }
@@ -6483,9 +6483,9 @@ body > * {
   position: relative;
   z-index: 4; }
   .footer a {
-    color: #666666; }
+    color: #333333; }
     .footer a:hover {
-      color: #424242; }
+      color: #0f0f0f; }
   .footer small {
     z-index: 0;
     position: absolute;
@@ -6558,7 +6558,7 @@ body > * {
     content: '';
     padding-top: 1.5rem;
     margin: 1.5rem 1.25rem 0;
-    border-top: 1px solid #666666;
+    border-top: 1px solid #333333;
     display: block; }
 
 .hint {
@@ -6627,8 +6627,8 @@ body > * {
     .status-dots li.current {
       background: #CCCCCC; }
     .status-dots li.active {
-      border-color: #666666;
-      background: #666666;
+      border-color: #333333;
+      background: #333333;
       cursor: pointer; }
 
 .tier-details {
@@ -6664,8 +6664,8 @@ body > * {
   background: radial-gradient(  at 50% 50%, rgba(186, 118, 105, 0.1) 0%, rgba(186, 118, 105, 0.6) 50%, rgba(186, 118, 105, 0.9) 100%); }
 
 .tier-silver:before {
-  background: -webkit-radial-gradient(50% 50%,   rgba(102, 102, 102, 0.1) 0%, rgba(102, 102, 102, 0.6) 50%, rgba(102, 102, 102, 0.9) 100%);
-  background: radial-gradient(  at 50% 50%, rgba(102, 102, 102, 0.1) 0%, rgba(102, 102, 102, 0.6) 50%, rgba(102, 102, 102, 0.9) 100%); }
+  background: -webkit-radial-gradient(50% 50%,   rgba(51, 51, 51, 0.1) 0%, rgba(51, 51, 51, 0.6) 50%, rgba(51, 51, 51, 0.9) 100%);
+  background: radial-gradient(  at 50% 50%, rgba(51, 51, 51, 0.1) 0%, rgba(51, 51, 51, 0.6) 50%, rgba(51, 51, 51, 0.9) 100%); }
 
 .tier-gold:before {
   background: -webkit-radial-gradient(50% 50%,   rgba(235, 190, 69, 0.1) 0%, rgba(235, 190, 69, 0.6) 50%, rgba(235, 190, 69, 0.9) 100%);
