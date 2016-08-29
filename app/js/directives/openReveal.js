@@ -4,7 +4,7 @@ angular.module('app')
 
 .directive('openReveal', function factory() {
   return {
-    restrict: 'A',
+    restrict: 'E',
     scope: {
       'openReveal': '@'
     },

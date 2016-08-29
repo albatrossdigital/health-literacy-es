@@ -58,13 +58,13 @@ angular.module('app.use')
                 {// Feeling Sick - PRIMARY
                   'stories': [
                     {
-                      text: 'Ha estado pagando su cuota mensual de $220 para el seguro médico, para tener cobertura cuando necesite atención médica.',
+                      text: 'Ha estado pagando su cuota mensual de $275 para el seguro médico, para tener cobertura cuando necesite atención médica.',
                       costs: {
                         'insured': [/*
                           {
                             label: "Premium",
                             group: 'premium',
-                            amount: 220,
+                            amount: 275,
                             suffix: '/month'
                           }
                         */],
@@ -86,7 +86,7 @@ angular.module('app.use')
                           {
                             label: "Copago",
                             group: 'copay',
-                            amount: 25,
+                            amount: 30,
                           },
                         ],
                         'uninsured' : [
@@ -101,7 +101,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Su proveedor de atención médica primaria le recomienda que consulte a un especialista. El especialista le sugiere que se realice un análisis de sangre y una resonancia magnética*. El copago del especialista es más que el copago del proveedor de atención médica primaria. También, deberá pagar un coaseguro por la RM y el análisis de sangre.',
+                      text: 'Su proveedor de atención médica primaria le recomienda que consulte a un especialista. El especialista le sugiere que se realice un análisis de sangre y una resonancia magnética*. El copago del especialista es más que el copago del proveedor de atención médica primaria. También, deberá pagar un coaseguro por la RM y el análisis de sangre siempre que se haya cumplido con el deducible.',
                       costs: {
                         'insured': [
                           {
@@ -175,13 +175,13 @@ angular.module('app.use')
                 {// Feeling Sick - URGENT
                   'stories': [
                     {
-                      text: 'Ha estado pagando su cuota mensual de $220 para el seguro médico, para tener cobertura cuando necesite atención médica.',
+                      text: 'Ha estado pagando su cuota mensual de $275 para el seguro médico, para tener cobertura cuando necesite atención médica.',
                       costs: {
                         'insured': [/*
                           {
                             label: "Premium",
                             group: 'premium',
-                            amount: 220,
+                            amount: 275,
                             suffix: '/month'
                           }
                         */],
@@ -197,12 +197,12 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Cuesta más recibir atención urgente que visitar al proveedor de atención médica primaria. Usted tiene un copago o un coaseguro mayor.',
+                      text: 'Cuesta más recibir atención urgente que visitar al proveedor de atención médica primaria. Usted tiene un copago mayor.',
                       costs: {
                         'insured': [
                           {
-                            label: "Coaseguro",
-                            group: 'coinsurance',
+                            label: "Copago",
+                            group: 'copay',
                             amount: 75
                           },
                         ],
@@ -218,7 +218,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'El médico o la enfermera profesional de atención urgente lo envía para que se realice una RM* y un análisis de sangre. Por estas pruebas también debe pagar un coaseguro.',
+                      text: 'El médico o la enfermera profesional de atención urgente lo envía para que se realice una RM* y un análisis de sangre. Según su cobertura y si ha cumplido con el deducible, tendrá que pagar un coaseguro por estas pruebas.',
                       costs: {
                         'insured': [
                           {
@@ -280,7 +280,7 @@ angular.module('app.use')
                 {// Feeling Sick - ER
                   'stories': [
                     {
-                      text: 'Ha estado pagando su cuota mensual de $220 para el seguro médico, para tener cobertura cuando necesite atención médica.',
+                      text: 'Ha estado pagando su cuota mensual de $275 para el seguro médico, para tener cobertura cuando necesite atención médica.',
                       costs: {
                         'insured': [/*
                           {
@@ -302,7 +302,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Cuesta más acudir a la sala de emergencia que al proveedor de atención médica primaria o que recibir atención urgente. Tendrá un coaseguro más alto o un copago mayor para asistir a una consulta.',
+                      text: 'Cuesta más acudir a la sala de emergencia que al proveedor de atención médica primaria o que recibir atención urgente. Según su cobertura y si ha cumplido con el deducible, tendrá un coaseguro más alto o un copago mayor para asistir a una consulta.',
                       costs: {
                         'insured': [
                           {
@@ -314,7 +314,7 @@ angular.module('app.use')
                         'uninsured' : [
                           {
                             group: "visit",
-                            amount: 800 
+                            amount: 1000 
                           }
                         ]
                       },
@@ -395,13 +395,13 @@ angular.module('app.use')
                 {// Nasty Cut - PRIMARY
                   'stories': [
                     {
-                      text: 'Ha estado pagando su cuota mensual de $220 para el seguro médico, para tener cobertura cuando necesite atención médica.',
+                      text: 'Ha estado pagando su cuota mensual de $275 para el seguro médico, para tener cobertura cuando necesite atención médica.',
                       costs: {
                         'insured': [
                           /*{
                             label: "Premium",
                             group: 'premium',
-                            amount: 220,
+                            amount: 275,
                             suffix: '/month'
                           }*/
                         ],
@@ -423,7 +423,7 @@ angular.module('app.use')
                           {
                             label: "Copago",
                             group: 'copay',
-                            amount: 25,
+                            amount: 30,
                           },
                           {
                             label: "Limpieza de herida/suturas",
@@ -447,13 +447,13 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: '¡Oh, no! Su cortada comienza a parecerse a una herida de las que se ven en las películas de terror. Se está infectando. Suele suceder, no entre en pánico. Simplemente, resuélvalo. Regresa al proveedor para que le realice una limpieza y le vuelvan a poner puntadas.',
+                      text: '¡Oh, no! Su cortada comienza a parecerse a una herida de las que se ven en las películas de terror. Se está infectando. Puede suceder, no entre en pánico. Simplemente, resuélvalo. Regresa al proveedor para que le realice una limpieza y le vuelvan a poner puntadas.',
                       costs: {
                         'insured': [
                           {
                             label: "Copago",
                             group: 'copay',
-                            amount: 25,
+                            amount: 30,
                           },
                           {
                             label: "Limpieza completa/suturas",
@@ -507,13 +507,13 @@ angular.module('app.use')
                 {// Nasty Cut - URGENT
                   'stories': [
                     {
-                      text: 'Ha estado pagando su cuota mensual de $220 para el seguro médico, para tener cobertura cuando necesite atención médica.',
+                      text: 'Ha estado pagando su cuota mensual de $275 para el seguro médico, para tener cobertura cuando necesite atención médica.',
                       costs: {
                         'insured': [/*
                           {
                             label: "Premium",
                             group: 'premium',
-                            amount: 220,
+                            amount: 275,
                             suffix: '/month'
                           }
                         */],
@@ -619,13 +619,13 @@ angular.module('app.use')
                 {// Nasty Cut - ER
                   'stories': [
                     {
-                      text: 'Ha estado pagando su cuota mensual de $220 para el seguro médico, para tener cobertura cuando necesite atención médica.',
+                      text: 'Ha estado pagando su cuota mensual de $275 para el seguro médico, para tener cobertura cuando necesite atención médica.',
                       costs: {
                         'insured': [/*
                           {
                             label: "Premium",
                             group: 'premium',
-                            amount: 220,
+                            amount: 275,
                             suffix: '/month'
                           }
                         ],
@@ -641,7 +641,7 @@ angular.module('app.use')
                       hint: false
                     },
                     {
-                      text: 'Se dirige a la sala de emergencia (en especial si sangra mucho) para que le curen la herida.',
+                      text: 'Se dirige a la sala de emergencia (en especial si sangra mucho) para que le curen la herida. Según su plan de seguro y si ha cumplido con el deducible, tendrá que pagar un mayor copago o coaseguro.',
                       costs: {
                         'insured': [
                           {
@@ -749,19 +749,19 @@ angular.module('app.use')
                 {// Appendicitis - ER
                   'stories': [
                     {
-                      text: 'Ha estado pagando su cuota mensual de $220 para el seguro médico, para tener cobertura cuando necesite atención médica.',
+                      text: 'Ha estado pagando su cuota mensual de $275 para el seguro médico, para tener cobertura cuando necesite atención médica.',
                       costs: {
                         'insured': [
                           /*{
                             label: "Premium",
                             group: 'premium',
-                            amount: 220,
+                            amount: 275,
                             suffix: '/month'
                           },*/
                           {
                             label: "Desembolso máximo",
                             group: 'outofpocket',
-                            amount: 4600
+                            amount: 4800
                           },
                         ],
                         'uninsured': [/*
@@ -789,10 +789,10 @@ angular.module('app.use')
                       },
                       img: 'Appendicitis_ER_2.png',
                       showCosts: true,
-                      hint: ["Con esta cantidad, cumple con el deducible de su seguro médico."]
+                      hint: ["Con esta cantidad, cumple con el deducible de su seguro médico. Desde ahora, ud. pagará coaseguro por otros servicios."]
                     },
                     {
-                      text: 'Le han extraído el apéndice y permanecerá en el hospital durante 3 días para recuperarse. Debido a que alcanzó su deducible, paga el 20% del resto de los costos hasta alcanzar el desembolso máximo.',
+                      text: 'Le han extraído el apéndice y permanecerá en el hospital durante 3 días para recuperarse. Debido a que alcanzó su deducible, paga el coaseguro o el 30% del resto de los costos hasta alcanzar el desembolso máximo.',
                       costs: {
                         'insured': [
                           {
@@ -823,7 +823,7 @@ angular.module('app.use')
                       },
                       img: 'Appendicitis_ER_3.png',
                       showCosts: true,
-                      hint: ['Usted paga $4,600 para alcanzar su desembolso máximo y su seguro médico paga el resto.']
+                      hint: ['Usted paga $4,800 de coaseguro para alcanzar su desembolso máximo y su seguro médico paga el resto.']
                     },
                   ],
                   'groups': {
