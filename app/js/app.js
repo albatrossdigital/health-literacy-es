@@ -137,6 +137,9 @@ angular.module('app', [
           else if(argPos > 0) {
             return path.replace('/?', '?');
           }
+          else if(path === '/go') {
+            return;
+          }
 
           return '/';
         }
@@ -150,14 +153,23 @@ angular.module('app', [
       $stateProvider
 
         //////////
-        // Home //
+        // New Home (landing) //
         //////////
 
         .state("home", {
-
           // Use a url of "/" to set a state as the "index".
           url: "/",
-          templateUrl: 'views/home.html'
+          templateUrl: 'views/landing.html'
+        })
+
+        //////////
+        // Old Home //
+        //////////
+        .state("go", {
+
+          // Use a url of "/" to set a state as the "index".
+          url: "/go",
+          templateUrl: 'views/go.html'
         });
 
     }
