@@ -255,6 +255,10 @@ angular.module('app.use')
                       'label': 'Cuota',
                       'weight': 0
                     },
+                    'copay': {
+                      'label': 'Copago',
+                      'weight': 1
+                    },
                     'coinsurance': {
                       'label': 'Coaseguro',
                       'weight': 1
