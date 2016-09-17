@@ -56,12 +56,10 @@
     <div class="off-canvas-wrap" data-offcanvas="">
       <div class="inner-wrap">
         <header class="l-header"><div class="row"><div class="columns">
+          <h2 class="site-name"><a href="/go" ui-sref="go"><img src="../images/logo.png" alt="Home" title="Home">Seguro <span>TU</span></a></h2>
           <a term-link="" class="header-toggle left ng-isolate-scope">
-            <span>
-                <span class="s1"></span><span class="s2"></span><span class="s3"></span>
-            </span> Términos
+            <i class="fa fa-info-circle" aria-hidden="true"></i> Glosario
           </a>
-          <h2 class="site-name"><a href="/" ui-sref="home"><img src="../images/logo.png" alt="Home" title="Home">Seguro <span>TU</span></a></h2>
           <a class="right get-insurance" href="/get-insurance" ui-sref="get-insurance">
             <i class="fa fa-plus"></i> ¡Obtenga seguro!
           </a>
@@ -75,12 +73,14 @@
     SeguroTU es un sitio web educacional para ayudarle entender los básicos sobre cómo funciona el seguro médico. Este sitio provee palabras importantes en contexto de escenarios básicos, información sobre el valor del seguro médico, y cómo empezar a elegir y comprar un plan.
     </p><p>
     Por favor, entienda que los costos usados en SeguroTU son simplemente ejemplos educacionales. Estos costos vienen de planes de seguro médico verdaderos, sin embargo, los costos que usted experimentará pueden variar bastante según su plan de seguro, su edad, dónde vive, y dónde recibe la atención médica.
-    </p><p>
+    </p>
+    <p class="row text-center">
+      <a href="/go" ui-sref="go" class="button alert">¡A comenzar!</a>
+    </p>
+    <p>
     Para más información sobre quienes somos y por qué creamos SeguroTU, visite <a href="/about" ui-sref="about">Acerca de</a>.
     </p>
-    <div class="row text-center">
-      <a href="/go" ui-sref="go" class="button alert">¡A comenzar!</a>
-    </div>
+    
     
   </div>
 </div>
@@ -195,6 +195,7 @@
         <footer class="footer ng-scope" ng-controller="metaInfoCtrl"><div class="row"><div class="columns">
             <div class="left">
               <ul class="inline-list">
+                <li ui-sref-active="active" class="active"><a href="/" ui-sref="home">Inicio</a></li>
                 <li ui-sref-active="active"><a href="/about" ui-sref="about">Acerca de</a></li>
                 <li ui-sref-active="active"><a href="/resources" ui-sref="resources">Recursos</a></li>
                 <li><a href="http://www.coveredu.org">English Version</a></li>

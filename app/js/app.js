@@ -33,6 +33,11 @@ angular.module('app', [
 
       // Share42 script
       var share42 = document.createElement('script');
+
+      $rootScope.previous = function(e) {
+        $window.history.back();
+        e.preventDefault();
+      }
 		
       // Apply meta data if available
       $rootScope.$on('$stateChangeStart', 

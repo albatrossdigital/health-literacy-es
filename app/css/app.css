@@ -4929,11 +4929,11 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 
 /* Default Link Styles */
 a {
-  color: #ff5722;
+  color: #1976d2;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
-    color: #f93a00; }
+    color: #1668b5; }
   a img {
     border: none; }
 
@@ -5946,23 +5946,47 @@ th.hide-for-touch {
     margin-right: 0.5em; }
 
 .next-button {
-  padding-top: 2.5rem;
   overflow: hidden;
   clear: both; }
+  .next-button .next-button-inner {
+    width: 190px;
+    margin-left: auto;
+    margin-right: auto; }
   .next-button .button {
     border: 1px solid #ff5722;
     background: rgba(255, 255, 255, 0);
     padding: 0;
     line-height: 85px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block; }
+    display: block;
+    float: left; }
     .next-button .button:hover {
       background: rgba(255, 255, 255, 0.7); }
+    .next-button .button.next-button-primary {
+      background: rgba(255, 87, 34, 0.8);
+      color: #FFFFFF; }
+      .next-button .button.next-button-primary:hover {
+        background: #ff5722; }
+    .next-button .button.button-left {
+      margin-right: 20px; }
   .next-button .button, .next-button i {
     height: 85px;
     width: 85px; }
+
+a.link-term {
+  color: #ff5722 !important; }
+  a.link-term i {
+    font-size: 16px; }
+
+a.button.use-previous-header {
+  padding: 0;
+  position: absolute;
+  left: 1rem;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  margin-top: -5px; }
 
 @media only screen and (min-width:46.9375rem) {
   .next-button:not(.relative) {
@@ -6024,7 +6048,7 @@ th.hide-for-touch {
     width: 2em; }
     .header-toggle span span {
       display: block;
-      background-color: #ff5722;
+      background-color: #1976d2;
       top: 0;
       left: 0; }
     .header-toggle span .s1 {
@@ -6119,6 +6143,9 @@ h3 {
 
 p.text-small {
   margin-top: 0; }
+
+.l-header a {
+  color: #ff5722 !important; }
 
 @media only screen and (min-width:46.9375rem) {
   h1, .h1 {
@@ -6323,7 +6350,7 @@ to prevent collapsing during animation*/
     .small-pad .choice-header {
       padding-top: 0; }
   .big-pad {
-    padding-top: 7.1875rem; }
+    padding-top: 2.5rem; }
   .big-pad-right {
     padding-right: 2.5rem; }
   .full-height.columns {
@@ -6596,7 +6623,7 @@ body > * {
 
 @media only screen and (min-width:46.9375rem) {
   .premium-wrap {
-    padding-bottom: 11.5625rem !important;
+    padding-bottom: 9.375rem !important;
     position: relative; }
   .compare-section-insured {
     padding-left: 2.5rem; }

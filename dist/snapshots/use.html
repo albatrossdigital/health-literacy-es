@@ -56,12 +56,10 @@
     <div class="off-canvas-wrap" data-offcanvas="">
       <div class="inner-wrap">
         <header class="l-header"><div class="row"><div class="columns">
+          <h2 class="site-name"><a href="/go" ui-sref="go"><img src="../images/logo.png" alt="Home" title="Home">Seguro <span>TU</span></a></h2>
           <a term-link="" class="header-toggle left ng-isolate-scope">
-            <span>
-                <span class="s1"></span><span class="s2"></span><span class="s3"></span>
-            </span> Términos
+            <i class="fa fa-info-circle" aria-hidden="true"></i> Glosario
           </a>
-          <h2 class="site-name"><a href="/" ui-sref="home"><img src="../images/logo.png" alt="Home" title="Home">Seguro <span>TU</span></a></h2>
           <a class="right get-insurance" href="/get-insurance" ui-sref="get-insurance">
             <i class="fa fa-plus"></i> ¡Obtenga seguro!
           </a>
@@ -69,6 +67,9 @@
         <!-- uiView:  --><main id="main" class="main full-height transform ng-scope" ui-view="">
 <!-- uiView:  --><div ui-view="" class="full-all transform ng-scope">
 <div class="choice-header triangle-bottom columns ng-scope">
+  <a href="#" ng-click="previous($event)" class="button round use-previous-header" title="Previous Page">
+    <i class="fa fa-chevron-left"></i><span class="invisible">Back</span>
+  </a>
   <h2 ng-bind="pageData[currentPage].title" class="ng-binding">Elija una situación</h2>
 </div>
 <div class="full-all header-top clearfix ng-scope">
@@ -190,6 +191,7 @@
         <footer class="footer ng-scope" ng-controller="metaInfoCtrl"><div class="row"><div class="columns">
             <div class="left">
               <ul class="inline-list">
+                <li ui-sref-active="active"><a href="/" ui-sref="home">Inicio</a></li>
                 <li ui-sref-active="active"><a href="/about" ui-sref="about">Acerca de</a></li>
                 <li ui-sref-active="active"><a href="/resources" ui-sref="resources">Recursos</a></li>
                 <li><a href="http://www.coveredu.org">English Version</a></li>

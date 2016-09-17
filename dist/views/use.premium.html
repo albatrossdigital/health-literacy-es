@@ -33,9 +33,15 @@
        class="next-button" 
        ng-init="location = goToPage(key);">
 
-    <a href="#" ui-sref="{{location}}" class="button round">
-      <i class="fa fa-chevron-down"></i><span class="invisible">Página siguiente</span>
-    </a>
+    <div class="next-button-inner">
+      <a href="#" ng-click="previous($event)" class="button round button-left" title="Previous Page">
+        <i class="fa fa-chevron-left"></i><span class="invisible">Back</span>
+      </a>
+      <a href="#" ui-sref="{{location}}" class="button round next-button-primary" title="Next Page">
+        <i class="fa fa-chevron-right"></i><span class="invisible">Next Page</span>
+      </a>
+    </div>
+    
   </div>
 </div>
 
