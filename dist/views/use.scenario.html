@@ -8,7 +8,7 @@
 <div class="full-all header-top clearfix">
   <div ng-repeat="(key, option) in pageData[currentPage].options" 
        ng-init="nextLink = nextPageVal(key)"
-       class="scenario-pattern-{{key}} medium-4 columns reds no-padding full-height">
+       class="scenario-pattern-{{key}} {{colClass}} columns reds no-padding full-height">
 
     <a class="full-all full-link h3" href="#" ui-sref="{{nextLink}}"><span>{{option.title}}</span></a>
   </div>

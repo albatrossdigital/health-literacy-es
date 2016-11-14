@@ -23,6 +23,10 @@ angular.module('app.use')
               'title': 'Elija una situación',
               'options': [
                 {
+                  'title': 'Tiempo para un chequeo anual médica',
+                  'id': 'routine'
+                },
+                {
                   'title': 'Malestar',
                   'id': 'sick'
                 },
@@ -54,6 +58,131 @@ angular.module('app.use')
               ],
             },
             'results': [
+              [// Routine (annual check-up)
+                {// Routine - PRIMARY
+                  'stories': [
+                    {
+                      text: 'Ha estado pagando su cuota  mensual de $275 para el seguro médico, para tener cobertura cuando necesite atención médica.',
+                      img: 'PayingPremium_1.png',
+                      showCosts: false,
+                      hint: false
+                    },
+                    {
+                      text: 'Si usted va a recibir su chequeo anual, es un servicio preventivo y no tendrá que pagar un copago.',
+                      img: 'Routine_Free.png',
+                      showCosts: true,
+                      hint: ['*IMPORTANTE: Si se acude a su proveedor por una enfermedad que ya se experimenta, como un resfriado o herida menor, la visita no se considera como preventiva y usted tendría que pagar un copago.']
+                    },
+                    {
+                      text: 'Durante su chequeo anual, su proveedor de atención médica primaria (médico de cabecera) puede proveer otros servicios preventivos sin copago (por ejemplo una prueba para las infecciones de transmisión sexual, chequeo por la depresión, un análisis de sangre para el colesterol y para la diabetes, los anticonceptivos, etc.) Usted recibe su prueba para las infecciones de transmisión sexual, un análisis de sangre, y una vacuna contra la gripe para mantener su sistema inmunológico.',
+                      costs: {
+                        'insured': [
+                          {
+                            label: "Copago",
+                            group: 'overall',
+                            amount: 0,
+                            skipCount: true
+                          },
+                        ]
+                      },
+                      img: 'Routine_Free2.png',
+                      showCosts: true,
+                      //hint: ['You pay $4,800 in coinsurance to reach your out-of-pocket maximum and your health insurance pays for the rest!']
+                    },
+                    {
+                      text: 'Su análisis de sangre muestra que su nivel de azúcar está un poco alto. Su proveedor de atención médica primaria le aconseja que usted coma más saludable y haga ejercicio con frecuencia para evitar la diabetes. Su médico quiere que usted regrese el próximo año por otro chequeo. ¡Felicidades! Acaba de establecer una relación con un proveedor de atención médica primaria. Esto puede hacer más fácil obtener una visita en seguida si está enfermo y así puede evitar costos más altos de la atención urgente o sala de emergencia.',
+                      costs: {
+                        'insured': [
+                          {
+                            'label': 'Chequeo Anual',
+                            group: "annual",
+                            amount: 0 
+                          },
+                          {
+                            'label': 'Análisis de sangre',
+                            group: 'blood',
+                            amount: 0
+                          },
+                          {
+                            'label': 'Prueba por infecciones sexuales',
+                            group: 'sti',
+                            amount: 0
+                          },
+                          {
+                            'label': 'Vacuna de gripe',
+                            group: 'vaccine',
+                            amount: 0
+                          }
+                        ],
+                        'uninsured' : [
+                          {
+                            group: "annual",
+                            amount: 160 
+                          },
+                          {
+                            group: 'blood',
+                            amount: 200
+                          },
+                          {
+                            group: 'sti',
+                            amount: 200
+                          },
+                          {
+                            group: 'vaccine',
+                            amount: 35
+                          }
+                        ]
+                      },
+                      img: 'Routine_Recurring.png',
+                      showCosts: true
+                    },
+                  ],
+                  'override': false,
+                  'groups': {
+                    'annual': {
+                      'label': 'Chequeo Anual',
+                      'weight': 1
+                    },
+                    'blood': {
+                      'label': 'Análisis de sangre',
+                      'weight': 2
+                    },
+                    'sti': {
+                      'label': 'Prueba por infecciones sexuales',
+                      'weight': 3
+                    },
+                    'vaccine': {
+                      'label': 'Vacuna de gripe',
+                      'weight': 4
+                    },
+                    'overall': {
+                      'label': 'Total',
+                      'weight': 3,
+                      'hide': true
+                    }
+                  },
+                  'results': {
+                    'text': 'Tenga en cuenta que los costos son ejemplos. Los costos reales variarán en función de su plan de seguro médico, el nivel de cobertura y el lugar en el que obtenga la atención médica.'
+                  },
+                  img: 'Routine_Recurring.png'
+                },
+                {// Routine -  URGENT
+                  'stories': [],
+                  'override': true,
+                  'results': {
+                    'text': 'Es posible que usted pueda recibir algunos servicios preventivos en un lugar de urgencias como un chequeo anual, pero tendrá que pagar. <a href="/use/action?scenarioId=0">Veamos que pasa</a> cuando usted visita a su proveedor de atención médica primaria.'
+                  },
+                  img: 'NastyCut_ER_3.png'
+                },
+                {// Routine -  ER
+                  'stories': [],
+                  'override': true,
+                  'results': {
+                    'text': 'Perdón, la sala de emergencia no provee servicios como un chequeo básico o físico anual. <a href="/use/action?scenarioId=0">Vuelva atrás</a> y pruebe con otra opción.'
+                  },
+                  img: 'NastyCut_ER_3.png'
+                }
+              ],
               [// Feeling Sick
                 {// Feeling Sick - PRIMARY
                   'stories': [

@@ -87,7 +87,11 @@ angular.module('app.shop', [
             $scope.currentPage = 'question';
             $scope.questionId = $stateParams.questionId - 1;
             $scope.question = shopData.questions[$scope.questionId];
-            $scope.colClass = 12 / $scope.question.options.length;
+            // Build width
+            var colWidth = 12/($scope.question.options.length);
+            $scope.colClass = colWidth < 4 
+                            ? 'medium-half-height medium-6 large-' + colWidth 
+                            : 'medium-' + colWidth;
 
             $scope.answer = function(key) {
               $scope.answers[key] ++;

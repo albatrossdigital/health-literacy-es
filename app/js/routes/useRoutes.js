@@ -45,6 +45,12 @@ angular.module('app.use', [
           controller: function($scope, metaInfo, useData) {
             $scope.pageData = useData;
             $scope.currentPage = 'scenario';
+            // Build width
+            var colWidth = 12/(useData.results.length);
+            
+            $scope.colClass = colWidth < 4 
+                            ? 'medium-half-height medium-6 large-' + colWidth 
+                            : 'medium-' + colWidth;
 
             $scope.nextPageVal = function(key) {
               return 'use.action({scenarioId: ' + key + '})'
@@ -58,6 +64,8 @@ angular.module('app.use', [
           controller: function($scope, $stateParams, useData) {
             $scope.pageData = useData;
             $scope.currentPage = 'action';
+            // Build width
+            $scope.colWidth = 12/(useData.results.length);
 
             $scope.nextPageVal = function(key) {
               return 'use.premium({premuimId:0, scenarioId: '

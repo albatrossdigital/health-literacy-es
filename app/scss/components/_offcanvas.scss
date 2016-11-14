@@ -7,14 +7,23 @@
     margin-bottom: rem-calc(0);
     padding-bottom: rem-calc(12);
     padding-top: rem-calc(12);
+    color: white;
     //padding-left: rem-calc(50px);
   }
 
   i {
     color: $orange;
-    float: right;
+    //float: right;
     line-height: rem-calc(42);
   }
+
+  .accordion {
+    padding-top: 66px;
+  }
+}
+
+.move-right .left-off-canvas-menu h2{
+  position: fixed;
 }
 
 // *

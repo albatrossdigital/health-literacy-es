@@ -175,17 +175,55 @@
 
   // Make 3 (or 2) in a row full height
   .full-height {
-
     &.columns {
-      left: (100%/3);
-
       &:first-child {
         left: 0;
       }
-
       &:last-child {
         left: auto;
         right: 0;
+      }
+    }
+    &.medium-4 {
+      left: (100%/3);
+    }
+    &.medium-3 {
+      &:nth-child(2) {
+        left: 25%;
+      }
+      &:nth-child(3) {
+        left: 50%;
+      }
+    }
+  }
+}
+
+@media #{$medium-only} {
+  // Make 3 (or 2) in a row full height
+  .full-height {
+    &.medium-half-height {
+      height: 50%;
+      top: 0;
+
+      &:nth-child(n + 3) {
+        top: 50%;
+      }
+    }
+    &.medium-6:nth-child(2n) {
+      left: 50%;
+    }
+  }
+}
+
+@media #{$large-up} {
+  // Make 3 (or 2) in a row full height
+  .full-height {
+    &.large-3 {
+      &:nth-child(2) {
+        left: 25%;
+      }
+      &:nth-child(3) {
+        left: 50%;
       }
     }
   }

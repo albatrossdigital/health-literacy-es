@@ -35,18 +35,23 @@
   @include patterning('How_to_shop_health_insurance.jpg');
 }
 
-.bg-thermometer-repeat,
+.bg-routine-repeat,
 .scenario-pattern-0 {
+  @include patterning('routine.jpg');
+}
+
+.bg-thermometer-repeat,
+.scenario-pattern-1 {
   @include patterning('feeling_sick.jpg');
 }
 
 .bg-bandaid-repeat,
-.scenario-pattern-1  {
+.scenario-pattern-2  {
   @include patterning('Nasty_cut.jpg');
 }
 
 .bg-bed-repeat,
-.scenario-pattern-2  {
+.scenario-pattern-3  {
   @include patterning('Appendicitis.jpg');
 }
 

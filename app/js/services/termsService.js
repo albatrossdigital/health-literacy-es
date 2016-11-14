@@ -108,6 +108,54 @@ angular.module('app.terms')
               'regex': 'remisión',
               'label': 'Remisión',
               'text': 'Una recomendación de un proveedor de atención médica primaria para visitar a un especialista. Por ejemplo, el médico podría remitirlo para que visite a un otorrinolaringólogo. Con algunos planes de seguro médico, debe obtener una remisión de su proveedor de atención médica primaria antes de poder visitar a un especialista.'
+            },
+            {
+              'key': 'hmo',
+              'regex': 'HMO',
+              'label': 'Organización para el mantenimiento de la salud (HMO)',
+              'text': 'En general es el tipo de plan de seguro médico más barato con una red de proveedores más limitada. En un HMO, casi siempre se le exige que primero consulte al proveedor de atención médica primaria  antes de poder visitar a un especialista con una remisión. No cubre los costos por servicios de los proveedores fuera de la red, excepto en situaciones de emergencia en la que no hay proveedores del HMO disponibles.'
+            },
+            {
+              'key': 'epo',
+              'regex': 'EPO',
+              'label': 'Organización de proveedores exclusivos (EPO)',
+              'text': 'Un tipo de plan de seguro médico de costos bajos o moderados con una red limitada de proveedores. Usted puede elegir un proveedor de atención médica primaria o un especialista que quiere ver, pero hay menos proveedores de los cuales se puede elegir que un plan PPO. Un plan EPO no cubre los costos por servicios de los proveedores fuera de la red, excepto en situaciones de emergencia en la que no hay proveedores dentro de la red disponibles.'
+            },
+            {
+              'key': 'ppo',
+              'regex': 'PPO',
+              'label': 'Organización de proveedores preferidos (PPO)',
+              'text': 'Un tipo de plan de seguro médico más costoso con una red de proveedores amplia. Usted puede elegir un proveedor de atención médica primaria o especialista que quiere ver desde una lista más grande. Algunos planes PPO cubrirán servicios de proveedores fuera de la red, pero usted tendrá que pagar más (A menudo, el desembolso máximo es del doble del máximo dentro de la red).'
+            },
+            {
+              'key': 'marketplace',
+              'regex': 'mercado de seguros|mercado',
+              'label': 'Mercado de seguros',
+              'text': 'Esta es la pagina web que se puede utilizar para obtener el seguro médico. Algunos estados tienen su propio mercado como Connect for Health Colorado o Covered California. Otros utilizan CuidadoDeSalud.gov. Estos mercados son los únicos lugares donde se puede recebir asistencia financiera para reducir las cuotas mensuales del seguro médico.'
+            },
+            {
+              'key': 'medicaid',
+              'regex': 'Medicaid',
+              'label': 'Medicaid',
+              'text': 'Es un programa de seguro médico de bajo costo manejado por su estado. Bajo Obamacare, muchos de los estados han ampliado la población que puede calificar por el programa, pero algunos no. Los costos que usted paga en Medicaid dependen del estado, pero típicamente puede obtener servicios de salud a costo muy bajo o sin costo ninguno. En algunos estados se conoce por otro nombre, en Colorado es Health First Colorado, en California es Medi-Cal.'
+            },
+            {
+              'key': 'medicare',
+              'regex': 'Medicare',
+              'label': 'Medicare',
+              'text': 'Es un programa de seguro médico para las personas con 65 años o más de edad. Medicare cubre costos médicos básicos, pero muchas personas compran seguro suplementario para pagar menos de su bolsillo por la atención médica.'
+            },
+            {
+              'key': 'assistance',
+              'regex': 'crédito fiscal|ayuda económica',
+              'label': 'Crédito fiscal/Ayuda económica',
+              'text': 'Si usted obtiene el seguro médico a través del mercado de seguros, es posible que usted reciba un crédito fiscal según sus ingresos. Es un crédito fiscal en sus impuestos que se puede usar inmediatamente para bajar sus cuotas mensuales de seguro médico.'
+            },
+            {
+              'key': 'csr',
+              'regex': 'ahorros en los costos de su bolsillo|reducción de costos',
+              'label': 'Ahorros en los costos de su bolsillo/Reducción de Costos',
+              'text': 'Algunas personas que califican por los créditos fiscales en el mercado de seguros también califican por planes de seguro que proveen ahorros en los costos de su bolsillo. Estos ahorros son determinados por sus ingresos, pero reducen cuánto tendría que pagar de su bolsillo a través de los copagos, el coaseguro, y su deducible. Si califica por estos planes de ahorros, solo se puede aplicar a los planes de nivel plata en el mercado.'
             }
           ];
           cache.put(callUrl, result);

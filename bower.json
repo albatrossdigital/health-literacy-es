@@ -9,6 +9,7 @@
     "angular-ui-router": "0.2.11",
     "angular-animate": "1.2.25",
     "angular-touch": "1.2.25",
-    "bourbon": "v3.2.3"
+    "bourbon": "v3.2.3",
+    "jquery": "~2.1.1"
   }
 }
